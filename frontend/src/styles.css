@@ -1,0 +1,42 @@
+:root {
+  font-family: Inter, "Microsoft YaHei", system-ui, sans-serif;
+  color: #17233d;
+  background: #f3f6fb;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 1180px; }
+.app-shell { min-height: 100vh; }
+.sidebar { background: linear-gradient(180deg, #101d36 0%, #172c50 100%); color: #fff; position: relative; }
+.brand { height: 82px; padding: 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #ffffff18; }
+.brand-mark { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #2dd4bf, #3b82f6); }
+.brand strong, .brand span { display: block; }
+.brand span { color: #9fb3cf; font-size: 12px; margin-top: 4px; }
+.nav-menu { background: transparent !important; border: 0 !important; padding: 12px; }
+.nav-menu .el-menu-item { color: #b8c7dd; border-radius: 9px; margin: 5px 0; }
+.nav-menu .el-menu-item:hover, .nav-menu .el-menu-item.is-active { color: #fff; background: #2a67d6 !important; }
+.sidebar-footer { position: absolute; bottom: 20px; width: 100%; color: #7890b1; text-align: center; font-size: 12px; }
+.topbar { height: 70px; background: #fff; border-bottom: 1px solid #e6ebf2; display: flex; align-items: center; justify-content: space-between; }
+.topbar strong, .topbar span { display: block; }
+.topbar span { color: #8491a6; font-size: 13px; margin-top: 4px; }
+.main-content { padding: 24px; }
+.page-head { margin-bottom: 20px; }
+.page-head h1 { margin: 0 0 7px; font-size: 26px; }
+.page-head p { margin: 0; color: #6b7890; }
+.panel { background: #fff; border: 1px solid #e5ebf4; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 8px 28px #1837650a; }
+.panel-title { margin: 0 0 16px; font-size: 17px; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+.stat-card { background: #fff; border: 1px solid #e5ebf4; border-radius: 14px; padding: 20px; }
+.stat-card .label { color: #75839a; font-size: 13px; }
+.stat-card .value { font-size: 30px; font-weight: 750; margin-top: 8px; color: #194f9f; }
+.cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cap-card { min-height: 130px; padding: 18px; border-radius: 12px; background: linear-gradient(145deg, #f6f9ff, #edf4ff); border: 1px solid #dbe7fa; }
+.cap-card strong { display: block; margin-bottom: 10px; color: #174c93; }
+.cap-card span { color: #68768d; line-height: 1.7; font-size: 14px; }
+.toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.chart { width: 100%; height: 520px; }
+.risk-high { color: #d93025; font-weight: 700; }
+.risk-medium { color: #d97706; font-weight: 700; }
+.risk-low { color: #15803d; font-weight: 700; }
+.answer-box { padding: 16px; line-height: 1.8; border-radius: 10px; background: #f6f8fc; white-space: pre-wrap; }
+.json-box { background: #101827; color: #d7e2f4; border-radius: 10px; padding: 18px; max-height: 560px; overflow: auto; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 13px; }
