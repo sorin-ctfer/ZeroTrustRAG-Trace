@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { api, unwrap } from '@/api'
+import { useAsyncTask } from '@/composables/useAsyncTask'
 
 const stats = ref<Record<string, number>>({})
+const { loading, error, execute } = useAsyncTask()
 const cards = [
   ['evidence_count', 'Evidence 数量'], ['chunk_count', 'Chunk 数量'],
   ['agent_count', 'Agent 数量'], ['claim_count', 'Claim 数量'],
@@ -17,12 +19,17 @@ const capabilities = [
   ['TrustScore 可信评分', '融合证据覆盖、来源独立性、投毒和因果风险。'],
   ['可信重生成', '隔离污染证据后重检索，并输出带 Evidence 引用的保守答案。'],
 ]
-onMounted(async () => { stats.value = unwrap(await api.get('/dashboard/stats')) })
+const load = async () => {
+  const data = await execute(async () => unwrap<Record<string, number>>(await api.get('/dashboard/stats')))
+  if (data) stats.value = data
+}
+onMounted(load)
 </script>
 
 <template>
   <div class="page-head"><h1>系统仪表盘</h1><p>多 Agent 零信任协同与 RAG 知识投毒因果验证的完整演示入口。</p></div>
-  <div class="stat-grid">
+  <el-alert v-if="error" class="error-alert" type="error" :title="error" show-icon :closable="false" />
+  <div v-loading="loading" class="stat-grid">
     <div v-for="[key, label] in cards" :key="key" class="stat-card">
       <div class="label">{{ label }}</div><div class="value">{{ stats[key] ?? 0 }}</div>
     </div>

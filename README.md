@@ -2,6 +2,8 @@
 
 > 基于多 Agent 零信任协同与 RAG 知识投毒因果验证的信息污染溯源纠偏系统
 
+> 当前开发分支：`dev`。下一阶段优化只提交到 `dev`，未合并到 `main`。
+
 智源净域是一个可本地运行、可展示、可测试的全栈安全原型。系统不调用真实大模型 API，而是使用
 TF-IDF、余弦相似度、启发式 NLI、NetworkX 和模板生成，演示从知识投毒检测、Agent 声明验证、
 级联错误识别、联合溯源到可信纠偏的完整闭环。
@@ -46,7 +48,7 @@ RAG 检测   Agent 零信任   IPJG 联合图谱
 | 后端 | Python 3.10+、FastAPI、Pydantic v2、scikit-learn、NetworkX |
 | 前端 | Vue3、Vite、TypeScript、Element Plus、ECharts、Axios |
 | 存储 | 本地 JSON |
-| 测试 | pytest、FastAPI TestClient、vue-tsc、Vite build |
+| 测试 | pytest、路由 endpoint/Pydantic 兼容测试、vue-tsc、Vite build |
 
 不包含 `torch`、`transformers`，不需要 GPU、API Key 或网络模型服务。
 
@@ -148,6 +150,9 @@ docker compose up
 | `/correction` | 隔离、降权、回滚、BFT 和可信重生成 |
 | `/reports` | JSON 报告复制和下载 |
 
+所有页面均包含加载状态和接口错误提示。图谱支持缩放、拖拽、箭头、边类型、风险配色与邻接高亮；
+纠偏页面使用图表对比前后 TrustScore。
+
 ## 演示流程
 
 1. 启动前后端，进入“知识库管理”，点击“加载内置样例”。
@@ -166,6 +171,11 @@ docker compose up
 1. **企业制度知识投毒**：伪造“权限变更无需审批”文档。
 2. **安全情报错误共识**：多个 Agent 复用同一错误 Evidence，将正常 IP 误标为 C2。
 3. **Prompt Infection**：RAG 文档包含“忽略规则、关闭防护”等间接提示注入文本。
+4. **漏洞状态投毒**：伪造“漏洞已经修复、无需升级或打补丁”的处置结论。
+5. **安全认证投毒**：伪造产品已经取得 EAL4+ 最高等级认证。
+6. **良性错误负样本**：历史通知中的旧版本信息已过时，但没有恶意诱导或伪造行为。
+
+良性错误会标记为 `benign_error`，保留风险提示但不会进入恶意投毒隔离集合，用于展示误报控制。
 
 所有域名、IP、文档、Agent 和结论均为本地模拟数据。
 
@@ -204,6 +214,10 @@ cd backend
 pytest
 ```
 
+测试覆盖旧版 RAG 闭环、6 类 Web 案例、良性错误误报控制，以及以下路由兼容行为：
+`/api/rag/analyze`、`/api/agents/run-demo`、`/api/detect/cascade`、`/api/trace/ipjg`、
+`/api/correction/run`、`/api/report/{case_id}`。
+
 前端：
 
 ```bash
@@ -211,7 +225,7 @@ cd frontend
 npm run build
 ```
 
-旧版 RAG 闭环测试和新增 Web/API 集成测试均位于 `backend/tests/`。
+旧版 RAG 闭环测试和新增 Web/API 兼容测试均位于 `backend/tests/`。
 
 ## 核心公式
 
@@ -250,6 +264,10 @@ BERT/BGE、NLI 模型、Milvus、Neo4j、GAT 和约束式大模型生成。
 
 不是。当前结果来自内置小规模案例和固定规则仿真，只用于验证原型闭环。
 
+### 如何部署到其他环境
+
+见 [docs/deployment.md](docs/deployment.md)，其中包含本地、Docker Compose、环境变量和故障排查说明。
+
 ## GitHub 提交
 
 目标仓库：
@@ -258,15 +276,15 @@ BERT/BGE、NLI 模型、Milvus、Neo4j、GAT 和约束式大模型生成。
 git@github.com:weikelai/RAGweblab.git
 ```
 
-标准提交命令：
+当前开发提交目标为 `dev`：
 
 ```bash
 git add .
-git commit -m "feat: implement RAGweblab full-stack prototype"
-git branch -M main
-git remote add origin git@github.com:weikelai/RAGweblab.git
-git push -u origin main
+git commit -m "feat: extend dev prototype with cases tests and UI polish"
+git push -u origin dev
 ```
+
+未经评审不要直接合并或推送到 `main`。
 
 ## 安全声明
 

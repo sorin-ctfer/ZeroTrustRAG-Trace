@@ -240,7 +240,17 @@ def analyze_rag(query: str, original_answer: str, top_k: int = 5, case_id: str |
         hit_counts=retrieval.hit_counts,
         rank_variances=retrieval.rank_variance,
     )
-    suspicious = [item for item in detections if item.dual_risk >= 0.5]
+    evidence_by_id = {item.evidence_id: item for item in top_evidence}
+
+    def is_benign_error(evidence_id: str) -> bool:
+        """良性过时/歧义信息保留风险提示，但不归类为恶意知识投毒。"""
+        evidence = evidence_by_id[evidence_id]
+        return evidence.metadata.get("label") == "benign_error"
+
+    suspicious = [
+        item for item in detections
+        if item.dual_risk >= 0.5 and not is_benign_error(item.evidence_id)
+    ]
     detection_map = {item.evidence_id: item for item in detections}
     counterfactual = []
     for result in suspicious:
@@ -261,6 +271,7 @@ def analyze_rag(query: str, original_answer: str, top_k: int = 5, case_id: str |
     cf_map = {item.suspicious_evidence_id: item for item in counterfactual}
     for ev in top_evidence:
         det = detection_map[ev.evidence_id]
+        benign_error = is_benign_error(ev.evidence_id)
         rows.append(
             {
                 **_stored_evidence(ev.model_dump()),
@@ -268,6 +279,13 @@ def analyze_rag(query: str, original_answer: str, top_k: int = 5, case_id: str |
                 "retrieval_rank": ev.retrieval_rank,
                 **det.model_dump(),
                 "causal_score": cf_map.get(ev.evidence_id).causal_score if ev.evidence_id in cf_map else 0.0,
+                "risk_category": (
+                    "benign_error"
+                    if benign_error
+                    else "poison_suspect"
+                    if det.evidence_id in {item.evidence_id for item in suspicious}
+                    else "normal"
+                ),
             }
         )
     return {
@@ -275,6 +293,9 @@ def analyze_rag(query: str, original_answer: str, top_k: int = 5, case_id: str |
         "original_answer": original_answer,
         "top_k": rows,
         "suspicious_evidence": [item.evidence_id for item in suspicious],
+        "benign_error_evidence": [
+            item.evidence_id for item in top_evidence if is_benign_error(item.evidence_id)
+        ],
         "counterfactual_results": [item.model_dump() for item in counterfactual],
         "trust_score": trust.model_dump(),
     }
@@ -338,15 +359,32 @@ def run_agent_demo(case_id: str) -> dict[str, Any]:
     evidence_ids = {item["evidence_id"] for item in case.get("evidences", [])}
     e_bad = poisoned[0] if poisoned else next(iter(evidence_ids))
     e_good = trusted[0] if trusted else next(iter(evidence_ids))
-    claims = [
-        _claim("CLM-001", AGENTS[0], f"规划核验任务：{case['question']}", [], [], 0.96, 0.05, "plan"),
-        _claim("CLM-002", AGENTS[1], f"检索到高相关证据 {e_bad}", [e_bad], ["CLM-001"], 0.91, 0.68, "retrieve"),
-        _claim("CLM-003", AGENTS[2], wrong, [e_bad], ["CLM-002"], 0.88, 0.84, "analyze"),
-        _claim("CLM-004", AGENTS[3], f"初步复核同意：{wrong}", [e_bad], ["CLM-003"], 0.82, 0.79, "verify"),
-        _claim("CLM-005", AGENTS[4], f"形成多数决策：{wrong}", [e_bad], ["CLM-003", "CLM-004"], 0.86, 0.88, "decide"),
-        _claim("CLM-006", AGENTS[5], "准备执行受污染决策", [e_bad], ["CLM-005"], 0.83, 0.91, "execute"),
-        _claim("CLM-007", AGENTS[3], f"可信证据复核：{correct}", [e_good], ["CLM-002"], 0.94, 0.12, "verify"),
-    ]
+    if poisoned:
+        claims = [
+            _claim("CLM-001", AGENTS[0], f"规划核验任务：{case['question']}", [], [], 0.96, 0.05, "plan"),
+            _claim("CLM-002", AGENTS[1], f"检索到高相关证据 {e_bad}", [e_bad], ["CLM-001"], 0.91, 0.68, "retrieve"),
+            _claim("CLM-003", AGENTS[2], wrong, [e_bad], ["CLM-002"], 0.88, 0.84, "analyze"),
+            _claim("CLM-004", AGENTS[3], f"初步复核同意：{wrong}", [e_bad], ["CLM-003"], 0.82, 0.79, "verify"),
+            _claim("CLM-005", AGENTS[4], f"形成多数决策：{wrong}", [e_bad], ["CLM-003", "CLM-004"], 0.86, 0.88, "decide"),
+            _claim("CLM-006", AGENTS[5], "准备执行受污染决策", [e_bad], ["CLM-005"], 0.83, 0.91, "execute"),
+            _claim("CLM-007", AGENTS[3], f"可信证据复核：{correct}", [e_good], ["CLM-002"], 0.94, 0.12, "verify"),
+        ]
+    else:
+        outdated = next(
+            (
+                item["evidence_id"] for item in case.get("evidences", [])
+                if item.get("metadata", {}).get("label") == "benign_error"
+            ),
+            e_bad,
+        )
+        claims = [
+            _claim("CLM-001", AGENTS[0], f"规划核验任务：{case['question']}", [], [], 0.96, 0.05, "plan"),
+            _claim("CLM-002", AGENTS[1], f"检索到历史证据 {outdated}，需要检查时效性", [outdated], ["CLM-001"], 0.82, 0.22, "retrieve"),
+            _claim("CLM-003", AGENTS[2], f"历史信息可能过时：{wrong}", [outdated], ["CLM-002"], 0.78, 0.32, "analyze"),
+            _claim("CLM-004", AGENTS[3], f"可信证据复核：{correct}", [e_good], ["CLM-003"], 0.95, 0.08, "verify"),
+            _claim("CLM-005", AGENTS[4], f"采用最新独立证据：{correct}", [e_good], ["CLM-004"], 0.94, 0.09, "decide"),
+            _claim("CLM-006", AGENTS[5], "更新版本信息，不执行安全隔离动作", [e_good], ["CLM-005"], 0.93, 0.06, "execute"),
+        ]
     _claims = validate_claims(claims, evidence_ids)
     nodes = [
         {"id": agent["agent_id"], "name": agent["name"], "category": 0, "risk": 0.2}

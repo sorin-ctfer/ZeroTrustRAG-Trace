@@ -1,22 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { api, unwrap } from '@/api'
-const cases = [
-  ['case_enterprise_policy_approval', '企业制度知识投毒'],
-  ['case_threat_intel_false_consensus', '安全情报错误共识'],
-  ['case_prompt_infection', 'Prompt Infection'],
-]
-const caseId = ref(cases[0][0]), report = ref<any>()
-const load = async () => { report.value = unwrap(await api.get(`/report/${caseId.value}`)) }
-const copy = async () => { await navigator.clipboard.writeText(JSON.stringify(report.value, null, 2)); ElMessage.success('已复制 JSON') }
+import { useAsyncTask } from '@/composables/useAsyncTask'
+const cases = ref<any[]>([])
+const caseId = ref('case_enterprise_policy_approval'), reportData = ref<any>()
+const { loading, error, execute } = useAsyncTask()
+const load = async () => {
+  const data = await execute(async () => unwrap(await api.get(`/report/${caseId.value}`)))
+  if (data) reportData.value = data
+}
+const copy = async () => {
+  await navigator.clipboard.writeText(JSON.stringify(reportData.value, null, 2))
+  ElMessage.success('已复制 JSON')
+}
 const download = () => {
-  const blob = new Blob([JSON.stringify(report.value, null, 2)], { type: 'application/json' })
+  const blob = new Blob([JSON.stringify(reportData.value, null, 2)], { type: 'application/json' })
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${caseId.value}.json`; a.click(); URL.revokeObjectURL(a.href)
 }
+onMounted(async () => {
+  const data = await execute(async () => unwrap<any[]>(await api.get('/rag/cases')))
+  if (data) cases.value = data
+})
 </script>
 <template>
   <div class="page-head"><h1>结构化风险报告</h1><p>生成、复制和下载包含检测、溯源、纠偏与前后对比的 JSON 报告。</p></div>
-  <section class="panel"><div class="toolbar"><el-select v-model="caseId" style="width: 360px"><el-option v-for="[id,name] in cases" :key="id" :label="name" :value="id" /></el-select><el-button type="primary" @click="load">生成报告</el-button><el-button :disabled="!report" @click="copy">复制 JSON</el-button><el-button :disabled="!report" @click="download">下载 .json</el-button></div></section>
-  <section v-if="report" class="panel"><div class="json-box">{{ JSON.stringify(report, null, 2) }}</div></section>
+  <el-alert v-if="error" class="error-alert" type="error" :title="error" show-icon :closable="false" />
+  <section class="panel"><div class="toolbar"><el-select v-model="caseId" style="width: 420px"><el-option v-for="item in cases" :key="item.case_id" :label="item.title" :value="item.case_id" /></el-select><el-button type="primary" :loading="loading" @click="load">生成报告</el-button><el-button :disabled="!reportData" @click="copy">复制 JSON</el-button><el-button :disabled="!reportData" @click="download">下载 .json</el-button></div></section>
+  <section v-if="reportData" v-loading="loading" class="panel"><div class="json-box">{{ JSON.stringify(reportData, null, 2) }}</div></section>
 </template>
