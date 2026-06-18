@@ -16,7 +16,7 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div class="page-head"><h1>可信纠偏</h1><p>隔离 Chunk、降权 Agent、回滚 Claim、重检索并形成 Evidence-backed BFT Consensus。</p></div>
+  <div class="page-head"><h1>可信纠偏</h1><p>隔离污染 Chunk、回滚受影响 Claim、重检索并形成 Evidence-backed 可信答案。</p></div>
   <el-alert v-if="error" class="error-alert" type="error" :title="error" show-icon :closable="false" />
   <section class="panel"><div class="toolbar"><el-select v-model="caseId" style="width: 420px"><el-option v-for="item in cases" :key="item.case_id" :label="item.title" :value="item.case_id" /></el-select><el-button type="primary" :loading="loading" @click="run">一键执行纠偏</el-button></div></section>
   <template v-if="result">

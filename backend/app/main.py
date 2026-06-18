@@ -47,8 +47,20 @@ app.add_middleware(
 )
 
 from .routers.platform import router as platform_router
+from .routers import interactive_rag
+from .routers.external_knowledge import router as external_knowledge_router
+from .routers.poison_samples import router as poison_samples_router
+from .routers.rag_training import router as rag_training_router
 
 app.include_router(platform_router)
+app.include_router(external_knowledge_router)
+app.include_router(poison_samples_router)
+app.include_router(rag_training_router)
+app.include_router(
+    interactive_rag.router,
+    prefix="/api/interactive",
+    tags=["interactive-rag"],
+)
 
 
 # ---------------------------------------------------------------------------

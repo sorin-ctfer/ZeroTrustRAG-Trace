@@ -1,0 +1,25 @@
+{
+  "training_status": "已训练",
+  "mode": "训练模型模式",
+  "trained_at": "2026-06-18T06:52:12.815599+00:00",
+  "model_type": "random_forest",
+  "metrics": {
+    "Precision": 0.9486,
+    "Recall": 0.8788,
+    "F1": 0.9124,
+    "AUC": 0.9915,
+    "PR_AUC": 0.9853,
+    "confusion_matrix": [
+      [
+        795,
+        22
+      ],
+      [
+        56,
+        406
+      ]
+    ]
+  },
+  "train_size": 2373,
+  "validation_size": 1279
+}

@@ -1,41 +1,93 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { api, unwrap } from '@/api'
+import { computed, onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { externalKnowledgeApi, interactiveSessionApi, poisonSamplesApi, trainingApi } from '@/api/lab'
 import { useAsyncTask } from '@/composables/useAsyncTask'
 
-const stats = ref<Record<string, number>>({})
+const router = useRouter()
+const externalStats = ref<any>({})
+const trainingStats = ref<any>({})
+const trainingStatus = ref<any>({})
+const samples = ref<any[]>([])
+const sessions = ref<any[]>([])
+const publicSources = ref<any[]>([])
 const { loading, error, execute } = useAsyncTask()
-const cards = [
-  ['evidence_count', 'Evidence 数量'], ['chunk_count', 'Chunk 数量'],
-  ['agent_count', 'Agent 数量'], ['claim_count', 'Claim 数量'],
-  ['high_risk_evidence_count', '高风险证据'], ['high_risk_agent_count', '高风险 Agent'],
-  ['average_trust_score', '平均 TrustScore'],
-]
-const capabilities = [
-  ['多 Agent 零信任声明链', '对身份、权限、证据引用、父声明和签名逐项验证。'],
-  ['RAG 知识投毒检测', '以 RAS、GIS 和 DualRisk 识别异常吸附与答案诱导。'],
-  ['反事实因果验证', '通过原始、删除、仅可疑、可信替代四路结果计算因果贡献。'],
-  ['信息污染联合溯源图谱', '贯通 Evidence、Claim、Consensus 和 Action 四层传播链。'],
-  ['TrustScore 可信评分', '融合证据覆盖、来源独立性、投毒和因果风险。'],
-  ['可信重生成', '隔离污染证据后重检索，并输出带 Evidence 引用的保守答案。'],
-]
+
+const latestSession = computed(() => sessions.value[0] || {})
+const highRiskSessions = computed(() => sessions.value.filter(item => item.risk_level === 'high').length)
+const cards = computed(() => [
+  ['可信知识 Chunk', externalStats.value.chunk_count || 0],
+  ['训练样本', trainingStats.value.sample_count || 0],
+  ['投毒知识样本', samples.value.length],
+  ['实验室 Session', sessions.value.length],
+  ['高风险 Session', highRiskSessions.value],
+  ['公开数据源', publicSources.value.length],
+])
+const capabilities = computed(() => [
+  ['AI 交互实验室', `当前检测模式：${trainingStatus.value.mode || '规则模式'}，模型链路在实验室会话中按实际调用记录。`],
+  ['数据集驱动投毒知识', `投毒知识来自训练数据集 poison/benign_error 样本，当前可选 ${samples.value.length} 条。`],
+  ['Session 风险闭环', `最近 session 风险：${latestSession.value.risk_level || '暂无'}；报告和纠偏均绑定 session。`],
+])
+
 const load = async () => {
-  const data = await execute(async () => unwrap<Record<string, number>>(await api.get('/dashboard/stats')))
-  if (data) stats.value = data
+  const data = await execute(async () => {
+    const [external, trainStats, trainStatus, poisonSamples, labSessions, sources] = await Promise.all([
+      externalKnowledgeApi.stats(),
+      trainingApi.stats(),
+      trainingApi.status(),
+      poisonSamplesApi.list(),
+      interactiveSessionApi.sessions(),
+      trainingApi.publicSources(),
+    ])
+    return { external, trainStats, trainStatus, poisonSamples, labSessions, sources }
+  })
+  if (!data) return
+  externalStats.value = data.external
+  trainingStats.value = data.trainStats
+  trainingStatus.value = data.trainStatus
+  samples.value = data.poisonSamples
+  sessions.value = data.labSessions
+  publicSources.value = data.sources
 }
+
 onMounted(load)
 </script>
 
 <template>
-  <div class="page-head"><h1>系统仪表盘</h1><p>多 Agent 零信任协同与 RAG 知识投毒因果验证的完整演示入口。</p></div>
+  <div class="page-head">
+    <h1>系统仪表盘</h1>
+    <p>以 AI 交互实验室为中心展示数据集、可信知识、投毒知识、训练检测模式和 session 风险状态。</p>
+  </div>
   <el-alert v-if="error" class="error-alert" type="error" :title="error" show-icon :closable="false" />
   <div v-loading="loading" class="stat-grid">
-    <div v-for="[key, label] in cards" :key="key" class="stat-card">
-      <div class="label">{{ label }}</div><div class="value">{{ stats[key] ?? 0 }}</div>
+    <div v-for="[label, value] in cards" :key="label" class="stat-card">
+      <div class="label">{{ label }}</div>
+      <div class="value">{{ value }}</div>
     </div>
   </div>
   <section class="panel">
-    <h2 class="panel-title">核心能力</h2>
-    <div class="cap-grid"><div v-for="[title, text] in capabilities" :key="title" class="cap-card"><strong>{{ title }}</strong><span>{{ text }}</span></div></div>
+    <div class="toolbar">
+      <el-button type="primary" @click="router.push('/interactive-rag-lab')">进入 AI 交互实验室</el-button>
+      <el-button @click="router.push('/rag-training')">管理训练数据集</el-button>
+      <el-button @click="router.push('/reports')">查看 Session 报告</el-button>
+    </div>
+    <h2 class="panel-title mt-12">当前闭环</h2>
+    <div class="cap-grid">
+      <div v-for="[title, text] in capabilities" :key="title" class="cap-card">
+        <strong>{{ title }}</strong>
+        <span>{{ text }}</span>
+      </div>
+    </div>
+  </section>
+  <section class="panel">
+    <h2 class="panel-title">最近 AI 交互实验室 Session</h2>
+    <el-table :data="sessions.slice(0, 6)" v-loading="loading" size="small">
+      <el-table-column prop="session_id" label="Session" min-width="180" />
+      <el-table-column prop="question" label="问题" min-width="260" show-overflow-tooltip />
+      <el-table-column prop="risk_level" label="风险" width="110" />
+      <el-table-column prop="injected_poison_count" label="注入" width="90" />
+      <el-table-column prop="llm_provider" label="模型" width="120" />
+      <el-table-column prop="updated_at" label="更新时间" min-width="180" />
+    </el-table>
   </section>
 </template>

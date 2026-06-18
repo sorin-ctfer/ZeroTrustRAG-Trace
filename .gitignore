@@ -5,6 +5,8 @@ __pycache__/
 .venv/
 .venv-*/
 backend/.venv/
+.env
+*.env.local
 
 # Node
 node_modules/
@@ -14,6 +16,7 @@ frontend/dist/
 *.tsbuildinfo
 frontend/vite.config.js
 frontend/vite.config.d.ts
+frontend/.ms-playwright/
 
 # Editors and OS
 .idea/
@@ -24,6 +27,10 @@ Thumbs.db
 # Runtime data
 backend/app/data/knowledge_store.json
 backend/app/data/reports/
+backend/app/data/interactive_chunks.json
+backend/app/data/interactive_sessions.json
+data/public_datasets/raw/
+data/public_datasets/converted/
 
 # Local report tooling
 .docx_deps/

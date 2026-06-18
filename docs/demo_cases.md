@@ -32,5 +32,24 @@
 
 此案例用于验证误报控制：界面显示“良性错误”提示，但 `suspicious_evidence` 保持为空。
 
-所有域名、IP、产品、漏洞、文档和结论均为本地演示数据，不代表真实组织或公开基准。
+## 交互式答辩流程
 
+1. 进入“外部知识库”，加载内置可信制度样例或上传本地制度文档。所有 Chunk 均标记为 `trusted`。
+2. 进入“RAG 训练评测”，加载内置 PoisonBench，训练 RAS/GIS 检测模型。Precision、Recall、F1、AUC、PR-AUC 和混淆矩阵均由验证集真实计算。
+3. 进入“投毒样本库”，加载或新增本地演示投毒样本。样本可启用、禁用或删除，不会写入外部可信知识库。
+4. 进入“AI 交互实验室”，先基于外部可信知识提问，查看正常回答、引用证据和 Top-K。
+5. 从投毒样本库选择样本并注入当前 session，再次提问，观察 session poison Chunk 进入 Top-K。
+6. 点击“执行投毒检测”，查看 RAS、GIS、DualRisk、CausalScore、风险原因和风险 Chunk。
+7. 只有检测到 high risk 或 detected_poison_chunks 非空时，页面显示“进入可信纠偏”。
+8. 在 `/interactive-correction/{session_id}` 查看 original、remove、solo、replace 四路反事实，隔离高风险 Chunk 后执行可信重生成。
+9. 展示 TrustScore_before / TrustScore_after、ASR_before / ASR_after、RecoveryRate、EvidenceSupportRate、被隔离 Chunk 和纠偏后引用证据。
+10. 生成 JSON 风险报告。
+
+交互式流程使用三类独立数据：
+
+- `external_trusted_chunks.json`：外部可信知识。
+- `poison_samples.json`：本地防御演示投毒样本。
+- `interactive_sessions.json`：session 级注入、问答、检测和纠偏记录。
+
+所有域名、IP、产品、漏洞、文档和结论均为本地演示数据，不代表真实组织或公开基准。
+所有投毒内容仅用于本地防御研究和答辩展示，不连接、不修改、不攻击任何真实在线系统。

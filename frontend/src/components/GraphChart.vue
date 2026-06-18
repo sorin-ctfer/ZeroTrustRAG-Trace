@@ -10,7 +10,7 @@ const render = async () => {
   await nextTick()
   if (!root.value) return
   chart ||= echarts.init(root.value)
-  const categoryNames = (props.graph.categories || ['Agent', 'Claim', 'Evidence', 'Action']).map((item: any) =>
+  const categoryNames = (props.graph.categories || ['Claim', 'Evidence', 'Action']).map((item: any) =>
     typeof item === 'string' ? { name: item } : item,
   )
   const palette = ['#3b82f6', '#25a18e', '#8b5cf6', '#f59e0b', '#64748b']

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE || '/api',
-  timeout: 30000,
+  timeout: 180000,
 })
 
 export const unwrap = <T>(response: { data: { success?: boolean; data: T; error?: string } }): T => {
