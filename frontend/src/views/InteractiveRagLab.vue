@@ -43,6 +43,12 @@ const llmProviderLabel = computed(() => {
 })
 const canEnterCorrection = computed(() => detection.value?.risk_level === 'high' || detection.value?.detected_poison_chunks?.length)
 const tagType = (label: string) => label === 'trusted' ? 'success' : label === 'poison' ? 'danger' : label === 'benign_error' ? 'warning' : label === 'quarantined' ? 'info' : 'primary'
+const displayQuestion = computed(() => question.value.trim() || (selectedPoison.value ? '使用所选样本内置问题（已隐藏）' : ''))
+const experimentQuestion = () => question.value.trim() || selectedPoison.value?.target_query || ''
+const sampleLabel = (item: any, index: number) => {
+  const source = item.source || '训练数据集投毒知识'
+  return `样本 ${String(index + 1).padStart(3, '0')} · ${item.attack_type} · ${source}`
+}
 
 const persistLabState = () => {
   window.localStorage.setItem(LAB_STATE_KEY, JSON.stringify({
@@ -60,7 +66,6 @@ const hydrateFromSession = (savedSession: any) => {
   beforeChat.value = chats.before_poison || chats.normal_chat
   afterChat.value = chats.after_poison
   detection.value = savedSession?.detection_result || savedSession?.detection_report
-  question.value = savedSession?.question || beforeChat.value?.question || question.value
   injectedSampleId.value = savedSession?.injected_poison_chunks?.[0]?.sample_id || ''
 }
 
@@ -150,12 +155,13 @@ const run = async (step: string, task: () => Promise<void>) => {
 }
 
 const askBefore = async () => run('before', async () => {
-  if (!question.value.trim()) {
+  const currentQuestion = experimentQuestion()
+  if (!currentQuestion) {
     ElMessage.warning('请选择数据集投毒样本，或输入一个实验问题')
     return
   }
   await createCleanSession()
-  beforeChat.value = await withTimeout(interactiveSessionApi.chat(question.value, 'before_poison', sessionId.value))
+  beforeChat.value = await withTimeout(interactiveSessionApi.chat(currentQuestion, 'before_poison', sessionId.value))
   session.value = await withTimeout(interactiveSessionApi.get(sessionId.value))
   persistLabState()
 })
@@ -171,7 +177,7 @@ const askAfter = async () => run('after', async () => {
     await withTimeout(interactiveSessionApi.injectPoison(sessionId.value, selectedSample.value))
     injectedSampleId.value = selectedSample.value
   }
-  afterChat.value = await withTimeout(interactiveSessionApi.chat(question.value, 'after_poison', sessionId.value))
+  afterChat.value = await withTimeout(interactiveSessionApi.chat(experimentQuestion(), 'after_poison', sessionId.value))
   session.value = await withTimeout(interactiveSessionApi.get(sessionId.value))
   persistLabState()
 })
@@ -183,7 +189,7 @@ const detectPoison = async () => run('detect', async () => {
   }
   detection.value = await withTimeout(interactiveSessionApi.detect({
     session_id: sessionId.value,
-    question: question.value,
+    question: experimentQuestion(),
     before_answer: beforeChat.value.answer,
     after_answer: afterChat.value.answer,
   }))
@@ -201,10 +207,7 @@ const enterCorrection = () => {
   router.push(`/interactive-correction/${sessionId.value}`)
 }
 
-watch(selectedPoison, item => {
-  if (item?.target_query) question.value = item.target_query
-  persistLabState()
-})
+watch(selectedPoison, persistLabState)
 
 watch([question, selectedSource], persistLabState)
 
@@ -256,7 +259,7 @@ onMounted(async () => {
     <el-tour-step
       target=".guide-target-samples"
       title="选择数据集投毒样本"
-      description="样本来自已导入训练数据集，只注入当前 session，不写入外部可信知识库；选择后会自动带入目标问题。"
+      description="样本来自已导入训练数据集，只注入当前 session，不写入外部可信知识库；目标问题在页面隐藏。"
       placement="left"
     />
     <el-tour-step
@@ -332,7 +335,7 @@ onMounted(async () => {
         <div class="chat-row user">
           <div class="chat-bubble">
             <div class="chat-stage">用户问题</div>
-            <div class="chat-text">{{ question }}</div>
+            <div class="chat-text">{{ displayQuestion }}</div>
           </div>
         </div>
         <div v-if="beforeChat" class="chat-row assistant">
@@ -374,7 +377,7 @@ onMounted(async () => {
       </div>
 
       <div class="chat-input guide-target-question">
-        <el-input v-model="question" type="textarea" :rows="3" placeholder="输入实验问题" />
+        <el-input v-model="question" type="textarea" :rows="3" placeholder="输入自定义实验问题；留空时使用所选样本内置问题（页面隐藏）" />
         <div class="toolbar mt-12">
           <el-button type="primary" :icon="Search" :loading="loadingStep === 'before'" @click="askBefore">投毒前提问</el-button>
           <el-button type="warning" :icon="Warning" :loading="loadingStep === 'after'" @click="askAfter">注入样本并投毒后提问</el-button>
@@ -388,13 +391,18 @@ onMounted(async () => {
       <div class="guide-target-samples">
         <el-alert type="warning" :closable="false" show-icon title="只注入当前 session，不写入外部可信知识库。" />
         <el-select v-model="selectedSample" class="mt-12" placeholder="选择投毒样本" filterable>
-          <el-option v-for="item in samples" :key="item.sample_id" :label="`${item.attack_type} · ${item.source}`" :value="item.sample_id" />
+          <el-option
+            v-for="(item, index) in samples"
+            :key="item.sample_id"
+            :label="sampleLabel(item, index)"
+            :value="item.sample_id"
+          />
         </el-select>
         <div v-if="selectedPoison" class="poison-detail">
           <h3>数据来源</h3>
           <p>{{ selectedPoison.source }}</p>
-          <h3>目标问题</h3>
-          <p>{{ selectedPoison.target_query }}</p>
+          <h3>样本问题</h3>
+          <p class="muted">已隐藏，执行实验时在后台使用。</p>
           <h3>投毒内容</h3>
           <div class="answer-box answer-risk">{{ selectedPoison.content }}</div>
         </div>

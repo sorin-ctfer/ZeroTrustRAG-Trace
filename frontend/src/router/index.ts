@@ -9,10 +9,8 @@ const router = createRouter({
     { path: '/rag-training', component: () => import('@/views/RagTrainingView.vue') },
     { path: '/poison-samples', component: () => import('@/views/PoisonSamplesView.vue') },
     { path: '/knowledge', component: () => import('@/views/KnowledgeView.vue') },
-    { path: '/rag-detection', component: () => import('@/views/RagDetectionView.vue') },
     { path: '/interactive-rag-lab', component: () => import('@/views/InteractiveRagLab.vue') },
     { path: '/interactive-correction/:session_id', component: () => import('@/views/InteractiveCorrectionView.vue') },
-    { path: '/correction', component: () => import('@/views/CorrectionView.vue') },
     { path: '/reports', component: () => import('@/views/ReportsView.vue') },
   ],
 })

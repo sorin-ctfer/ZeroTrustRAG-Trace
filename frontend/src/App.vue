@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import {
-  ChatDotRound, Coin, DataAnalysis, Document, Files, Grid, RefreshRight, Warning,
+  ChatDotRound, Coin, DataAnalysis, Document, Files, Grid,
 } from '@element-plus/icons-vue'
 
 const route = useRoute()
@@ -10,9 +10,7 @@ const menus = [
   ['/rag-training', 'RAG 训练评测', DataAnalysis],
   ['/poison-samples', '演示投毒知识', Coin],
   ['/knowledge', '知识库管理', Files],
-  ['/rag-detection', 'RAG 投毒检测', Warning],
   ['/interactive-rag-lab', 'AI 交互实验室', ChatDotRound],
-  ['/correction', '可信纠偏', RefreshRight],
   ['/reports', '风险报告', Document],
 ]
 </script>
