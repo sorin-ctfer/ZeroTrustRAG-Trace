@@ -48,6 +48,10 @@ export const interactiveCorrectionApi = {
   report: async (sessionId: string) => unwrap<any>(await api.get(`/interactive/correction/${sessionId}/report`)),
 }
 
+export const poisonPropagationApi = {
+  build: async (sessionId: string) => unwrap<any>(await api.get(`/interactive/propagation/${sessionId}`)),
+}
+
 export const trainingApi = {
   importDataset: async (jsonl: string, name = 'imported_jsonl') =>
     unwrap<any>(await api.post('/datasets/import', { jsonl, name })),

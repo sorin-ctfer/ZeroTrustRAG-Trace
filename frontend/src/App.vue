@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import {
-  ChatDotRound, Coin, DataAnalysis, Document, Files, Grid,
+  ChatDotRound, Coin, DataAnalysis, Document, Files, Grid, Share,
 } from '@element-plus/icons-vue'
 
 const route = useRoute()
@@ -11,6 +11,7 @@ const menus = [
   ['/poison-samples', '演示投毒知识', Coin],
   ['/knowledge', '知识库管理', Files],
   ['/interactive-rag-lab', 'AI 交互实验室', ChatDotRound],
+  ['/poison-propagation', '投毒传播图谱', Share],
   ['/reports', '风险报告', Document],
 ]
 </script>

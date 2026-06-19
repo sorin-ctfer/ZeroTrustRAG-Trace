@@ -2,7 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
-import { ChatDotRound, InfoFilled, Right, Search, Warning } from '@element-plus/icons-vue'
+import { ChatDotRound, InfoFilled, Right, Search, Share, Warning } from '@element-plus/icons-vue'
 import { externalKnowledgeApi, interactiveSessionApi, poisonSamplesApi, trainingApi } from '@/api/lab'
 
 const router = useRouter()
@@ -207,6 +207,14 @@ const enterCorrection = () => {
   router.push(`/interactive-correction/${sessionId.value}`)
 }
 
+const enterPropagation = () => {
+  if (!sessionId.value || !detection.value) {
+    ElMessage.warning('请先在 AI 交互实验室执行投毒检测')
+    return
+  }
+  router.push(`/poison-propagation/${sessionId.value}`)
+}
+
 watch(selectedPoison, persistLabState)
 
 watch([question, selectedSource], persistLabState)
@@ -282,8 +290,8 @@ onMounted(async () => {
     />
     <el-tour-step
       target=".guide-target-correction"
-      title="进入可信纠偏"
-      description="检测为高风险后，点击纠偏入口，按反事实分析、隔离风险 chunk、可信重生成的顺序处理。"
+      title="构建传播图谱与可信纠偏"
+      description="检测后先构建投毒传播图谱，查看相似投毒片段和传播路径；高风险时继续进入可信纠偏。"
       placement="left"
     />
   </el-tour>
@@ -442,6 +450,9 @@ onMounted(async () => {
             {{ item }}
           </el-timeline-item>
         </el-timeline>
+        <el-button class="correct-entry" type="primary" :icon="Share" @click="enterPropagation">
+          构建投毒传播图谱
+        </el-button>
         <el-button v-if="canEnterCorrection" class="correct-entry" type="danger" :icon="Right" @click="enterCorrection">
           进入可信纠偏
         </el-button>

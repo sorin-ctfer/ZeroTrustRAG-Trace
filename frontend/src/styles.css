@@ -125,11 +125,15 @@ body { margin: 0; min-width: 1180px; }
 .detect-summary { display: grid; gap: 12px; margin-top: 12px; }
 .detect-summary .el-tag { width: fit-content; margin-right: 8px; }
 .correction-metrics { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.propagation-stats { grid-template-columns: repeat(4, 1fr); }
+.propagation-layout { display: grid; grid-template-columns: minmax(680px, 1fr) 360px; gap: 18px; align-items: start; }
+.propagation-layout aside { border-left: 1px solid #e5ebf4; padding-left: 18px; min-height: 520px; }
 @media (max-width: 1500px) {
   body { min-width: 1024px; }
   .interactive-grid { grid-template-columns: 1fr 1fr; }
   .interactive-column:last-child { grid-column: 1 / -1; }
-  .rag-lab-layout, .correction-layout, .guided-rag-layout { grid-template-columns: 1fr; }
+  .rag-lab-layout, .correction-layout, .guided-rag-layout, .propagation-layout { grid-template-columns: 1fr; }
+  .propagation-layout aside { border-left: 0; padding-left: 0; min-height: 0; }
   .ai-card-grid { grid-template-columns: 1fr; }
   .demo-poison-panel { position: static; }
   .bottom-actions { grid-template-columns: 1fr; }

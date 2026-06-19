@@ -11,6 +11,7 @@ from pydantic import BaseModel, Field
 from ..services.bailian_llm_service import BailianConfigurationError
 from ..services.interactive_correction_service import interactive_correction_service
 from ..services.interactive_poison_detector import interactive_poison_detector
+from ..services.poison_propagation_graph import poison_propagation_graph_service
 from ..services.interactive_rag_service import interactive_rag_service
 from ..services.interactive_vector_store import interactive_vector_store
 
@@ -213,6 +214,11 @@ def correction_regenerate(session_id: str):
 @router.get("/correction/{session_id}/report")
 def correction_report(session_id: str):
     return _run(lambda: interactive_correction_service.report(session_id))
+
+
+@router.get("/propagation/{session_id}")
+def poison_propagation_graph(session_id: str):
+    return _run(lambda: poison_propagation_graph_service.build(session_id))
 
 
 @router.get("/report/{session_id}")
