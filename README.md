@@ -5,8 +5,8 @@
 > 当前开发分支：`dev`。下一阶段优化只提交到 `dev`，未合并到 `main`。
 
 智源净域是一个可本地运行、可展示、可测试的全栈安全原型。基础闭环使用
-TF-IDF、余弦相似度、启发式 NLI、NetworkX 和证据抽取；交互式增强模式默认直接调用百炼大模型，也可切换到本地 Ollama，模型不可用时自动回退到本地证据抽取。
-系统已覆盖从外部可信知识导入、投毒样本注入、RAG 投毒检测、Agent 声明验证、级联错误识别、联合溯源到可信纠偏和报告导出的完整闭环。
+TF-IDF、余弦相似度、启发式 NLI、NetworkX、GAT 动态传播图谱和证据抽取；交互式增强模式默认直接调用百炼大模型，也可切换到本地 Ollama，模型不可用时自动回退到本地证据抽取。
+系统已覆盖从外部可信知识导入、投毒样本注入、RAG 投毒检测、动态投毒传播图谱构建、Agent 声明验证、级联错误识别、联合溯源到可信纠偏和报告导出的完整闭环。
 
 ## 系统架构
 
@@ -18,7 +18,7 @@ FastAPI API / Pydantic Models
               │
     ┌─────────┼─────────────┐
     ▼         ▼             ▼
-RAG 检测   Agent 零信任   IPJG 联合图谱
+RAG 检测   GAT 传播图谱   Agent 零信任
     │         │             │
     └─────────┴──────┬──────┘
                      ▼
@@ -38,6 +38,7 @@ RAG 检测   Agent 零信任   IPJG 联合图谱
 - Claim Provenance DAG 与 Propagation Factor、False Consensus Rate、Drift Velocity、
   Influence Score、Byzantine Suspicion Score。
 - Evidence、Claim、Consensus、Action 四层 IPJG 信息污染联合图谱。
+- Query、Answer、Chunk、Document、Claim 异构 RAG 投毒传播图谱，使用当前 session 动态图结构进行 GAT 训练推理，输出相似投毒片段和传播路径。
 - 高风险 Chunk 隔离、Agent 降权、Claim 回滚和 Evidence-backed BFT Consensus。
 - TrustScore 前后对比、可信重生成和结构化 JSON 报告。
 - 外部可信知识库、投毒样本库、交互式 session、RAG 检测模型训练评测和本地 Ollama / 百炼兜底增强问答。
@@ -60,6 +61,7 @@ RAG 检测   Agent 零信任   IPJG 联合图谱
 - 已完成外部知识库页面：统一导入 txt、md、pdf、docx、JSONL clean_chunks 和内置可信制度样例，保存到 `backend/app/data/external_trusted_chunks.json`。
 - 已完成投毒样本库页面：单独管理从训练数据集生成的投毒知识样本、攻击类型、目标错误答案、正确答案和启用状态，保存到 `backend/app/data/poison_samples.json`。
 - 已完成 AI 交互实验室：支持选择公开数据集、导入可信 clean chunks、从 poison/benign_error 样本生成投毒知识、聊天式 RAG 问答、当前 session 投毒样本注入、投毒前后 Top-K 检索展示、风险检测、风险摘要和 session 报告生成。
+- 已完成 RAG 投毒传播图谱构建：在 AI 交互实验室投毒检测后，围绕当前 session 构建 Query、Answer、Chunk、Document、Claim 异构图，使用 GAT 注意力传播识别相似投毒片段、同错误声明和高风险传播路径。
 - 已完成交互式可信纠偏页面：检测到高风险后跳转到 `/interactive-correction/{session_id}`，执行四路反事实、session 内隔离、重检索、可信重生成和 JSON 纠偏报告。
 - 已完成 RAG 训练评测页面：支持导入 JSONL、下载并转换 SafeRAG/RGB 公开数据集、重置数据集、查看样本分布，使用 scikit-learn 训练 Logistic Regression 或 Random Forest 检测模型，并展示真实验证集 Precision、Recall、F1、AUC、PR-AUC 和混淆矩阵。
 - 已完成训练模式融合：训练模型存在时交互式检测优先使用训练模型；没有模型时自动 fallback 到规则模式，并在风险摘要中展示当前检测模式。
@@ -76,12 +78,12 @@ RAG 检测   Agent 零信任   IPJG 联合图谱
 
 | 部分 | 技术 |
 |---|---|
-| 后端 | Python 3.10+、FastAPI、Pydantic v2、scikit-learn、NetworkX、LangChain Core、pypdf、python-docx |
+| 后端 | Python 3.10+、FastAPI、Pydantic v2、scikit-learn、NetworkX、LangChain Core、pypdf、python-docx；GAT 图谱推理可调用本地 PyTorch 环境 |
 | 前端 | Vue3、Vite、TypeScript、Element Plus、ECharts、Axios |
 | 存储 | 本地 JSON |
 | 测试 | pytest、路由 endpoint/Pydantic 兼容测试、vue-tsc、Vite build |
 
-不包含 `torch`、`transformers`，不需要 GPU。
+默认运行不强依赖 `torch`、`transformers` 或 GPU；RAG 投毒传播图谱会优先调用本地 `E:\anaconda\envs\pytorch` 进行 PyTorch GAT 训练/推理，WSL 后端无法调用 Windows interop 时自动使用本地动态注意力 GAT 后端。
 
 旧版内置案例、本地规则模式、外部知识库、投毒样本库和训练评测不需要 API Key；交互式问答默认使用百炼，切换到 Ollama 时可按本地模型性能调整超时、输出长度和上下文窗口。
 
@@ -210,13 +212,14 @@ npm run dev
 
 1. 进入“AI 交互实验室”，在“数据集实验准备”中选择 SafeRAG 或 RGB，点击“准备当前实验数据”。
 2. 系统会下载/转换所选公开数据集，导入训练数据，导入可信 clean chunks，并从数据集 poison/benign_error 记录生成可选投毒知识。
-3. 选择一条数据集投毒知识；实验室会把该样本的 `target_query` 带入问题框，用户也可以改成自己的问题。
+3. 选择一条数据集投毒知识；页面不会展示该样本的具体目标问题，留空时后台使用样本内置问题，用户也可以输入自己的实验问题。
 4. 点击“投毒前提问”，系统只基于可信知识检索并调用百炼；如果切换到 Ollama，则调用本地 `deepseek-r1:8b` 等模型。
 5. 点击“注入样本并投毒后提问”，系统只向当前 session 注入所选投毒 Chunk，再执行混合检索和回答。
 6. 点击“执行投毒检测”，展示 RAS、GIS、DualRisk、TrustScore、风险 Chunk 和检测模式。
-7. 检测到高风险后点击“进入可信纠偏”，跳转到 `/interactive-correction/{session_id}`。
-8. 在纠偏页面查看 original、remove、solo、replace 四路反事实，隔离风险 Chunk 并可信重生成。
-9. 进入“结构化风险报告”，选择同一个 AI 交互实验室 session，生成、复制或下载 JSON 报告。
+7. 点击“构建投毒传播图谱”，跳转到 `/poison-propagation/{session_id}`，查看 GAT 图谱、相似投毒片段和传播路径。
+8. 检测到高风险后点击“进入可信纠偏”，跳转到 `/interactive-correction/{session_id}`。
+9. 在纠偏页面查看 original、remove、solo、replace 四路反事实，隔离风险 Chunk 并可信重生成。
+10. 进入“结构化风险报告”，选择同一个 AI 交互实验室 session，生成、复制或下载 JSON 报告。
 
 数据文件：
 
@@ -286,6 +289,8 @@ backend/.venv/bin/python backend/scripts/ingest_public_datasets.py --reset-train
 → 投毒后混合检索
 → RAS/GIS/DualRisk 检测
 → 风险 Chunk 标记
+→ 动态 GAT 投毒传播图谱构建
+→ 相似投毒片段与传播路径识别
 → 跳转可信纠偏页面
 → 四路反事实验证
 → 隔离高风险 Chunk
@@ -316,13 +321,12 @@ docker compose up
 | `/rag-training` | JSONL/公开数据集导入、检测模型训练和真实指标 |
 | `/poison-samples` | 数据集投毒知识创建、启停、删除和管理 |
 | `/knowledge` | 上传、切分、样例加载、投毒样本管理 |
-| `/rag-detection` | RAS/GIS/DualRisk/CausalScore/TrustScore |
 | `/interactive-rag-lab` | 数据集准备、Ollama/百炼问答、session 投毒注入、检测和报告 |
+| `/poison-propagation/:session_id?` | 基于 AI 交互实验室 session 的动态 GAT 投毒传播图谱、相似投毒片段和传播路径 |
 | `/interactive-correction/:session_id` | 围绕 AI 实验室 session 的反事实验证、隔离、重检索和可信重生成 |
 | `/agent-trust` | 六 Agent 与 Zero-Trust Claim Envelope |
 | `/cascade-detection` | 级联错误指标和 Claim DAG |
 | `/trace-graph` | 四层 IPJG 联合溯源图谱 |
-| `/correction` | 隔离、降权、回滚、BFT 和可信重生成 |
 | `/reports` | AI 交互实验室 session JSON 报告复制和下载 |
 
 所有页面均包含加载状态和接口错误提示。图谱支持缩放、拖拽、箭头、边类型、风险配色与邻接高亮；
@@ -335,9 +339,10 @@ docker compose up
 3. 选择数据集投毒知识，执行“投毒前提问”。
 4. 执行“注入样本并投毒后提问”，观察 Top-K 和回答变化。
 5. 执行“投毒检测”，查看 RAS、GIS、DualRisk 和 TrustScore。
-6. 进入“可信纠偏”，完成反事实、隔离和可信重生成。
-7. 进入“结构化风险报告”，选择同一 session 生成并下载 JSON。
-8. 回到“系统仪表盘”，查看 session 风险和数据集状态。
+6. 进入“投毒传播图谱”，构建动态 GAT 图谱并查看相似投毒片段。
+7. 进入“可信纠偏”，完成反事实、隔离和可信重生成。
+8. 进入“结构化风险报告”，选择同一 session 生成并下载 JSON。
+9. 回到“系统仪表盘”，查看 session 风险和数据集状态。
 
 无需登录，不包含账号和密码。
 
@@ -427,6 +432,7 @@ POST /api/interactive/correction/{session_id}/counterfactual
 POST /api/interactive/correction/{session_id}/quarantine
 POST /api/interactive/correction/{session_id}/regenerate
 GET  /api/interactive/correction/{session_id}/report
+GET  /api/interactive/propagation/{session_id}
 ```
 
 详细说明见 [docs/api.md](docs/api.md) 和 Swagger。
