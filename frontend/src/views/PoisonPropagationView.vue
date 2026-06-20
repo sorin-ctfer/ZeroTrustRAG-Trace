@@ -84,7 +84,16 @@ onMounted(async () => {
       <div class="stat-card"><div class="label">关系边</div><div class="value">{{ summary.edge_count }}</div></div>
       <div class="stat-card"><div class="label">高风险 Chunk</div><div class="value">{{ summary.risk_node_count }}</div></div>
       <div class="stat-card"><div class="label">相似投毒片段</div><div class="value">{{ summary.similar_poison_count }}</div></div>
+      <div class="stat-card"><div class="label">图谱方法</div><div class="value small-value">{{ summary.graph_method }}</div></div>
     </div>
+    <el-alert
+      v-if="summary.backend_note"
+      class="error-alert"
+      type="info"
+      show-icon
+      :closable="false"
+      :title="summary.backend_note"
+    />
 
     <section class="panel propagation-layout">
       <div>

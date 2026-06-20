@@ -43,8 +43,33 @@ const llmProviderLabel = computed(() => {
 })
 const canEnterCorrection = computed(() => detection.value?.risk_level === 'high' || detection.value?.detected_poison_chunks?.length)
 const tagType = (label: string) => label === 'trusted' ? 'success' : label === 'poison' ? 'danger' : label === 'benign_error' ? 'warning' : label === 'quarantined' ? 'info' : 'primary'
-const displayQuestion = computed(() => question.value.trim() || (selectedPoison.value ? '使用所选样本内置问题（已隐藏）' : ''))
-const experimentQuestion = () => question.value.trim() || selectedPoison.value?.target_query || ''
+const builtInQuestion = computed(() => String(selectedPoison.value?.target_query || '').trim())
+const activeQuestion = computed(() => question.value.trim() || builtInQuestion.value)
+const questionSourceLabel = computed(() => question.value.trim() ? '自定义问题' : builtInQuestion.value ? '样本内置问题' : '未设置')
+const displayQuestion = computed(() => activeQuestion.value || '请选择数据集投毒样本，或输入一个实验问题')
+const experimentQuestion = () => activeQuestion.value
+const flowSteps = computed(() => [
+  {
+    title: '输入问题',
+    note: activeQuestion.value ? displayQuestion.value : '等待输入问题或选择含内置问题的样本',
+    done: Boolean(activeQuestion.value),
+  },
+  {
+    title: '投毒前可信检索',
+    note: beforeChat.value ? '可信基线回答已生成' : '点击“投毒前提问”生成可信基线',
+    done: Boolean(beforeChat.value),
+  },
+  {
+    title: '注入样本并对比',
+    note: afterChat.value ? '投毒后混合检索回答已生成' : '选择样本后执行投毒后提问',
+    done: Boolean(afterChat.value),
+  },
+  {
+    title: '执行投毒检测',
+    note: detection.value ? `${detection.value.risk_level} · ${riskPercent.value}%` : '完成前后问答后执行检测',
+    done: Boolean(detection.value),
+  },
+])
 const sampleLabel = (item: any, index: number) => {
   const source = item.source || '训练数据集投毒知识'
   return `样本 ${String(index + 1).padStart(3, '0')} · ${item.attack_type} · ${source}`
@@ -267,7 +292,7 @@ onMounted(async () => {
     <el-tour-step
       target=".guide-target-samples"
       title="选择数据集投毒样本"
-      description="样本来自已导入训练数据集，只注入当前 session，不写入外部可信知识库；目标问题在页面隐藏。"
+      description="样本来自已导入训练数据集，只注入当前 session，不写入外部可信知识库；样本内置问题会在页面展示并可直接用于实验。"
       placement="left"
     />
     <el-tour-step
@@ -296,167 +321,269 @@ onMounted(async () => {
     />
   </el-tour>
 
-  <div class="stat-grid compact-stats guide-target-status">
-    <div class="stat-card"><div class="label">外部可信 Chunk</div><div class="value">{{ externalStats.chunk_count || 0 }}</div></div>
-    <div class="stat-card"><div class="label">当前 session 投毒</div><div class="value">{{ injectedCount }}</div></div>
-    <div class="stat-card"><div class="label">训练样本</div><div class="value">{{ trainingStats.sample_count || 0 }}</div></div>
-    <div class="stat-card"><div class="label">检测模式</div><div class="value small-value">{{ summary.detection_mode || trainingStatus.mode || '规则模式' }}</div></div>
-    <div class="stat-card"><div class="label">AI 模型</div><div class="value small-value">{{ llmMode }}</div></div>
-    <div class="stat-card"><div class="label">当前 TrustScore</div><div class="value">{{ currentTrustScore }}</div></div>
-  </div>
-
-  <section class="panel">
-    <h2 class="panel-title">数据集实验准备</h2>
-    <div class="toolbar">
-      <el-select v-model="selectedSource" style="width: 320px" placeholder="选择公开数据集">
-        <el-option
-          v-for="item in publicSources"
-          :key="item.key"
-          :label="`${item.name} · ${item.downloaded ? '已下载' : '未下载'}`"
-          :value="item.key"
-        />
-      </el-select>
-      <el-button type="primary" :loading="loadingStep === 'prepare'" @click="prepareDatasetLab">
-        准备当前实验数据
-      </el-button>
-      <el-tag type="info">Session {{ sessionId || '初始化中' }}</el-tag>
+  <div class="lab-page">
+    <div class="stat-grid compact-stats lab-status-grid guide-target-status">
+      <div class="stat-card"><div class="label">外部可信 Chunk</div><div class="value">{{ externalStats.chunk_count || 0 }}</div></div>
+      <div class="stat-card"><div class="label">当前 session 投毒</div><div class="value">{{ injectedCount }}</div></div>
+      <div class="stat-card"><div class="label">训练样本</div><div class="value">{{ trainingStats.sample_count || 0 }}</div></div>
+      <div class="stat-card"><div class="label">检测模式</div><div class="value small-value">{{ summary.detection_mode || trainingStatus.mode || '规则模式' }}</div></div>
+      <div class="stat-card"><div class="label">AI 模型</div><div class="value small-value">{{ llmMode }}</div></div>
+      <div class="stat-card"><div class="label">当前 TrustScore</div><div class="value">{{ currentTrustScore }}</div></div>
     </div>
-    <p class="muted">
-      该步骤从所选公开数据集导入训练样本和可信 clean chunks，并从 poison/benign_error 样本生成实验室可选投毒知识。
-    </p>
-  </section>
 
-  <div class="rag-lab-layout">
-    <section class="panel chat-panel guide-target-chat">
-      <div class="session-strip">
-        <el-tag effect="dark">{{ sessionId || 'SESSION 初始化中' }}</el-tag>
-        <el-tag :type="llmProvider === 'extractive' ? 'warning' : 'success'">{{ llmProviderLabel }}</el-tag>
-        <el-button :loading="loadingStep === 'before'" @click="askBefore">新建可信基线</el-button>
+    <section class="panel lab-prep-panel">
+      <div class="lab-panel-heading">
+        <div>
+          <h2 class="panel-title">数据集实验准备</h2>
+          <p>导入训练样本、可信 clean chunks，并生成当前实验可选的投毒知识。</p>
+        </div>
+        <el-tag type="info">Session {{ sessionId || '初始化中' }}</el-tag>
       </div>
-
-      <div v-if="!beforeChat && !afterChat" class="chat-empty">
-        <el-icon><ChatDotRound /></el-icon>
-        <span>输入问题后先生成投毒前可信回答</span>
-      </div>
-
-      <div v-else class="chat-scroll">
-        <div class="chat-row user">
-          <div class="chat-bubble">
-            <div class="chat-stage">用户问题</div>
-            <div class="chat-text">{{ displayQuestion }}</div>
-          </div>
-        </div>
-        <div v-if="beforeChat" class="chat-row assistant">
-          <div class="chat-bubble">
-            <div class="chat-stage">AI 回答 · 投毒前可信检索 · {{ beforeChat.llm_provider }}</div>
-            <div class="chat-text">{{ beforeChat.answer }}</div>
-            <el-collapse class="citation-collapse">
-              <el-collapse-item title="引用证据">
-                <div v-for="chunk in topkBefore" :key="chunk.chunk_id" class="citation-card">
-                  <div>
-                    <code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code>
-                    <el-tag size="small" :type="tagType(chunk.trust_label || chunk.trust_level)">{{ chunk.trust_label || chunk.trust_level }}</el-tag>
-                  </div>
-                  <p>{{ chunk.content }}</p>
-                  <small>similarity {{ chunk.similarity ?? chunk.score }} · {{ chunk.retrieval_mode || 'tfidf_fallback' }}</small>
-                </div>
-              </el-collapse-item>
-            </el-collapse>
-          </div>
-        </div>
-        <div v-if="afterChat" class="chat-row assistant">
-          <div class="chat-bubble risk-bubble">
-            <div class="chat-stage">AI 回答 · 投毒后混合检索 · {{ afterChat.llm_provider }}</div>
-            <div class="chat-text">{{ afterChat.answer }}</div>
-            <el-collapse class="citation-collapse">
-              <el-collapse-item title="引用证据">
-                <div v-for="chunk in topkAfter" :key="chunk.chunk_id" class="citation-card">
-                  <div>
-                    <code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code>
-                    <el-tag size="small" :type="tagType(chunk.trust_label || chunk.trust_level)">{{ chunk.trust_label || chunk.trust_level }}</el-tag>
-                  </div>
-                  <p>{{ chunk.content }}</p>
-                  <small>similarity {{ chunk.similarity ?? chunk.score }} · {{ chunk.retrieval_mode || 'tfidf_fallback' }}</small>
-                </div>
-              </el-collapse-item>
-            </el-collapse>
-          </div>
-        </div>
-      </div>
-
-      <div class="chat-input guide-target-question">
-        <el-input v-model="question" type="textarea" :rows="3" placeholder="输入自定义实验问题；留空时使用所选样本内置问题（页面隐藏）" />
-        <div class="toolbar mt-12">
-          <el-button type="primary" :icon="Search" :loading="loadingStep === 'before'" @click="askBefore">投毒前提问</el-button>
-          <el-button type="warning" :icon="Warning" :loading="loadingStep === 'after'" @click="askAfter">注入样本并投毒后提问</el-button>
-          <el-button class="guide-target-detect" :loading="loadingStep === 'detect'" @click="detectPoison">执行投毒检测</el-button>
-        </div>
+      <div class="prep-toolbar">
+        <el-select v-model="selectedSource" placeholder="选择公开数据集">
+          <el-option
+            v-for="item in publicSources"
+            :key="item.key"
+            :label="`${item.name} · ${item.downloaded ? '已下载' : '未下载'}`"
+            :value="item.key"
+          />
+        </el-select>
+        <el-button type="primary" :loading="loadingStep === 'prepare'" @click="prepareDatasetLab">
+          准备当前实验数据
+        </el-button>
       </div>
     </section>
 
-    <aside class="panel risk-panel guide-target-correction">
-      <h2 class="panel-title">数据集投毒知识</h2>
-      <div class="guide-target-samples">
-        <el-alert type="warning" :closable="false" show-icon title="只注入当前 session，不写入外部可信知识库。" />
-        <el-select v-model="selectedSample" class="mt-12" placeholder="选择投毒样本" filterable>
-          <el-option
-            v-for="(item, index) in samples"
-            :key="item.sample_id"
-            :label="sampleLabel(item, index)"
-            :value="item.sample_id"
-          />
-        </el-select>
-        <div v-if="selectedPoison" class="poison-detail">
-          <h3>数据来源</h3>
-          <p>{{ selectedPoison.source }}</p>
-          <h3>样本问题</h3>
-          <p class="muted">已隐藏，执行实验时在后台使用。</p>
-          <h3>投毒内容</h3>
-          <div class="answer-box answer-risk">{{ selectedPoison.content }}</div>
-        </div>
-      </div>
+    <div class="lab-workbench">
+      <main class="lab-primary-column">
+        <section class="panel lab-input-panel guide-target-question guide-target-samples">
+          <div class="lab-panel-heading">
+            <div>
+              <h2 class="panel-title">输入、注入与检测</h2>
+              <p>按顺序完成问题确认、可信基线、投毒后对比和风险检测。</p>
+            </div>
+            <el-tag :type="llmProvider === 'extractive' ? 'warning' : 'success'">{{ llmProviderLabel }}</el-tag>
+          </div>
 
-      <h3>投毒前 Top-K</h3>
-      <div class="topk-list guide-target-topk-before">
-        <div v-for="chunk in topkBefore" :key="chunk.chunk_id" class="citation-card">
-          <div><code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code><el-tag size="small" :type="tagType(chunk.trust_label)">{{ chunk.trust_label }}</el-tag></div>
-          <p>{{ chunk.content }}</p>
-          <small>similarity {{ chunk.similarity ?? chunk.score }}</small>
-        </div>
-        <el-empty v-if="!topkBefore.length" description="暂无投毒前检索结果" />
-      </div>
+          <div class="lab-input-grid">
+            <div class="lab-question-block">
+              <div v-if="selectedPoison || question.trim()" class="active-question-card">
+                <div class="active-question-head">
+                  <span>当前实验问题</span>
+                  <el-tag size="small" :type="question.trim() ? 'primary' : 'success'">{{ questionSourceLabel }}</el-tag>
+                </div>
+                <p>{{ displayQuestion }}</p>
+              </div>
+              <el-input v-model="question" type="textarea" :rows="4" placeholder="输入自定义实验问题；留空时使用所选样本内置问题" />
+            </div>
 
-      <h3>投毒后 Top-K</h3>
-      <div class="topk-list guide-target-topk-after">
-        <div v-for="chunk in topkAfter" :key="chunk.chunk_id" class="citation-card">
-          <div><code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code><el-tag size="small" :type="tagType(chunk.trust_label)">{{ chunk.trust_label }}</el-tag></div>
-          <p>{{ chunk.content }}</p>
-          <small>similarity {{ chunk.similarity ?? chunk.score }}</small>
-        </div>
-        <el-empty v-if="!topkAfter.length" description="暂无投毒后检索结果" />
-      </div>
+            <div class="lab-sample-card">
+              <div class="sample-picker-row">
+                <div class="sample-scope-note">仅注入当前 session</div>
+                <el-select v-model="selectedSample" placeholder="选择投毒样本" filterable>
+                  <el-option
+                    v-for="(item, index) in samples"
+                    :key="item.sample_id"
+                    :label="sampleLabel(item, index)"
+                    :value="item.sample_id"
+                  />
+                </el-select>
+              </div>
+              <div v-if="selectedPoison" class="poison-detail compact-poison-detail">
+                <div class="sample-preview-grid">
+                  <div class="sample-preview-question">
+                    <span>样本内置问题</span>
+                    <strong>{{ selectedPoison.target_query }}</strong>
+                  </div>
+                  <div class="sample-answer-grid">
+                    <div>
+                      <span>目标错误答案</span>
+                      <strong>{{ selectedPoison.target_wrong_answer || '未标注' }}</strong>
+                    </div>
+                    <div>
+                      <span>可信正确答案</span>
+                      <strong>{{ selectedPoison.correct_answer || '未标注' }}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <template v-if="detection">
-        <h3>检测结果</h3>
-        <el-progress :percentage="riskPercent" :status="riskPercent >= 70 ? 'exception' : undefined" />
-        <div class="metric-grid">
-          <div v-for="key in ['RAS', 'GIS', 'DualRisk']" :key="key">
-            <span>{{ key }}</span>
-            <strong>{{ Number(detection.metrics?.[key] || 0).toFixed(3) }}</strong>
+          <div class="lab-action-bar">
+            <el-button :icon="Search" :loading="loadingStep === 'before'" @click="askBefore">投毒前提问</el-button>
+            <el-button type="warning" plain :icon="Warning" :loading="loadingStep === 'after'" @click="askAfter">注入样本并投毒后提问</el-button>
+            <el-button class="guide-target-detect" type="primary" :loading="loadingStep === 'detect'" @click="detectPoison">执行投毒检测</el-button>
+          </div>
+
+          <div class="workflow-card">
+            <div v-for="(step, index) in flowSteps" :key="step.title" class="workflow-step" :class="{ done: step.done }">
+              <div class="workflow-index">{{ index + 1 }}</div>
+              <div class="workflow-copy">
+                <strong>{{ step.title }}</strong>
+                <span>{{ step.note }}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel chat-panel guide-target-chat">
+          <div class="lab-panel-heading">
+            <div>
+              <h2 class="panel-title">回答对比</h2>
+              <p>投毒前回答只使用可信知识库；投毒后回答混合当前 session 注入样本。</p>
+            </div>
+            <el-tag effect="dark">{{ sessionId || 'SESSION 初始化中' }}</el-tag>
+          </div>
+
+          <div v-if="!beforeChat && !afterChat" class="chat-empty">
+            <el-icon><ChatDotRound /></el-icon>
+            <span>请输入问题并执行检测，系统将在此展示检索过程、来源证据和回答分析。</span>
+          </div>
+
+          <div v-else class="chat-scroll">
+            <div class="chat-row user">
+              <div class="chat-bubble">
+                <div class="chat-stage">用户问题</div>
+                <div class="chat-text">{{ displayQuestion }}</div>
+              </div>
+            </div>
+            <div v-if="beforeChat" class="chat-row assistant">
+              <div class="chat-bubble">
+                <div class="chat-stage">AI 回答 · 投毒前可信检索 · {{ beforeChat.llm_provider }}</div>
+                <div class="chat-text">{{ beforeChat.answer }}</div>
+                <el-collapse class="citation-collapse">
+                  <el-collapse-item title="引用证据">
+                    <div v-for="chunk in topkBefore" :key="`before-chat-${chunk.chunk_id}`" class="citation-card">
+                      <div>
+                        <code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code>
+                        <el-tag size="small" :type="tagType(chunk.trust_label || chunk.trust_level)">{{ chunk.trust_label || chunk.trust_level }}</el-tag>
+                      </div>
+                      <p>{{ chunk.content }}</p>
+                      <small>similarity {{ chunk.similarity ?? chunk.score }} · {{ chunk.retrieval_mode || 'tfidf_fallback' }}</small>
+                    </div>
+                  </el-collapse-item>
+                </el-collapse>
+              </div>
+            </div>
+            <div v-if="afterChat" class="chat-row assistant">
+              <div class="chat-bubble risk-bubble">
+                <div class="chat-stage">AI 回答 · 投毒后混合检索 · {{ afterChat.llm_provider }}</div>
+                <div class="chat-text">{{ afterChat.answer }}</div>
+                <el-collapse class="citation-collapse">
+                  <el-collapse-item title="引用证据">
+                    <div v-for="chunk in topkAfter" :key="`after-chat-${chunk.chunk_id}`" class="citation-card">
+                      <div>
+                        <code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code>
+                        <el-tag size="small" :type="tagType(chunk.trust_label || chunk.trust_level)">{{ chunk.trust_label || chunk.trust_level }}</el-tag>
+                      </div>
+                      <p>{{ chunk.content }}</p>
+                      <small>similarity {{ chunk.similarity ?? chunk.score }} · {{ chunk.retrieval_mode || 'tfidf_fallback' }}</small>
+                    </div>
+                  </el-collapse-item>
+                </el-collapse>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel evidence-panel">
+          <div class="lab-panel-heading">
+            <div>
+              <h2 class="panel-title">检索证据</h2>
+              <p>对比投毒前后 Top-K，观察 poison 或低可信证据是否靠前。</p>
+            </div>
+          </div>
+
+          <div v-if="!topkBefore.length && !topkAfter.length" class="empty-workbench-card">
+            <strong>暂无检索证据</strong>
+            <span>请输入问题并执行投毒前/投毒后提问，系统将在此展示来源证据、相似度和检索排名。</span>
+          </div>
+
+          <div v-else class="evidence-grid">
+            <div>
+              <h3>投毒前 Top-K</h3>
+              <div class="topk-list guide-target-topk-before">
+                <div v-for="chunk in topkBefore" :key="`before-${chunk.chunk_id}`" class="citation-card">
+                  <div><code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code><el-tag size="small" :type="tagType(chunk.trust_label)">{{ chunk.trust_label }}</el-tag></div>
+                  <p>{{ chunk.content }}</p>
+                  <small>similarity {{ chunk.similarity ?? chunk.score }}</small>
+                </div>
+                <el-empty v-if="!topkBefore.length" description="暂无投毒前检索结果" />
+              </div>
+            </div>
+            <div>
+              <h3>投毒后 Top-K</h3>
+              <div class="topk-list guide-target-topk-after">
+                <div v-for="chunk in topkAfter" :key="`after-${chunk.chunk_id}`" class="citation-card">
+                  <div><code>#{{ chunk.rank }} {{ chunk.chunk_id }}</code><el-tag size="small" :type="tagType(chunk.trust_label)">{{ chunk.trust_label }}</el-tag></div>
+                  <p>{{ chunk.content }}</p>
+                  <small>similarity {{ chunk.similarity ?? chunk.score }}</small>
+                </div>
+                <el-empty v-if="!topkAfter.length" description="暂无投毒后检索结果" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="panel result-panel guide-target-correction">
+        <div class="lab-panel-heading">
+          <div>
+            <h2 class="panel-title">检测结果</h2>
+            <p>风险评分、检测指标和后续处置入口集中展示。</p>
           </div>
         </div>
-        <el-timeline class="mt-12">
-          <el-timeline-item v-for="item in detection.risk_types || ['低风险观察项']" :key="item" :type="detection.risk_level === 'high' ? 'danger' : 'primary'">
-            {{ item }}
-          </el-timeline-item>
-        </el-timeline>
-        <el-button class="correct-entry" type="primary" :icon="Share" @click="enterPropagation">
-          构建投毒传播图谱
-        </el-button>
-        <el-button v-if="canEnterCorrection" class="correct-entry" type="danger" :icon="Right" @click="enterCorrection">
-          进入可信纠偏
-        </el-button>
-      </template>
-    </aside>
+
+        <template v-if="detection">
+          <div class="risk-score-block">
+            <div>
+              <span>总体风险</span>
+              <strong>{{ riskPercent }}%</strong>
+            </div>
+            <el-tag :type="detection.risk_level === 'high' ? 'danger' : detection.risk_level === 'medium' ? 'warning' : 'success'">
+              {{ detection.risk_level }}
+            </el-tag>
+          </div>
+          <el-progress :percentage="riskPercent" :status="riskPercent >= 70 ? 'exception' : riskPercent >= 35 ? 'warning' : 'success'" />
+
+          <div class="result-metric-grid">
+            <div v-for="key in ['RAS', 'GIS', 'DualRisk']" :key="key">
+              <span>{{ key }}</span>
+              <strong>{{ Number(detection.metrics?.[key] || 0).toFixed(3) }}</strong>
+            </div>
+          </div>
+
+          <div class="risk-reason-section">
+            <h3>风险原因</h3>
+            <div class="risk-reason-list">
+              <el-tag
+                v-for="item in detection.risk_types || ['低风险观察项']"
+                :key="item"
+                :type="detection.risk_level === 'high' ? 'danger' : 'info'"
+                effect="plain"
+              >
+                {{ item }}
+              </el-tag>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <el-button type="primary" :icon="Share" @click="enterPropagation">
+              构建投毒传播图谱
+            </el-button>
+            <el-button v-if="canEnterCorrection" type="danger" :icon="Right" @click="enterCorrection">
+              进入可信纠偏
+            </el-button>
+          </div>
+        </template>
+
+        <div v-else class="result-empty">
+          <el-icon><ChatDotRound /></el-icon>
+          <strong>等待检测结果</strong>
+          <span>完成投毒前提问、注入样本并投毒后提问后，点击“执行投毒检测”。风险百分比、RAS/GIS/DualRisk 和后续操作会在这里集中展示。</span>
+        </div>
+      </aside>
+    </div>
   </div>
 </template>

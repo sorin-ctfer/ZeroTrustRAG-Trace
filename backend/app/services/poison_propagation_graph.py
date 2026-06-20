@@ -7,7 +7,9 @@ import math
 import os
 import re
 import subprocess
+import sys
 import tempfile
+import importlib.util
 from pathlib import Path
 from typing import Any
 
@@ -89,6 +91,7 @@ class PoisonPropagationGraphService:
         return self._format_response(session, detection, graph_data, gat_result)
 
     def _dynamic_graph_data(self, session: dict[str, Any], detection: dict[str, Any], candidate_limit: int) -> dict[str, Any]:
+        before_chunks = session.get("topk_before") or session.get("chats", {}).get("before_poison", {}).get("retrieved_chunks", [])
         after_chunks = session.get("topk_after") or session.get("chats", {}).get("after_poison", {}).get("retrieved_chunks", [])
         injected_chunks = session.get("injected_poison_chunks", [])
         risk_chunks = detection.get("risk_chunks") or detection.get("detected_poison_chunks") or []
@@ -101,7 +104,7 @@ class PoisonPropagationGraphService:
 
         sample_chunks = self._poison_sample_chunks()
         sample_candidates = self._rank_sample_candidates(anchor_chunks, sample_chunks, candidate_limit)
-        chunks = self._merge_chunks(after_chunks + injected_chunks + sample_candidates)
+        chunks = self._merge_chunks(before_chunks + after_chunks + injected_chunks + sample_candidates)
         node_payload, edge_payload, ui_nodes, ui_links = self._build_nodes_edges(session, detection, chunks, sample_candidates)
         return {
             "nodes": node_payload,
@@ -244,8 +247,7 @@ class PoisonPropagationGraphService:
             content_len = min(len(chunk.get("content", "")) / 700.0, 1.0)
             candidate_feature = 1.0 if chunk_id in candidate_ids else 0.0
             cited_feature = 1.0 if chunk_id in cited else 0.0
-            is_library_candidate = chunk_id in candidate_ids
-            label_target = -1 if is_library_candidate else 1 if is_poison else 0 if is_trusted else -1
+            label_target = 1 if is_poison else 0 if is_trusted else -1
             add_node(doc_id, _preview(chunk.get("source") or chunk.get("document_id") or "Document", 34), 3, -1, [0.0, 0.0, 0.0, content_len, candidate_feature, sim])
             add_node(node_id, _preview(chunk.get("content", ""), 42), 2, label_target, [rank_feature, sim, cited_feature, content_len, candidate_feature, 0.0], chunk_id=chunk_id, trust_label=label, detail=_preview(chunk.get("content", ""), 220))
             add_node(claim_id, _preview(claim, 44), 4, -1, [0.0, sim, 0.0, min(len(claim) / 160.0, 1.0), candidate_feature, 0.0], detail=claim)
@@ -265,32 +267,48 @@ class PoisonPropagationGraphService:
         return list(model_nodes.values()), model_edges, ui_nodes, ui_links
 
     def _run_gat(self, graph_data: dict[str, Any]) -> dict[str, Any]:
-        if not RUNNER_BAT.exists() or not GAT_SCRIPT.exists():
-            raise ValueError("GAT 运行器缺失，请检查 tools/run_pytorch_env.bat 和 gat_poison_graph_runner.py")
         RUNTIME_DIR.mkdir(parents=True, exist_ok=True)
         input_file = tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".json", dir=RUNTIME_DIR, delete=False)
         output_path = Path(input_file.name).with_suffix(".out.json")
+        fallback_notes: list[str] = []
         try:
             json.dump({"nodes": graph_data["nodes"], "edges": graph_data["edges"], "epochs": 90}, input_file, ensure_ascii=False)
             input_file.close()
-            command = [
-                CMD_EXE,
-                "/c",
-                _win_path(RUNNER_BAT),
-                _win_path(GAT_SCRIPT),
-                _win_path(Path(input_file.name)),
-                _win_path(output_path),
-            ]
-            proc = subprocess.run(command, capture_output=True, text=True, timeout=60)
-            if proc.returncode != 0:
-                return self._run_numpy_gat(
-                    graph_data,
-                    backend_note=(
-                        "Windows PyTorch runner unavailable from WSL backend process; "
-                        f"stdout={proc.stdout[-500:]} stderr={proc.stderr[-500:]}"
-                    ),
+            if GAT_SCRIPT.exists() and importlib.util.find_spec("torch") is not None:
+                result = self._run_gat_command(
+                    [sys.executable, str(GAT_SCRIPT), str(input_file.name), str(output_path)],
+                    output_path,
+                    timeout=60,
                 )
-            return json.loads(output_path.read_text(encoding="utf-8"))
+                if result is not None:
+                    return result
+                fallback_notes.append("local PyTorch GAT runner failed")
+
+            if GAT_SCRIPT.exists() and RUNNER_BAT.exists() and Path(CMD_EXE).exists():
+                result = self._run_gat_command(
+                    [
+                        CMD_EXE,
+                        "/c",
+                        _win_path(RUNNER_BAT),
+                        _win_path(GAT_SCRIPT),
+                        _win_path(Path(input_file.name)),
+                        _win_path(output_path),
+                    ],
+                    output_path,
+                    timeout=60,
+                )
+                if result is not None:
+                    return result
+                fallback_notes.append("Windows PyTorch GAT runner unavailable from backend process")
+
+            if not GAT_SCRIPT.exists():
+                fallback_notes.append("gat_poison_graph_runner.py missing")
+            if not RUNNER_BAT.exists() or not Path(CMD_EXE).exists():
+                fallback_notes.append("Windows PyTorch runner unavailable in this environment")
+            return self._run_numpy_gat(
+                graph_data,
+                backend_note="; ".join(fallback_notes) or "PyTorch runner unavailable; using local numpy attention backend",
+            )
         finally:
             try:
                 os.unlink(input_file.name)
@@ -300,6 +318,25 @@ class PoisonPropagationGraphService:
                 output_path.unlink()
             except OSError:
                 pass
+
+    def _run_gat_command(self, command: list[str], output_path: Path, timeout: int) -> dict[str, Any] | None:
+        try:
+            proc = subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=timeout,
+            )
+        except (OSError, subprocess.TimeoutExpired, UnicodeError):
+            return None
+        if proc.returncode != 0 or not output_path.exists():
+            return None
+        try:
+            return json.loads(output_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            return None
 
     def _run_numpy_gat(self, graph_data: dict[str, Any], backend_note: str) -> dict[str, Any]:
         nodes = graph_data["nodes"]
@@ -405,6 +442,7 @@ class PoisonPropagationGraphService:
                 "similar_poison_count": len(visible_candidates),
                 "risk_level": detection.get("risk_level", "unknown"),
                 "graph_method": gat.get("method", "dynamic_pytorch_gat"),
+                "backend_note": gat.get("backend_note", ""),
             },
             "graph": {
                 "categories": CATEGORIES,
