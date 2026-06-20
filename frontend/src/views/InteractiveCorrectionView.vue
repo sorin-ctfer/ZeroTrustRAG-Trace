@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
+import { DataAnalysis, DocumentChecked, Lock, MagicStick, Memo, RefreshRight } from '@element-plus/icons-vue'
 import { interactiveCorrectionApi } from '@/api/lab'
 
 const route = useRoute()
@@ -11,11 +12,12 @@ const detail = ref<any>()
 const counterfactual = ref<any>()
 const correction = ref<any>()
 const report = ref<any>()
-const loading = ref(false)
+const loadingAction = ref('')
+const isBusy = computed(() => Boolean(loadingAction.value))
 const tagType = (label: string) => label === 'trusted' ? 'success' : label === 'poison' ? 'danger' : label === 'benign_error' ? 'warning' : 'info'
 const refresh = async () => { detail.value = await interactiveCorrectionApi.detail(sessionId) }
-const run = async (task: () => Promise<any>, message: string, assign?: (data: any) => void) => {
-  loading.value = true
+const run = async (action: string, task: () => Promise<any>, message: string, assign?: (data: any) => void) => {
+  loadingAction.value = action
   try {
     const data = await task()
     if (assign) assign(data)
@@ -24,24 +26,33 @@ const run = async (task: () => Promise<any>, message: string, assign?: (data: an
   } catch (error: any) {
     ElMessage.error(error.message || '操作失败')
   } finally {
-    loading.value = false
+    loadingAction.value = ''
   }
 }
 const runCounterfactual = () => run(
+  'counterfactual',
   () => interactiveCorrectionApi.counterfactual(sessionId),
   '反事实验证完成',
   data => { counterfactual.value = data },
 )
+const runQuarantine = () => run(
+  'quarantine',
+  () => interactiveCorrectionApi.quarantine(sessionId),
+  '高风险 Chunk 已在当前 session 隔离',
+)
 const runRegenerate = () => run(
+  'regenerate',
   () => interactiveCorrectionApi.regenerate(sessionId),
   '可信重生成完成',
   data => { correction.value = data },
 )
 const runReport = () => run(
+  'report',
   () => interactiveCorrectionApi.report(sessionId),
   '纠偏报告已生成',
   data => { report.value = data },
 )
+const notifyRetrieve = () => ElMessage.success('重检索会在可信重生成时自动执行')
 onMounted(refresh)
 </script>
 
@@ -78,7 +89,15 @@ onMounted(refresh)
 
       <section class="panel">
         <h2 class="panel-title">四路反事实验证</h2>
-        <el-button :loading="loading" @click="runCounterfactual">运行反事实验证</el-button>
+        <el-button
+          type="primary"
+          :icon="DataAnalysis"
+          :loading="loadingAction === 'counterfactual'"
+          :disabled="isBusy && loadingAction !== 'counterfactual'"
+          @click="runCounterfactual"
+        >
+          运行反事实验证
+        </el-button>
         <div v-if="counterfactual" class="counterfactual-grid">
           <div v-for="key in ['original', 'remove', 'solo', 'replace']" :key="key" class="answer-box">
             <strong>{{ key }}</strong>
@@ -92,11 +111,68 @@ onMounted(refresh)
 
       <section class="panel">
         <h2 class="panel-title">纠偏操作</h2>
-        <div class="flow-actions">
-          <el-button type="warning" :loading="loading" @click="run(() => interactiveCorrectionApi.quarantine(sessionId), '高风险 Chunk 已在当前 session 隔离')">隔离高风险 Chunk</el-button>
-          <el-button :loading="loading" @click="ElMessage.success('重检索将在可信重生成时执行')">重新检索</el-button>
-          <el-button type="success" :loading="loading" @click="runRegenerate">可信重生成</el-button>
-          <el-button :loading="loading" @click="runReport">生成纠偏报告</el-button>
+        <div class="correction-action-list">
+          <div class="correction-action-row">
+            <div class="correction-action-copy">
+              <el-icon><Lock /></el-icon>
+              <div>
+                <strong>隔离高风险 Chunk</strong>
+                <span>只影响当前 session，避免风险证据继续参与后续检索。</span>
+              </div>
+            </div>
+            <el-button
+              type="warning"
+              :loading="loadingAction === 'quarantine'"
+              :disabled="isBusy && loadingAction !== 'quarantine'"
+              @click="runQuarantine"
+            >
+              执行隔离
+            </el-button>
+          </div>
+          <div class="correction-action-row">
+            <div class="correction-action-copy">
+              <el-icon><RefreshRight /></el-icon>
+              <div>
+                <strong>重新检索</strong>
+                <span>可信重生成会自动基于隔离后的证据重新检索。</span>
+              </div>
+            </div>
+            <el-button :disabled="isBusy" @click="notifyRetrieve">查看说明</el-button>
+          </div>
+          <div class="correction-action-row">
+            <div class="correction-action-copy">
+              <el-icon><MagicStick /></el-icon>
+              <div>
+                <strong>可信重生成</strong>
+                <span>使用可信证据生成纠偏答案，并计算恢复指标。</span>
+              </div>
+            </div>
+            <el-button
+              type="success"
+              :loading="loadingAction === 'regenerate'"
+              :disabled="isBusy && loadingAction !== 'regenerate'"
+              @click="runRegenerate"
+            >
+              开始重生成
+            </el-button>
+          </div>
+          <div class="correction-action-row">
+            <div class="correction-action-copy">
+              <el-icon><Memo /></el-icon>
+              <div>
+                <strong>生成纠偏报告</strong>
+                <span>汇总反事实、隔离、重生成和 TrustScore 变化。</span>
+              </div>
+            </div>
+            <el-button
+              :icon="DocumentChecked"
+              :loading="loadingAction === 'report'"
+              :disabled="isBusy && loadingAction !== 'report'"
+              @click="runReport"
+            >
+              生成报告
+            </el-button>
+          </div>
         </div>
         <div v-if="correction" class="answer-box answer-trusted">{{ correction.corrected_answer }}</div>
       </section>
