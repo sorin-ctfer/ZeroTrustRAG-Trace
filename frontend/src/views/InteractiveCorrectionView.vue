@@ -2,7 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
-import { DataAnalysis, DocumentChecked, Lock, MagicStick, Memo, RefreshRight } from '@element-plus/icons-vue'
+import { DataAnalysis, DocumentChecked, Lock, Memo, RefreshRight } from '@element-plus/icons-vue'
 import { interactiveCorrectionApi } from '@/api/lab'
 
 const route = useRoute()
@@ -63,7 +63,7 @@ onMounted(refresh)
   </div>
 
   <el-empty v-if="detail && !detail.ready" :description="detail.message">
-    <el-button type="primary" @click="router.push('/interactive-rag-lab')">返回 AI 交互实验室</el-button>
+    <el-button type="primary" @click="router.push('/interactive-rag-lab')">返回交互实验室</el-button>
   </el-empty>
 
   <template v-if="detail?.ready">
@@ -141,7 +141,7 @@ onMounted(refresh)
           </div>
           <div class="correction-action-row">
             <div class="correction-action-copy">
-              <el-icon><MagicStick /></el-icon>
+              <el-icon><DataAnalysis /></el-icon>
               <div>
                 <strong>可信重生成</strong>
                 <span>使用可信证据生成纠偏答案，并计算恢复指标。</span>

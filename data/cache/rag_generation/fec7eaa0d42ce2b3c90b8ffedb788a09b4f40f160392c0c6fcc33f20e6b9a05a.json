@@ -1,0 +1,9 @@
+{
+  "cache_key": "fec7eaa0d42ce2b3c90b8ffedb788a09b4f40f160392c0c6fcc33f20e6b9a05a",
+  "answer": "根据提供的检索上下文，所有条目均未给出实质性解释或有效理由，仅重复问题本身或标记为低置信度的复制内容（如FAQ条目明确指出“Reviewers should treat this as a copied low-confidence claim”）。因此，**上下文中未提供支持“为何应在安全回答中引用检索到的证据”的有效依据**。",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:13:18.476627+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

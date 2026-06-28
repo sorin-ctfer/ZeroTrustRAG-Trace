@@ -46,6 +46,32 @@ def _label_for_chunk(item: dict[str, Any], fallback: str) -> str:
     return "poison"
 
 
+def _risk_fields_for_label(label: str) -> dict[str, Any]:
+    if label == "trusted":
+        return {"risk_label": "trusted", "trust_label": "trusted", "risk_level": "safe", "risk_score": 0.0}
+    if label == "benign_error":
+        return {"risk_label": "benign_error", "trust_label": "benign_error", "risk_level": "medium", "risk_score": 0.35}
+    return {"risk_label": "poison", "trust_label": "poison", "risk_level": "high", "risk_score": 0.85}
+
+
+def _normalize_training_sample(sample: dict[str, Any]) -> dict[str, Any]:
+    normalized = dict(sample)
+    label = _label_for_chunk(normalized, str(normalized.get("label") or "trusted"))
+    normalized["label"] = label
+    normalized.update(_risk_fields_for_label(label))
+    normalized.setdefault("attack_type", "clean" if label == "trusted" else label)
+    normalized.setdefault("query", "")
+    normalized.setdefault("correct_answer", "")
+    normalized.setdefault("target_wrong_answer", "")
+    normalized["text"] = str(normalized.get("text", ""))
+    return normalized
+
+
+def _risk_label_distribution(samples: list[dict[str, Any]]) -> dict[str, int]:
+    counts = Counter(sample.get("risk_label") or sample.get("label", "unknown") for sample in samples)
+    return dict(counts)
+
+
 RISK_TERMS = (
     "忽略",
     "无视",
@@ -137,13 +163,24 @@ class RagDetectorTrainingService:
             return
         try:
             data = json.loads(self.dataset_file.read_text(encoding="utf-8"))
-            self._datasets = data if isinstance(data, list) else []
+            self._datasets = [self._normalize_dataset(item) for item in data] if isinstance(data, list) else []
         except (OSError, json.JSONDecodeError):
             self._datasets = []
 
     def _save(self) -> None:
         self.dataset_file.parent.mkdir(parents=True, exist_ok=True)
         self.dataset_file.write_text(json.dumps(self._datasets, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    def _normalize_dataset(self, dataset: dict[str, Any]) -> dict[str, Any]:
+        normalized = dict(dataset)
+        samples = [_normalize_training_sample(sample) for sample in normalized.get("samples", [])]
+        normalized["samples"] = samples
+        normalized["risk_label_distribution"] = _risk_label_distribution(samples)
+        normalized["risk_tagged"] = all(
+            sample.get("risk_label") and sample.get("risk_level") and "risk_score" in sample
+            for sample in samples
+        )
+        return normalized
 
     def import_jsonl(self, raw_jsonl: str, name: str = "imported_jsonl") -> dict[str, Any]:
         samples: list[dict[str, Any]] = []
@@ -194,6 +231,7 @@ class RagDetectorTrainingService:
             "created_at": now_iso(),
             "samples": samples,
         }
+        dataset = self._normalize_dataset(dataset)
         with self._lock:
             self._datasets.append(dataset)
             self._save()
@@ -213,13 +251,19 @@ class RagDetectorTrainingService:
                     "name": item["name"],
                     "created_at": item["created_at"],
                     "sample_count": len(item.get("samples", [])),
+                    "risk_tagged": item.get("risk_tagged", False),
+                    "risk_label_distribution": item.get("risk_label_distribution", {}),
                 }
                 for item in self._datasets
             ]
 
     def samples(self) -> list[dict[str, Any]]:
         with self._lock:
-            return [dict(sample) for dataset in self._datasets for sample in dataset.get("samples", [])]
+            return [
+                _normalize_training_sample(sample)
+                for dataset in self._datasets
+                for sample in dataset.get("samples", [])
+            ]
 
     def stats(self) -> dict[str, Any]:
         samples = self.samples()
@@ -228,6 +272,12 @@ class RagDetectorTrainingService:
         return {
             "dataset_count": len(self._datasets),
             "sample_count": len(samples),
+            "risk_tagged_samples": sum(
+                1
+                for sample in samples
+                if sample.get("risk_label") and sample.get("risk_level") and "risk_score" in sample
+            ),
+            "risk_label_distribution": _risk_label_distribution(samples),
             "clean_chunks": labels.get("trusted", 0),
             "poison_chunks": labels.get("poison", 0),
             "benign_error_chunks": labels.get("benign_error", 0),

@@ -1,0 +1,9 @@
+{
+  "cache_key": "3ceb9f4be9fab8ba8cdc0ee19086d3fa4d9646910387bf515d8c775277543620",
+  "answer": "根据提供的检索上下文，未给出关于“为何应在安全回答中引用检索到的证据”的实质性解释或理由。所有条目均仅重复问题本身（如 “Why should retrieved evidence be cited in a security answer?”），或标注为低置信度、需谨慎对待的复制内容（如 FAQ 条目被明确标记为“copied low-confidence claim”），且无支持性事实、原则或权威依据。\n\n因此，**上下文中不存在可依据的有效证据来回答该问题**。",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:13:23.806155+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

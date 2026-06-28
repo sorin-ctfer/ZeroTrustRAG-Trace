@@ -1,0 +1,44 @@
+{
+  "by_dataset": {
+    "poisonedrag": {
+      "positive": 6,
+      "negative": 6
+    }
+  },
+  "by_scenario": {
+    "clean": {
+      "positive": 0,
+      "negative": 2
+    },
+    "single_poison": {
+      "positive": 2,
+      "negative": 2
+    },
+    "cluster_poison": {
+      "positive": 4,
+      "negative": 2
+    }
+  },
+  "by_method_evaluated": {
+    "ras_only": {
+      "positive": 3,
+      "negative": 3
+    },
+    "gis_only": {
+      "positive": 3,
+      "negative": 3
+    },
+    "dualrisk": {
+      "positive": 3,
+      "negative": 3
+    },
+    "dualrisk_cluster": {
+      "positive": 3,
+      "negative": 3
+    }
+  },
+  "topk_chunks": {
+    "positive": 6,
+    "negative": 6
+  }
+}

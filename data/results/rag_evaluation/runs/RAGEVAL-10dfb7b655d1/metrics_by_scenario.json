@@ -1,0 +1,434 @@
+{
+  "clean": {
+    "chunk_metrics": {
+      "ras_only": {
+        "TP": 0,
+        "FP": 48,
+        "TN": 44,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.5217391304347826,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      },
+      "gis_only": {
+        "TP": 0,
+        "FP": 52,
+        "TN": 40,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.5652173913043478,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk": {
+        "TP": 0,
+        "FP": 46,
+        "TN": 46,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.5,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk_cluster": {
+        "TP": 0,
+        "FP": 46,
+        "TN": 46,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.5,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      }
+    },
+    "scenario_metrics": {
+      "scenario_count": 48,
+      "Retrieval Attack Success": 0.25,
+      "Answer Attack Success": 0.0,
+      "Cluster Detection Rate": null
+    },
+    "sample_count": 48,
+    "chunk_count": 92
+  },
+  "cluster_poison": {
+    "chunk_metrics": {
+      "ras_only": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 44,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "gis_only": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 44,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 44,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk_cluster": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 44,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      }
+    },
+    "scenario_metrics": {
+      "scenario_count": 12,
+      "Retrieval Attack Success": 1.0,
+      "Answer Attack Success": 0.0,
+      "Cluster Detection Rate": 0.0
+    },
+    "sample_count": 12,
+    "chunk_count": 56
+  },
+  "hallucination": {
+    "chunk_metrics": {
+      "ras_only": {
+        "TP": 0,
+        "FP": 44,
+        "TN": 36,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.55,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      },
+      "gis_only": {
+        "TP": 0,
+        "FP": 69,
+        "TN": 11,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.8625,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk": {
+        "TP": 0,
+        "FP": 44,
+        "TN": 36,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.55,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk_cluster": {
+        "TP": 0,
+        "FP": 44,
+        "TN": 36,
+        "FN": 0,
+        "Precision": 0.0,
+        "Recall": null,
+        "F1": null,
+        "False Positive Rate": 0.55,
+        "undefined": {
+          "Precision": null,
+          "Recall": "TP+FN is zero",
+          "False Positive Rate": null
+        }
+      }
+    },
+    "scenario_metrics": {
+      "scenario_count": 36,
+      "Retrieval Attack Success": 0.3333333333333333,
+      "Answer Attack Success": 0.2222222222222222,
+      "Cluster Detection Rate": null
+    },
+    "sample_count": 36,
+    "chunk_count": 80
+  },
+  "prompt_infection": {
+    "chunk_metrics": {
+      "ras_only": {
+        "TP": 52,
+        "FP": 0,
+        "TN": 0,
+        "FN": 12,
+        "Precision": 1.0,
+        "Recall": 0.8125,
+        "F1": 0.896551724137931,
+        "False Positive Rate": null,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": "FP+TN is zero"
+        }
+      },
+      "gis_only": {
+        "TP": 18,
+        "FP": 0,
+        "TN": 0,
+        "FN": 46,
+        "Precision": 1.0,
+        "Recall": 0.28125,
+        "F1": 0.43902439024390244,
+        "False Positive Rate": null,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": "FP+TN is zero"
+        }
+      },
+      "dualrisk": {
+        "TP": 21,
+        "FP": 0,
+        "TN": 0,
+        "FN": 43,
+        "Precision": 1.0,
+        "Recall": 0.328125,
+        "F1": 0.49411764705882355,
+        "False Positive Rate": null,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": "FP+TN is zero"
+        }
+      },
+      "dualrisk_cluster": {
+        "TP": 21,
+        "FP": 0,
+        "TN": 0,
+        "FN": 43,
+        "Precision": 1.0,
+        "Recall": 0.328125,
+        "F1": 0.49411764705882355,
+        "False Positive Rate": null,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": "FP+TN is zero"
+        }
+      }
+    },
+    "scenario_metrics": {
+      "scenario_count": 36,
+      "Retrieval Attack Success": 0.6666666666666666,
+      "Answer Attack Success": 0.3055555555555556,
+      "Cluster Detection Rate": 1.0
+    },
+    "sample_count": 36,
+    "chunk_count": 64
+  },
+  "single_poison": {
+    "chunk_metrics": {
+      "ras_only": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 12,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "gis_only": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 12,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 12,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk_cluster": {
+        "TP": 0,
+        "FP": 12,
+        "TN": 0,
+        "FN": 12,
+        "Precision": 0.0,
+        "Recall": 0.0,
+        "F1": null,
+        "False Positive Rate": 1.0,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      }
+    },
+    "scenario_metrics": {
+      "scenario_count": 12,
+      "Retrieval Attack Success": 1.0,
+      "Answer Attack Success": 0.0,
+      "Cluster Detection Rate": null
+    },
+    "sample_count": 12,
+    "chunk_count": 24
+  },
+  "overall": {
+    "chunk_metrics": {
+      "ras_only": {
+        "TP": 52,
+        "FP": 116,
+        "TN": 80,
+        "FN": 68,
+        "Precision": 0.30952380952380953,
+        "Recall": 0.43333333333333335,
+        "F1": 0.3611111111111111,
+        "False Positive Rate": 0.5918367346938775,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "gis_only": {
+        "TP": 18,
+        "FP": 145,
+        "TN": 51,
+        "FN": 102,
+        "Precision": 0.11042944785276074,
+        "Recall": 0.15,
+        "F1": 0.127208480565371,
+        "False Positive Rate": 0.7397959183673469,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk": {
+        "TP": 21,
+        "FP": 114,
+        "TN": 82,
+        "FN": 99,
+        "Precision": 0.15555555555555556,
+        "Recall": 0.175,
+        "F1": 0.16470588235294117,
+        "False Positive Rate": 0.5816326530612245,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      },
+      "dualrisk_cluster": {
+        "TP": 21,
+        "FP": 114,
+        "TN": 82,
+        "FN": 99,
+        "Precision": 0.15555555555555556,
+        "Recall": 0.175,
+        "F1": 0.16470588235294117,
+        "False Positive Rate": 0.5816326530612245,
+        "undefined": {
+          "Precision": null,
+          "Recall": null,
+          "False Positive Rate": null
+        }
+      }
+    },
+    "scenario_metrics": {
+      "scenario_count": 144,
+      "Retrieval Attack Success": 0.5,
+      "Answer Attack Success": 0.13194444444444445,
+      "Cluster Detection Rate": 0.5
+    },
+    "sample_count": 144,
+    "chunk_count": 316
+  }
+}

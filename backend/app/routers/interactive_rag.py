@@ -53,6 +53,11 @@ class ChatRequest(BaseModel):
     session_id: str | None = None
 
 
+class AnswerabilityRequest(BaseModel):
+    question: str = Field(min_length=1)
+    session_id: str
+
+
 class DetectRequest(BaseModel):
     session_id: str
     question: str
@@ -146,6 +151,11 @@ def session_topk(session_id: str):
 @router.get("/session/{session_id}/risk-summary")
 def session_risk_summary(session_id: str):
     return _run(lambda: interactive_rag_service.risk_summary(session_id))
+
+
+@router.post("/rag/answerability")
+def check_answerability(req: AnswerabilityRequest):
+    return _run(lambda: interactive_rag_service.check_answerability(req.session_id, req.question))
 
 
 @router.post("/rag/chat")

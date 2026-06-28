@@ -1,0 +1,32 @@
+{
+  "run_id": "RAGEVAL-ab70ea54cb34",
+  "status": "running",
+  "total": 6,
+  "completed": 11,
+  "failed": 0,
+  "current_method": "retrieve_generate",
+  "current_sample": "poisonedrag-poisonedrag-sample-002",
+  "error": "",
+  "config": {
+    "dataset": "poisonedrag",
+    "mode": "sample",
+    "methods": [
+      "ras_only",
+      "gis_only",
+      "dualrisk",
+      "dualrisk_cluster"
+    ],
+    "top_k": [
+      3
+    ],
+    "poison_ratios": [
+      0.01
+    ],
+    "ras_threshold": 0.6,
+    "gis_threshold": 0.45,
+    "dualrisk_threshold": 0.25,
+    "cluster_threshold": 0.35,
+    "cluster_lambda": 0.5,
+    "retrieval_mode": "tfidf"
+  }
+}

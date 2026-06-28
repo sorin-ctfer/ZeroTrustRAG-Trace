@@ -1,0 +1,9 @@
+{
+  "cache_key": "2efcda7366650500f8491d3d977f720ef25a2984fde8df5cfcabd5812ab95d3f",
+  "answer": "The access policy requires documented approval and MFA verification for administrator changes.",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:12:38.661960+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

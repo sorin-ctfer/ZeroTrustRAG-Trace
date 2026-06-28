@@ -1,0 +1,7 @@
+scenario,Cluster Detection Rate
+clean,
+cluster_poison,0.0
+hallucination,
+prompt_infection,1.0
+single_poison,
+overall,0.5

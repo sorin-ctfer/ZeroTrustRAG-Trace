@@ -24,7 +24,7 @@ const cards = computed(() => [
   ['公开数据源', publicSources.value.length],
 ])
 const capabilities = computed(() => [
-  ['AI 交互实验室', `当前检测模式：${trainingStatus.value.mode || '规则模式'}，模型链路在实验室会话中按实际调用记录。`],
+  ['交互实验室', `当前检测模式：${trainingStatus.value.mode || '规则模式'}，回答生成过程在实验 session 中按证据范围记录。`],
   ['数据集驱动投毒知识', `投毒知识来自训练数据集 poison/benign_error 样本，当前可选 ${samples.value.length} 条。`],
   ['Session 风险闭环', `最近 session 风险：${latestSession.value.risk_level || '暂无'}；报告和纠偏均绑定 session。`],
 ])
@@ -56,7 +56,7 @@ onMounted(load)
 <template>
   <div class="page-head">
     <h1>系统仪表盘</h1>
-    <p>以 AI 交互实验室为中心展示数据集、可信知识、投毒知识、训练检测模式和 session 风险状态。</p>
+    <p>汇总数据集、可信知识、投毒样本、训练检测模式和 session 风险状态。</p>
   </div>
   <el-alert v-if="error" class="error-alert" type="error" :title="error" show-icon :closable="false" />
   <div v-loading="loading" class="stat-grid">
@@ -67,7 +67,7 @@ onMounted(load)
   </div>
   <section class="panel">
     <div class="toolbar">
-      <el-button type="primary" @click="router.push('/interactive-rag-lab')">进入 AI 交互实验室</el-button>
+      <el-button type="primary" @click="router.push('/interactive-rag-lab')">进入交互实验室</el-button>
       <el-button @click="router.push('/rag-training')">管理训练数据集</el-button>
       <el-button @click="router.push('/reports')">查看 Session 报告</el-button>
     </div>
@@ -80,13 +80,12 @@ onMounted(load)
     </div>
   </section>
   <section class="panel">
-    <h2 class="panel-title">最近 AI 交互实验室 Session</h2>
+    <h2 class="panel-title">最近实验 Session</h2>
     <el-table :data="sessions.slice(0, 6)" v-loading="loading" size="small">
       <el-table-column prop="session_id" label="Session" min-width="180" />
       <el-table-column prop="question" label="问题" min-width="260" show-overflow-tooltip />
       <el-table-column prop="risk_level" label="风险" width="110" />
       <el-table-column prop="injected_poison_count" label="注入" width="90" />
-      <el-table-column prop="llm_provider" label="模型" width="120" />
       <el-table-column prop="updated_at" label="更新时间" min-width="180" />
     </el-table>
   </section>

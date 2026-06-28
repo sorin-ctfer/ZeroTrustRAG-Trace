@@ -1,0 +1,30 @@
+{
+  "dataset": "BEIR SciFact",
+  "dataset_path": "/mnt/e/大创项目/信息安全作品赛-2026/参考论文/zyjd_system/experiments/datasets/scifact/scifact",
+  "query_count": 120,
+  "clean_chunk_count": 5183,
+  "synthetic_poison_chunk_count": 72,
+  "poison_query_count": 24,
+  "top_k": 8,
+  "retrieved_poison_hits_before": 84,
+  "isolated_chunk_count": 72,
+  "mean_trust_before": 0.8848877768943264,
+  "mean_trust_after": 0.9685000000000002,
+  "mean_poison_ratio_after_poisoning": 0.0875,
+  "mean_poison_ratio_after_correction": 0.0,
+  "mean_answer_deviation_after_poisoning": 0.03944937000930081,
+  "mean_answer_deviation_after_correction": 5.514107688971611e-16,
+  "affected_query_count": 24,
+  "figures": [
+    "experiments/figures/scifact_poisoning/fig_affected_query_deviation_before_after.png",
+    "experiments/figures/scifact_poisoning/fig_answer_deviation_boxplot.png",
+    "experiments/figures/scifact_poisoning/fig_cluster_dualrisk_top.png",
+    "experiments/figures/scifact_poisoning/fig_dataset_summary.png",
+    "experiments/figures/scifact_poisoning/fig_deviation_curve_top_queries.png",
+    "experiments/figures/scifact_poisoning/fig_dualrisk_distribution.png",
+    "experiments/figures/scifact_poisoning/fig_poison_propagation_graph.png",
+    "experiments/figures/scifact_poisoning/fig_poisoning_deviation_before_after.png",
+    "experiments/figures/scifact_poisoning/fig_topk_composition.png",
+    "experiments/figures/scifact_poisoning/fig_trustscore_before_after.png"
+  ]
+}

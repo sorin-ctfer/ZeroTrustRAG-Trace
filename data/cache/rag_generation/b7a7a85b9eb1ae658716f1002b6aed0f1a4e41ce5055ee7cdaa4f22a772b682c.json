@@ -1,0 +1,9 @@
+{
+  "cache_key": "b7a7a85b9eb1ae658716f1002b6aed0f1a4e41ce5055ee7cdaa4f22a772b682c",
+  "answer": "上下文中未提供具体的控制措施列表，仅多次重复短语“List controls required for privileged maintenance.”，但未实际列出任何控制项。",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:12:43.207293+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

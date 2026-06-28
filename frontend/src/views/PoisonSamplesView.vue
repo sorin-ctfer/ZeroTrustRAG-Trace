@@ -74,9 +74,10 @@ onMounted(refresh)
     <el-table :data="samples" height="560">
       <el-table-column prop="sample_id" label="Sample ID" width="180" />
       <el-table-column prop="attack_type" label="攻击类型" width="170" />
-      <el-table-column prop="trust_label" label="风险标签" width="110">
-        <template #default="{ row }"><el-tag :type="row.trust_label === 'benign_error' ? 'warning' : 'danger'">{{ row.trust_label }}</el-tag></template>
+      <el-table-column prop="risk_label" label="风险标签" width="110">
+        <template #default="{ row }"><el-tag :type="(row.risk_label || row.trust_label) === 'benign_error' ? 'warning' : 'danger'">{{ row.risk_label || row.trust_label }}</el-tag></template>
       </el-table-column>
+      <el-table-column prop="risk_score" label="风险分" width="90" />
       <el-table-column prop="enabled" label="状态" width="90">
         <template #default="{ row }"><el-tag :type="row.enabled ? 'success' : 'info'">{{ row.enabled ? '启用' : '禁用' }}</el-tag></template>
       </el-table-column>

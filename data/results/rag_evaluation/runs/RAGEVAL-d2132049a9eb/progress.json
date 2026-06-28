@@ -1,0 +1,37 @@
+{
+  "run_id": "RAGEVAL-d2132049a9eb",
+  "status": "running",
+  "total": 324,
+  "completed": 647,
+  "failed": 0,
+  "current_method": "retrieve_generate",
+  "current_sample": "ragtruth-ragtruth-sample-002",
+  "error": "",
+  "config": {
+    "dataset": "all",
+    "mode": "sample",
+    "methods": [
+      "ras_only",
+      "gis_only",
+      "dualrisk",
+      "dualrisk_cluster"
+    ],
+    "top_k": [
+      3,
+      5,
+      10
+    ],
+    "poison_ratios": [
+      0.01,
+      0.03,
+      0.05,
+      0.1
+    ],
+    "ras_threshold": 0.6,
+    "gis_threshold": 0.45,
+    "dualrisk_threshold": 0.25,
+    "cluster_threshold": 0.35,
+    "cluster_lambda": 0.5,
+    "retrieval_mode": "faiss"
+  }
+}

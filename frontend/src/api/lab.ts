@@ -34,6 +34,8 @@ export const interactiveSessionApi = {
   injectPoison: async (sessionId: string, sample_id: string) =>
     unwrap<any>(await api.post(`/interactive/session/${sessionId}/inject-poison`, { sample_id })),
   riskSummary: async (sessionId: string) => unwrap<any>(await api.get(`/interactive/session/${sessionId}/risk-summary`)),
+  answerability: async (session_id: string, question: string) =>
+    unwrap<any>(await api.post('/interactive/rag/answerability', { session_id, question })),
   chat: async (question: string, stage: string, session_id?: string) =>
     unwrap<any>(await api.post('/interactive/rag/chat', { question, stage, session_id })),
   detect: async (payload: any) => unwrap<any>(await api.post('/interactive/rag/chat-detect', payload)),

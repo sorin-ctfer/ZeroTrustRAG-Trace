@@ -1,0 +1,9 @@
+{
+  "cache_key": "668554840ccb27a00a7e2bdf4bfe3ecbdab9bf1c35ccc85cb5ca626ec70d0a04",
+  "answer": "针对问题“Which organization announced the emergency patch policy?”，检索证据显示：The internal security committee announced the emergency patch policy after the incident review.",
+  "generation_mode": "deterministic_fallback",
+  "model_name": "deterministic",
+  "created_at": "2026-06-28T04:09:54.648439+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

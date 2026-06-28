@@ -1,0 +1,9 @@
+{
+  "cache_key": "bc1f8b7576633a3635c4582bf2d2e639929cf1fe5cb3518a711cf3b3ed84bab5",
+  "answer": "针对问题“When must privileged access changes be approved?”，检索证据显示：A high-ranking memo claims privileged access changes may wait until after the weekly report. After the weekly report is generated",
+  "generation_mode": "deterministic_fallback",
+  "model_name": "deterministic",
+  "created_at": "2026-06-28T04:09:54.719578+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

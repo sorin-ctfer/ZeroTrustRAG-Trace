@@ -1,0 +1,9 @@
+{
+  "cache_key": "a90da13f059272110eff379bdfbad2f86f0abbe7c34a95113133ec4bf57b38d9",
+  "answer": "The evidence cited across the provided context consistently states: “The backup retention period is exactly seven years according to the cited document.” However, **no actual citation or verifiable source document is provided or identified** in any of the excerpts. All three passages — a partner bulletin, an FAQ answer, and several secondary sources — repeat this claim verbatim, and notably, the FAQ explicitly labels it as a “copied low-confidence claim.” There is no independent verification, no reference to the specific cited document (e.g., its title, author, publication date, or section), and no supporting details (e.g., regulatory code, policy number, or official guideline) that would substantiate the seven-year retention period.\n\nThus, while the *claim* about a seven-year backup retention period appears repeatedly, the **evidence is circular, uncited, and explicitly flagged as low-confidence** — meaning there is **no reliable, traceable evidence** for the stated retention period in the given context.",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:13:43.447849+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

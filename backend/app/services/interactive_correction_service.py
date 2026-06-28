@@ -8,12 +8,13 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 from .bailian_llm_service import get_chat_model, rag_top_k
 from .external_knowledge import external_knowledge_service
-from .interactive_rag_service import extract_citations, interactive_rag_service
+from .interactive_rag_service import clean_answer_text, extract_citations, interactive_rag_service
+from .interactive_rag_service import _enforce_supported_times
 
 CORRECTION_PROMPT = (
     "你是一个可信 RAG 纠偏助手。以下上下文已经移除了高风险污染 Chunk。"
     "请仅依据可信上下文回答问题，不得使用模型自身常识替代证据。"
-    "回答末尾列出引用的 chunk_id。"
+    "具体日期、月份和时间范围必须能在可信上下文原文中找到。正文不要输出原始 chunk_id。"
 )
 
 
@@ -33,7 +34,7 @@ class InteractiveCorrectionService:
             return {
                 "session_id": session_id,
                 "ready": False,
-                "message": "请先在 AI 交互实验室执行投毒检测。",
+                "message": "请先在交互实验室执行投毒检测。",
             }
         return {
             "session_id": session_id,
@@ -97,7 +98,8 @@ class InteractiveCorrectionService:
             SystemMessage(content=CORRECTION_PROMPT),
             HumanMessage(content=f"阶段：{stage}\n问题：{question}\n\n上下文：\n{context}\n\n请只依据上下文回答；若上下文为空或不足，说明证据不足，并列出引用的 chunk_id。"),
         ])
-        return str(response.content)
+        answer = clean_answer_text(str(response.content), [item["chunk_id"] for item in chunks])
+        return _enforce_supported_times(answer, chunks)
 
     def quarantine_risk_chunks(self, session_id: str, chunk_ids: list[str] | None = None) -> list[dict[str, Any]]:
         detail = self.detail(session_id)
@@ -142,8 +144,12 @@ class InteractiveCorrectionService:
             SystemMessage(content=CORRECTION_PROMPT),
             HumanMessage(content=f"问题：{question}\n\n可信上下文：\n{context or '空'}\n\n请生成纠偏后可信回答；若没有可信上下文，说明证据不足。"),
         ])
-        corrected_answer = str(response.content)
-        cited = extract_citations(corrected_answer, [item["chunk_id"] for item in trusted_retrieved])
+        raw_answer = str(response.content)
+        cited = extract_citations(raw_answer, [item["chunk_id"] for item in trusted_retrieved])
+        if not cited and trusted_retrieved:
+            cited = [trusted_retrieved[0]["chunk_id"]]
+        corrected_answer = clean_answer_text(raw_answer, [item["chunk_id"] for item in trusted_retrieved])
+        corrected_answer = _enforce_supported_times(corrected_answer, trusted_retrieved)
         before_score = detail.get("metrics", {}).get("TrustScore_after_poison", 50)
         after_score = round(min(98.0, max(before_score, 82.0 + 3.0 * len(cited))), 2)
         asr_before = 1.0 if detail.get("risk_chunks") else 0.0

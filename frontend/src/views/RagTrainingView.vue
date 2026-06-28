@@ -48,6 +48,7 @@ onMounted(refresh)
 
   <div class="stat-grid">
     <div class="stat-card"><div class="label">样本数</div><div class="value">{{ stats.sample_count || 0 }}</div></div>
+    <div class="stat-card"><div class="label">已打标样本</div><div class="value">{{ stats.risk_tagged_samples || 0 }}</div></div>
     <div class="stat-card"><div class="label">Clean</div><div class="value">{{ stats.clean_chunks || 0 }}</div></div>
     <div class="stat-card"><div class="label">Poison</div><div class="value">{{ stats.poison_chunks || 0 }}</div></div>
     <div class="stat-card"><div class="label">检测模式</div><div class="value small-value">{{ status.mode || '规则模式' }}</div></div>
@@ -117,6 +118,9 @@ onMounted(refresh)
     <h2 class="panel-title">样本预览</h2>
     <el-table :data="samples" height="360">
       <el-table-column prop="label" label="Label" width="120" />
+      <el-table-column prop="risk_label" label="Risk Label" width="120" />
+      <el-table-column prop="risk_level" label="Risk Level" width="110" />
+      <el-table-column prop="risk_score" label="Risk Score" width="110" />
       <el-table-column prop="attack_type" label="Attack Type" width="180" />
       <el-table-column prop="query" label="Query" width="240" show-overflow-tooltip />
       <el-table-column prop="text" label="Text" show-overflow-tooltip />

@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "limit_per_dataset": 500,
+  "datasets": {
+    "poisonedrag": 2,
+    "ragtruth": 2,
+    "alce": 3,
+    "agentdojo": 2
+  },
+  "splits": {
+    "train": 4,
+    "validation": 1,
+    "test": 4
+  },
+  "schema_fields": [
+    "sample_id",
+    "dataset",
+    "split",
+    "task_type",
+    "query",
+    "gold_answer",
+    "target_wrong_answer",
+    "clean_contexts",
+    "poison_contexts",
+    "source_ids",
+    "labels",
+    "metadata"
+  ]
+}

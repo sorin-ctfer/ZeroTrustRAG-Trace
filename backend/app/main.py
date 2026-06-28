@@ -51,11 +51,13 @@ from .routers import interactive_rag
 from .routers.external_knowledge import router as external_knowledge_router
 from .routers.poison_samples import router as poison_samples_router
 from .routers.rag_training import router as rag_training_router
+from .routers.rag_evaluation import router as rag_evaluation_router
 
 app.include_router(platform_router)
 app.include_router(external_knowledge_router)
 app.include_router(poison_samples_router)
 app.include_router(rag_training_router)
+app.include_router(rag_evaluation_router)
 app.include_router(
     interactive_rag.router,
     prefix="/api/interactive",

@@ -33,7 +33,7 @@ onMounted(refresh)
 <template>
   <div class="page-head">
     <h1>外部可信知识库</h1>
-    <p>统一导入可信文档、内置数据集和 clean_chunks，AI 交互实验室只读取这里的可信 Chunk。</p>
+    <p>统一导入可信文档、内置数据集和 clean_chunks，交互实验室只读取这里的可信 Chunk。</p>
   </div>
 
   <div class="stat-grid">

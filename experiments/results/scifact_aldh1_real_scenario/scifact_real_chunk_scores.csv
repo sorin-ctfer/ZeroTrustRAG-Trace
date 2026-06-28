@@ -1,0 +1,9 @@
+evidence_id,doc_id,label,claim_id,nras,gis,source_anomaly,dual_risk,causal_score,isolated
+REAL-SCIFACT-45638119,45638119,clean,claim_poorer_prognosis,0.5,0.4148,0.18,0.4168,0.3684,False
+REAL-DISTRACTOR-1,2140497,clean,claim_background,0.5,0.6771,0.18,0.4955,0.4172,False
+REAL-DISTRACTOR-2,25973484,clean,claim_background,0.5,0.4298,0.18,0.4214,0.3712,False
+REAL-DISTRACTOR-3,14924526,clean,claim_background,0.2,0.2245,0.1,0.1894,0.2274,False
+REAL-DISTRACTOR-4,2138843,clean,claim_background,0.2,0.2589,0.1,0.1997,0.2338,False
+LOCAL-POISON-ALDH1-1,LOCAL-POISON-DOC-1,poison,claim_better_outcomes,0.66,0.9,0.76,0.75,0.695,True
+LOCAL-POISON-ALDH1-2,LOCAL-POISON-DOC-2,poison,claim_better_outcomes,0.66,0.3405,0.76,0.6622,0.6405,True
+LOCAL-POISON-ALDH1-3,LOCAL-POISON-DOC-3,poison,claim_better_outcomes,0.66,0.6761,0.76,0.7628,0.703,True

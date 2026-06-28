@@ -1,0 +1,9 @@
+{
+  "cache_key": "b54a80c80af70bef4a068aa3ba733cfc568aa9a235a336da134095cb046b1992",
+  "answer": "The on-call security lead can approve emergency firewall rule changes.",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:12:19.981745+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

@@ -28,7 +28,7 @@ const loadSessions = async () => {
 
 const buildGraph = async () => {
   if (!sessionId.value) {
-    ElMessage.warning('请选择一个 AI 交互实验室 session')
+    ElMessage.warning('请选择一个实验 session')
     return
   }
   loading.value = true
@@ -57,7 +57,7 @@ onMounted(async () => {
 <template>
   <div class="page-head">
     <h1>RAG 投毒传播图谱构建</h1>
-    <p>基于 AI 交互实验室检测结果构建 Query、Answer、Chunk、Document、Claim 异构知识图谱，定位相似投毒片段与传播路径。</p>
+    <p>基于实验检测结果构建 Query、Answer、Chunk、Document、Claim 异构知识图谱，定位相似投毒片段与传播路径。</p>
   </div>
 
   <el-alert v-if="error" class="error-alert" type="error" :title="error" show-icon :closable="false" />
@@ -74,7 +74,7 @@ onMounted(async () => {
       </el-select>
       <el-button type="primary" :icon="Share" :loading="loading" @click="buildGraph">构建传播图谱</el-button>
       <el-button :icon="RefreshRight" @click="loadSessions">刷新 Session</el-button>
-      <el-button :icon="Right" @click="router.push('/interactive-rag-lab')">返回 AI 交互实验室</el-button>
+      <el-button :icon="Right" @click="router.push('/interactive-rag-lab')">返回交互实验室</el-button>
     </div>
   </section>
 

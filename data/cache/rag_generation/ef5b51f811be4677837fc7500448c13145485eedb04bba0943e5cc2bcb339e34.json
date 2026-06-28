@@ -1,0 +1,9 @@
+{
+  "cache_key": "ef5b51f811be4677837fc7500448c13145485eedb04bba0943e5cc2bcb339e34",
+  "answer": "针对问题“When must privileged access changes be approved?”，检索证据显示：Privileged access changes must be approved before the change is applied.",
+  "generation_mode": "deterministic_fallback",
+  "model_name": "deterministic",
+  "created_at": "2026-06-28T04:09:54.703862+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

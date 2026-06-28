@@ -13,7 +13,7 @@ const render = async () => {
   const categoryNames = (props.graph.categories || ['Claim', 'Evidence', 'Action']).map((item: any) =>
     typeof item === 'string' ? { name: item } : item,
   )
-  const palette = ['#3b82f6', '#25a18e', '#8b5cf6', '#f59e0b', '#64748b']
+  const palette = ['#2563eb', '#0f766e', '#64748b', '#d97706', '#475569', '#7c3aed']
   chart.setOption({
     tooltip: {
       formatter: (p: any) => {
@@ -28,7 +28,7 @@ const render = async () => {
         ...n, symbolSize: 32 + (n.risk || 0) * 24,
         itemStyle: {
           color: (n.risk || 0) >= .6 ? '#e25555' : palette[n.category || 0],
-          borderColor: '#fff', borderWidth: 2, shadowBlur: 8, shadowColor: '#0002',
+          borderColor: '#fff', borderWidth: 2,
         },
       })),
       links: props.graph.links || [], categories: categoryNames,
@@ -39,7 +39,7 @@ const render = async () => {
         color: '#52627a', backgroundColor: '#ffffffdd', padding: [2, 3],
       },
       force: { repulsion: 420, edgeLength: [105, 190], gravity: .08 },
-      lineStyle: { color: 'source', curveness: .08, opacity: .72, width: 1.5 },
+      lineStyle: { color: 'source', curveness: .08, opacity: .68, width: 1.4 },
       emphasis: { focus: 'adjacency', lineStyle: { width: 4, opacity: 1 } },
     }],
   }, true)

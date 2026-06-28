@@ -1,0 +1,9 @@
+{
+  "cache_key": "05ffa2a42683ee955e03f6ad65f3ff6148c93d8a0395358392d7e48081354ac7",
+  "answer": "Privileged access changes must be approved before the change is applied.",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:13:25.126906+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

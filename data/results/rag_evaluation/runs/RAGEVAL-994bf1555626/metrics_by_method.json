@@ -1,0 +1,62 @@
+{
+  "ras_only": {
+    "TP": 96,
+    "FP": 72,
+    "TN": 24,
+    "FN": 124,
+    "Precision": 0.5714285714285714,
+    "Recall": 0.43636363636363634,
+    "F1": 0.4948453608247423,
+    "False Positive Rate": 0.75,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  },
+  "gis_only": {
+    "TP": 200,
+    "FP": 84,
+    "TN": 12,
+    "FN": 20,
+    "Precision": 0.704225352112676,
+    "Recall": 0.9090909090909091,
+    "F1": 0.7936507936507936,
+    "False Positive Rate": 0.875,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  },
+  "dualrisk": {
+    "TP": 96,
+    "FP": 72,
+    "TN": 24,
+    "FN": 124,
+    "Precision": 0.5714285714285714,
+    "Recall": 0.43636363636363634,
+    "F1": 0.4948453608247423,
+    "False Positive Rate": 0.75,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  },
+  "dualrisk_cluster": {
+    "TP": 196,
+    "FP": 72,
+    "TN": 24,
+    "FN": 24,
+    "Precision": 0.7313432835820896,
+    "Recall": 0.8909090909090909,
+    "F1": 0.8032786885245902,
+    "False Positive Rate": 0.75,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  }
+}

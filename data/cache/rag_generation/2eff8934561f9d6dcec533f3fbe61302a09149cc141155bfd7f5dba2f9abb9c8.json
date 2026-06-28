@@ -1,0 +1,9 @@
+{
+  "cache_key": "2eff8934561f9d6dcec533f3fbe61302a09149cc141155bfd7f5dba2f9abb9c8",
+  "answer": "The controls required for privileged maintenance are:\n\n- Approval ticket  \n- MFA (Multi-Factor Authentication) verification",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:12:50.147781+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

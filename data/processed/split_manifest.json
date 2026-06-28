@@ -1,0 +1,35 @@
+{
+  "train": {
+    "base_sample_count": 27,
+    "scenario_count": 81,
+    "positive_chunks": 72,
+    "negative_chunks": 138,
+    "single_poison": 6,
+    "cluster_poison": 6,
+    "clean": 33,
+    "hallucination": 18,
+    "prompt_infection": 18
+  },
+  "validation": {
+    "base_sample_count": 9,
+    "scenario_count": 27,
+    "positive_chunks": 24,
+    "negative_chunks": 46,
+    "single_poison": 2,
+    "cluster_poison": 2,
+    "clean": 11,
+    "hallucination": 6,
+    "prompt_infection": 6
+  },
+  "test": {
+    "base_sample_count": 9,
+    "scenario_count": 27,
+    "positive_chunks": 24,
+    "negative_chunks": 46,
+    "single_poison": 2,
+    "cluster_poison": 2,
+    "clean": 11,
+    "hallucination": 6,
+    "prompt_infection": 6
+  }
+}

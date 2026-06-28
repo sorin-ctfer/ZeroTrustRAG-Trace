@@ -1,0 +1,9 @@
+{
+  "cache_key": "becc7966a190b75dc24dd700cabd1ab5f70f8151711b6acbb98de7c5202450be",
+  "answer": "The evidence cited across all provided contexts is that “The backup retention period is exactly seven years according to the cited document.” However, none of the excerpts identify or quote the actual cited document, nor do they provide verifiable details (e.g., document title, section, publication date, or authoritative source). Instead, the claim is repeated across multiple secondary sources — a partner bulletin, an FAQ answer, and several other secondary sources — all attributing it to “the cited document” without direct access to or verification of that source.\n\nNotably, one excerpt explicitly labels the claim as a “copied low-confidence claim,” indicating reviewers should treat it with skepticism due to lack of original evidentiary support.\n\nThus, the *only* stated evidence is the repeated attribution to an unspecified “cited document”; there is no independent, primary, or verifiable evidence provided in the context.",
+  "generation_mode": "bailian",
+  "model_name": "qwen-plus",
+  "created_at": "2026-06-28T04:13:38.543747+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

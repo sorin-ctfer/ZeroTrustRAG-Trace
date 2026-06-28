@@ -2,7 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
-import { ChatDotRound, InfoFilled, Right, Search, Share, Warning } from '@element-plus/icons-vue'
+import { Document, InfoFilled, Right, Search, Share, Warning } from '@element-plus/icons-vue'
 import { externalKnowledgeApi, interactiveSessionApi, poisonSamplesApi, trainingApi } from '@/api/lab'
 
 const router = useRouter()
@@ -16,6 +16,7 @@ const selectedSource = ref('')
 const beforeChat = ref<any>()
 const afterChat = ref<any>()
 const detection = ref<any>()
+const answerability = ref<any>()
 const externalStats = ref<any>({})
 const trainingStats = ref<any>({})
 const trainingStatus = ref<any>({})
@@ -30,18 +31,15 @@ const sessionId = computed(() => session.value?.session_id || '')
 const riskPercent = computed(() => Math.round((detection.value?.risk_score || 0) * 100))
 const currentTrustScore = computed(() => summary.value.current_trust_score || detection.value?.metrics?.TrustScore_after_poison || 100)
 const injectedCount = computed(() => summary.value.injected_poison_count ?? session.value?.injected_poison_chunk_ids?.length ?? 0)
-const topkBefore = computed(() => beforeChat.value?.retrieved_chunks || [])
-const topkAfter = computed(() => afterChat.value?.retrieved_chunks || [])
-const llmStatus = computed(() => summary.value.llm_status || beforeChat.value?.llm_status || afterChat.value?.llm_status || {})
-const llmMode = computed(() => llmStatus.value.mode || '模型状态检查中')
-const llmProvider = computed(() => afterChat.value?.llm_provider || beforeChat.value?.llm_provider || 'bailian')
-const llmProviderLabel = computed(() => {
-  if (llmProvider.value === 'ollama') return '本地 Ollama'
-  if (llmProvider.value === 'bailian') return '百炼大模型'
-  if (llmProvider.value === 'extractive') return '证据抽取兜底'
-  return llmStatus.value.mode || '模型待调用'
-})
+const topkBefore = computed(() => beforeChat.value?.retrieved_chunks || answerability.value?.retrieved_chunks || session.value?.topk_before || [])
+const topkAfter = computed(() => afterChat.value?.retrieved_chunks || session.value?.topk_after || [])
 const canEnterCorrection = computed(() => detection.value?.risk_level === 'high' || detection.value?.detected_poison_chunks?.length)
+const canRunPoisonCompare = computed(() => Boolean(beforeChat.value && answerability.value?.answerable))
+const baselineStatus = computed(() => {
+  if (answerability.value?.answerable) return '可信基准可回答'
+  if (answerability.value && !answerability.value.answerable) return '可信基准不可回答'
+  return '待校验'
+})
 const tagType = (label: string) => label === 'trusted' ? 'success' : label === 'poison' ? 'danger' : label === 'benign_error' ? 'warning' : label === 'quarantined' ? 'info' : 'primary'
 const builtInQuestion = computed(() => String(selectedPoison.value?.target_query || '').trim())
 const activeQuestion = computed(() => question.value.trim() || builtInQuestion.value)
@@ -56,12 +54,12 @@ const flowSteps = computed(() => [
   },
   {
     title: '投毒前可信检索',
-    note: beforeChat.value ? '可信基线回答已生成' : '点击“投毒前提问”生成可信基线',
-    done: Boolean(beforeChat.value),
+    note: beforeChat.value ? '可信基准回答已生成' : answerability.value?.message || '点击“投毒前提问”校验可信基准',
+    done: Boolean(beforeChat.value && answerability.value?.answerable),
   },
   {
     title: '注入样本并对比',
-    note: afterChat.value ? '投毒后混合检索回答已生成' : '选择样本后执行投毒后提问',
+    note: afterChat.value ? '投毒后原始回答已生成' : canRunPoisonCompare.value ? '可执行投毒对比' : '可信基准可回答后再执行',
     done: Boolean(afterChat.value),
   },
   {
@@ -91,6 +89,7 @@ const hydrateFromSession = (savedSession: any) => {
   beforeChat.value = chats.before_poison || chats.normal_chat
   afterChat.value = chats.after_poison
   detection.value = savedSession?.detection_result || savedSession?.detection_report
+  answerability.value = savedSession?.answerability
   injectedSampleId.value = savedSession?.injected_poison_chunks?.[0]?.sample_id || ''
 }
 
@@ -128,7 +127,7 @@ const withTimeout = async <T,>(task: Promise<T>, ms = 180000): Promise<T> => {
     return await Promise.race([
       task,
       new Promise<T>((_, reject) => {
-        timer = setTimeout(() => reject(new Error('接口响应超时，请确认本地 Ollama 已启动；如需百炼兜底，请检查后端 .env 配置')), ms)
+        timer = setTimeout(() => reject(new Error('接口响应超时，请检查后端服务和模型服务配置')), ms)
       }),
     ])
   } finally {
@@ -162,6 +161,7 @@ const createCleanSession = async () => {
   beforeChat.value = undefined
   afterChat.value = undefined
   detection.value = undefined
+  answerability.value = undefined
   injectedSampleId.value = ''
   summary.value = {}
   persistLabState()
@@ -186,14 +186,23 @@ const askBefore = async () => run('before', async () => {
     return
   }
   await createCleanSession()
+  answerability.value = await withTimeout(interactiveSessionApi.answerability(sessionId.value, currentQuestion))
+  session.value = await withTimeout(interactiveSessionApi.get(sessionId.value))
+  if (!answerability.value.answerable) {
+    ElMessage.warning(answerability.value.message || '当前问题缺少可信基准答案，请更换问题或补充可信知识')
+    persistLabState()
+    return
+  }
   beforeChat.value = await withTimeout(interactiveSessionApi.chat(currentQuestion, 'before_poison', sessionId.value))
   session.value = await withTimeout(interactiveSessionApi.get(sessionId.value))
   persistLabState()
 })
 
 const askAfter = async () => run('after', async () => {
-  if (!sessionId.value || !beforeChat.value) await askBefore()
-  if (!beforeChat.value) return
+  if (!sessionId.value || !beforeChat.value || !answerability.value?.answerable) {
+    ElMessage.warning('当前问题缺少可信基准答案，请更换问题或补充可信知识')
+    return
+  }
   if (!selectedSample.value) {
     ElMessage.warning('请选择数据集投毒样本')
     return
@@ -226,7 +235,7 @@ const detectPoison = async () => run('detect', async () => {
 
 const enterCorrection = () => {
   if (!sessionId.value || !detection.value) {
-    ElMessage.warning('请先在 AI 交互实验室执行投毒检测')
+    ElMessage.warning('请先在交互实验室执行投毒检测')
     return
   }
   router.push(`/interactive-correction/${sessionId.value}`)
@@ -234,7 +243,7 @@ const enterCorrection = () => {
 
 const enterPropagation = () => {
   if (!sessionId.value || !detection.value) {
-    ElMessage.warning('请先在 AI 交互实验室执行投毒检测')
+    ElMessage.warning('请先在交互实验室执行投毒检测')
     return
   }
   router.push(`/poison-propagation/${sessionId.value}`)
@@ -262,8 +271,8 @@ onMounted(async () => {
   <div class="page-head lab-hero">
     <div class="lab-title-row">
       <div>
-        <h1>AI 交互实验室</h1>
-        <p>围绕公开数据集完成可信知识导入、投毒知识选择、百炼大模型问答、Top-K 对比、投毒检测、可信纠偏和 session 风险报告。</p>
+        <h1>交互实验室</h1>
+        <p>围绕公开数据集完成可信知识导入、投毒知识选择、Top-K 对比、投毒检测、可信纠偏和 session 风险报告。</p>
       </div>
       <el-button :icon="InfoFilled" @click="startTour">打开指引</el-button>
     </div>
@@ -273,8 +282,8 @@ onMounted(async () => {
   <el-tour v-model="tourOpen" @close="closeTour" @finish="closeTour">
     <el-tour-step
       target=".guide-target-status"
-      title="确认模型调用状态"
-      description="这里显示当前 AI 模型链路。当前默认直接调用百炼大模型；切换到 Ollama 时才使用本地模型快速模式。"
+      title="确认可信基准状态"
+      description="这里显示可信基准是否可回答。可信证据不足时不会进入投毒对比。"
       placement="bottom"
     />
     <el-tour-step
@@ -286,7 +295,7 @@ onMounted(async () => {
     <el-tour-step
       target=".guide-target-question"
       title="按顺序执行实验"
-      description="先编辑问题并点击投毒前提问，再注入样本并投毒后提问，最后执行投毒检测。"
+      description="先编辑问题并生成可信基准，再执行投毒对比，最后执行投毒检测。"
       placement="top"
     />
     <el-tour-step
@@ -327,7 +336,7 @@ onMounted(async () => {
       <div class="stat-card"><div class="label">当前 session 投毒</div><div class="value">{{ injectedCount }}</div></div>
       <div class="stat-card"><div class="label">训练样本</div><div class="value">{{ trainingStats.sample_count || 0 }}</div></div>
       <div class="stat-card"><div class="label">检测模式</div><div class="value small-value">{{ summary.detection_mode || trainingStatus.mode || '规则模式' }}</div></div>
-      <div class="stat-card"><div class="label">AI 模型</div><div class="value small-value">{{ llmMode }}</div></div>
+      <div class="stat-card"><div class="label">可信基准</div><div class="value small-value">{{ baselineStatus }}</div></div>
       <div class="stat-card"><div class="label">当前 TrustScore</div><div class="value">{{ currentTrustScore }}</div></div>
     </div>
 
@@ -362,7 +371,7 @@ onMounted(async () => {
               <h2 class="panel-title">输入、注入与检测</h2>
               <p>按顺序完成问题确认、可信基线、投毒后对比和风险检测。</p>
             </div>
-            <el-tag :type="llmProvider === 'extractive' ? 'warning' : 'success'">{{ llmProviderLabel }}</el-tag>
+            <el-tag :type="answerability?.answerable ? 'success' : answerability ? 'warning' : 'info'">{{ baselineStatus }}</el-tag>
           </div>
 
           <div class="lab-input-grid">
@@ -411,10 +420,20 @@ onMounted(async () => {
           </div>
 
           <div class="lab-action-bar">
-            <el-button :icon="Search" :loading="loadingStep === 'before'" @click="askBefore">投毒前提问</el-button>
-            <el-button type="warning" plain :icon="Warning" :loading="loadingStep === 'after'" @click="askAfter">注入样本并投毒后提问</el-button>
+            <el-button :icon="Search" :loading="loadingStep === 'before'" @click="askBefore">生成可信基准回答</el-button>
+            <el-button type="warning" plain :icon="Warning" :loading="loadingStep === 'after'" :disabled="!canRunPoisonCompare" @click="askAfter">执行投毒对比</el-button>
             <el-button class="guide-target-detect" type="primary" :loading="loadingStep === 'detect'" @click="detectPoison">执行投毒检测</el-button>
           </div>
+
+          <el-alert
+            v-if="answerability && !answerability.answerable"
+            class="error-alert"
+            type="warning"
+            show-icon
+            :closable="false"
+            :title="answerability.message"
+            :description="answerability.missing_slots?.length ? `缺失信息：${answerability.missing_slots.join('、')}` : '请选择一个在可信知识库中已有明确答案的问题。'"
+          />
 
           <div class="workflow-card">
             <div v-for="(step, index) in flowSteps" :key="step.title" class="workflow-step" :class="{ done: step.done }">
@@ -430,14 +449,14 @@ onMounted(async () => {
         <section class="panel chat-panel guide-target-chat">
           <div class="lab-panel-heading">
             <div>
-              <h2 class="panel-title">回答对比</h2>
-              <p>投毒前回答只使用可信知识库；投毒后回答混合当前 session 注入样本。</p>
+              <h2 class="panel-title">投毒前后回答对比</h2>
+              <p>投毒前仅使用可信知识库；投毒后使用实际 Top-K 展示污染影响。</p>
             </div>
             <el-tag effect="dark">{{ sessionId || 'SESSION 初始化中' }}</el-tag>
           </div>
 
           <div v-if="!beforeChat && !afterChat" class="chat-empty">
-            <el-icon><ChatDotRound /></el-icon>
+            <el-icon><Document /></el-icon>
             <span>请输入问题并执行检测，系统将在此展示检索过程、来源证据和回答分析。</span>
           </div>
 
@@ -450,7 +469,7 @@ onMounted(async () => {
             </div>
             <div v-if="beforeChat" class="chat-row assistant">
               <div class="chat-bubble">
-                <div class="chat-stage">AI 回答 · 投毒前可信检索 · {{ beforeChat.llm_provider }}</div>
+                <div class="chat-stage">投毒前基准回答 · 证据范围：可信知识库 · 检索状态：{{ beforeChat.answerability?.retrieval_status || baselineStatus }} · 引用数量：{{ beforeChat.cited_chunk_ids?.length || 0 }} · 风险状态：可信</div>
                 <div class="chat-text">{{ beforeChat.answer }}</div>
                 <el-collapse class="citation-collapse">
                   <el-collapse-item title="引用证据">
@@ -468,7 +487,7 @@ onMounted(async () => {
             </div>
             <div v-if="afterChat" class="chat-row assistant">
               <div class="chat-bubble risk-bubble">
-                <div class="chat-stage">AI 回答 · 投毒后混合检索 · {{ afterChat.llm_provider }}</div>
+                <div class="chat-stage">投毒后原始回答 · 证据范围：投毒后 Top-K · 检索状态：已混合 session 证据 · 引用数量：{{ afterChat.cited_chunk_ids?.length || 0 }} · 风险状态：待检测</div>
                 <div class="chat-text">{{ afterChat.answer }}</div>
                 <el-collapse class="citation-collapse">
                   <el-collapse-item title="引用证据">
@@ -579,9 +598,9 @@ onMounted(async () => {
         </template>
 
         <div v-else class="result-empty">
-          <el-icon><ChatDotRound /></el-icon>
+          <el-icon><Document /></el-icon>
           <strong>等待检测结果</strong>
-          <span>完成投毒前提问、注入样本并投毒后提问后，点击“执行投毒检测”。风险百分比、RAS/GIS/DualRisk 和后续操作会在这里集中展示。</span>
+          <span>生成可信基准回答并执行投毒对比后，点击“执行投毒检测”。风险百分比、RAS/GIS/DualRisk 和后续操作会在这里集中展示。</span>
         </div>
       </aside>
     </div>

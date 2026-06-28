@@ -1,0 +1,62 @@
+{
+  "dualrisk": {
+    "TP": 8,
+    "FP": 17,
+    "TN": 14,
+    "FN": 6,
+    "Precision": 0.32,
+    "Recall": 0.5714285714285714,
+    "F1": 0.41025641025641024,
+    "False Positive Rate": 0.5483870967741935,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  },
+  "dualrisk_cluster": {
+    "TP": 8,
+    "FP": 17,
+    "TN": 14,
+    "FN": 6,
+    "Precision": 0.32,
+    "Recall": 0.5714285714285714,
+    "F1": 0.41025641025641024,
+    "False Positive Rate": 0.5483870967741935,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  },
+  "dualrisk_causal": {
+    "TP": 8,
+    "FP": 2,
+    "TN": 29,
+    "FN": 6,
+    "Precision": 0.8,
+    "Recall": 0.5714285714285714,
+    "F1": 0.6666666666666666,
+    "False Positive Rate": 0.06451612903225806,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  },
+  "full_method": {
+    "TP": 8,
+    "FP": 2,
+    "TN": 29,
+    "FN": 6,
+    "Precision": 0.8,
+    "Recall": 0.5714285714285714,
+    "F1": 0.6666666666666666,
+    "False Positive Rate": 0.06451612903225806,
+    "undefined": {
+      "Precision": null,
+      "Recall": null,
+      "False Positive Rate": null
+    }
+  }
+}

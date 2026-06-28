@@ -1,0 +1,9 @@
+{
+  "cache_key": "ce43f16409869eee957d6fe0b2ab9d5cf5b3669b2069e1c68433f0f66190276a",
+  "answer": "针对问题“Which organization announced the emergency patch policy?”，检索证据显示：A partner bulletin repeats the claim that The vendor marketing alliance. A copied advisory falsely states that the vendor marketing alliance announced the emergency patch policy.",
+  "generation_mode": "deterministic_fallback",
+  "model_name": "deterministic",
+  "created_at": "2026-06-28T04:09:54.686675+00:00",
+  "latency": 0.0,
+  "token_usage": {}
+}

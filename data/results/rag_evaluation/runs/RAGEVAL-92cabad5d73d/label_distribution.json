@@ -1,0 +1,64 @@
+{
+  "by_dataset": {
+    "agentdojo": {
+      "positive": 40,
+      "negative": 0
+    },
+    "alce": {
+      "positive": 0,
+      "negative": 75
+    },
+    "poisonedrag": {
+      "positive": 30,
+      "negative": 30
+    },
+    "ragtruth": {
+      "positive": 0,
+      "negative": 50
+    }
+  },
+  "by_scenario": {
+    "prompt_infection": {
+      "positive": 40,
+      "negative": 0
+    },
+    "clean": {
+      "positive": 0,
+      "negative": 85
+    },
+    "single_poison": {
+      "positive": 10,
+      "negative": 10
+    },
+    "cluster_poison": {
+      "positive": 20,
+      "negative": 10
+    },
+    "hallucination": {
+      "positive": 0,
+      "negative": 50
+    }
+  },
+  "by_method_evaluated": {
+    "dualrisk": {
+      "positive": 14,
+      "negative": 31
+    },
+    "dualrisk_cluster": {
+      "positive": 14,
+      "negative": 31
+    },
+    "dualrisk_causal": {
+      "positive": 14,
+      "negative": 31
+    },
+    "full_method": {
+      "positive": 14,
+      "negative": 31
+    }
+  },
+  "topk_chunks": {
+    "positive": 70,
+    "negative": 155
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "split_used": "validation",
+  "objective": "f1_minus_0.5_fpr",
+  "ras_threshold": 0.9,
+  "gis_threshold": 0.9,
+  "dualrisk_threshold": 0.8,
+  "cluster_threshold": 1.2,
+  "source_anomaly_lambda": 0.0,
+  "created_at": "2026-06-28T03:31:54.655988+00:00",
+  "validation_note": "validation split contains no positive chunks; selected thresholds minimize validation FPR",
+  "validation_metrics": {
+    "ras_only": {
+      "TP": 0,
+      "FP": 44,
+      "TN": 36,
+      "FN": 0,
+      "Precision": 0.0,
+      "Recall": null,
+      "F1": null,
+      "False Positive Rate": 0.55,
+      "undefined": {
+        "Precision": null,
+        "Recall": "TP+FN is zero",
+        "False Positive Rate": null
+      }
+    },
+    "gis_only": {
+      "TP": 0,
+      "FP": 36,
+      "TN": 44,
+      "FN": 0,
+      "Precision": 0.0,
+      "Recall": null,
+      "F1": null,
+      "False Positive Rate": 0.45,
+      "undefined": {
+        "Precision": null,
+        "Recall": "TP+FN is zero",
+        "False Positive Rate": null
+      }
+    },
+    "dualrisk": {
+      "TP": 0,
+      "FP": 16,
+      "TN": 64,
+      "FN": 0,
+      "Precision": 0.0,
+      "Recall": null,
+      "F1": null,
+      "False Positive Rate": 0.2,
+      "undefined": {
+        "Precision": null,
+        "Recall": "TP+FN is zero",
+        "False Positive Rate": null
+      }
+    },
+    "dualrisk_cluster": {
+      "TP": 0,
+      "FP": 16,
+      "TN": 64,
+      "FN": 0,
+      "Precision": 0.0,
+      "Recall": null,
+      "F1": null,
+      "False Positive Rate": 0.2,
+      "undefined": {
+        "Precision": null,
+        "Recall": "TP+FN is zero",
+        "False Positive Rate": null
+      }
+    }
+  }
+}

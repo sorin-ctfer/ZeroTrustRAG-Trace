@@ -1,0 +1,4 @@
+claim_id,label,member_count,cluster_dual_risk,cluster_causal_score
+claim_poorer_prognosis,clean,1,0.4168,0.3684
+claim_background,clean,4,0.3265,0.3124
+claim_better_outcomes,poison,3,0.725,0.6795
