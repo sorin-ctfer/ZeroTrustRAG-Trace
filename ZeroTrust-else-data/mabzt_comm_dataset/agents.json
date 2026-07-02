@@ -1,0 +1,816 @@
+[
+  {
+    "agent_id": "A_N_001",
+    "display_name": "rag_reader-01",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_001",
+    "private_key_ref": "demo-keyring/A_N_001",
+    "hmac_secret": "demo_hmac_secret::A_N_001::mabzt",
+    "trust_prior": 93,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_002",
+    "display_name": "forensic-02",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_002",
+    "private_key_ref": "demo-keyring/A_N_002",
+    "hmac_secret": "demo_hmac_secret::A_N_002::mabzt",
+    "trust_prior": 86,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_003",
+    "display_name": "planner-03",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_N_003",
+    "private_key_ref": "demo-keyring/A_N_003",
+    "hmac_secret": "demo_hmac_secret::A_N_003::mabzt",
+    "trust_prior": 91,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_004",
+    "display_name": "verifier-04",
+    "role": "verifier",
+    "permissions": [
+      "risk_judgment",
+      "verification",
+      "challenge_response"
+    ],
+    "public_key_id": "pk_A_N_004",
+    "private_key_ref": "demo-keyring/A_N_004",
+    "hmac_secret": "demo_hmac_secret::A_N_004::mabzt",
+    "trust_prior": 93,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_005",
+    "display_name": "comm_monitor-05",
+    "role": "comm_monitor",
+    "permissions": [
+      "transport_audit",
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_005",
+    "private_key_ref": "demo-keyring/A_N_005",
+    "hmac_secret": "demo_hmac_secret::A_N_005::mabzt",
+    "trust_prior": 87,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_006",
+    "display_name": "watcher-06",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_006",
+    "private_key_ref": "demo-keyring/A_N_006",
+    "hmac_secret": "demo_hmac_secret::A_N_006::mabzt",
+    "trust_prior": 94,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_007",
+    "display_name": "rag_reader-07",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_007",
+    "private_key_ref": "demo-keyring/A_N_007",
+    "hmac_secret": "demo_hmac_secret::A_N_007::mabzt",
+    "trust_prior": 92,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_008",
+    "display_name": "forensic-08",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_008",
+    "private_key_ref": "demo-keyring/A_N_008",
+    "hmac_secret": "demo_hmac_secret::A_N_008::mabzt",
+    "trust_prior": 96,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_009",
+    "display_name": "planner-09",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_N_009",
+    "private_key_ref": "demo-keyring/A_N_009",
+    "hmac_secret": "demo_hmac_secret::A_N_009::mabzt",
+    "trust_prior": 88,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_010",
+    "display_name": "verifier-10",
+    "role": "verifier",
+    "permissions": [
+      "risk_judgment",
+      "verification",
+      "challenge_response"
+    ],
+    "public_key_id": "pk_A_N_010",
+    "private_key_ref": "demo-keyring/A_N_010",
+    "hmac_secret": "demo_hmac_secret::A_N_010::mabzt",
+    "trust_prior": 90,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_011",
+    "display_name": "comm_monitor-11",
+    "role": "comm_monitor",
+    "permissions": [
+      "transport_audit",
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_011",
+    "private_key_ref": "demo-keyring/A_N_011",
+    "hmac_secret": "demo_hmac_secret::A_N_011::mabzt",
+    "trust_prior": 92,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_012",
+    "display_name": "watcher-12",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_012",
+    "private_key_ref": "demo-keyring/A_N_012",
+    "hmac_secret": "demo_hmac_secret::A_N_012::mabzt",
+    "trust_prior": 94,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_013",
+    "display_name": "rag_reader-13",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_013",
+    "private_key_ref": "demo-keyring/A_N_013",
+    "hmac_secret": "demo_hmac_secret::A_N_013::mabzt",
+    "trust_prior": 86,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_014",
+    "display_name": "forensic-14",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_014",
+    "private_key_ref": "demo-keyring/A_N_014",
+    "hmac_secret": "demo_hmac_secret::A_N_014::mabzt",
+    "trust_prior": 86,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_015",
+    "display_name": "planner-15",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_N_015",
+    "private_key_ref": "demo-keyring/A_N_015",
+    "hmac_secret": "demo_hmac_secret::A_N_015::mabzt",
+    "trust_prior": 89,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_016",
+    "display_name": "verifier-16",
+    "role": "verifier",
+    "permissions": [
+      "risk_judgment",
+      "verification",
+      "challenge_response"
+    ],
+    "public_key_id": "pk_A_N_016",
+    "private_key_ref": "demo-keyring/A_N_016",
+    "hmac_secret": "demo_hmac_secret::A_N_016::mabzt",
+    "trust_prior": 90,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_017",
+    "display_name": "comm_monitor-17",
+    "role": "comm_monitor",
+    "permissions": [
+      "transport_audit",
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_017",
+    "private_key_ref": "demo-keyring/A_N_017",
+    "hmac_secret": "demo_hmac_secret::A_N_017::mabzt",
+    "trust_prior": 95,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_018",
+    "display_name": "watcher-18",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_018",
+    "private_key_ref": "demo-keyring/A_N_018",
+    "hmac_secret": "demo_hmac_secret::A_N_018::mabzt",
+    "trust_prior": 88,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_019",
+    "display_name": "rag_reader-19",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_019",
+    "private_key_ref": "demo-keyring/A_N_019",
+    "hmac_secret": "demo_hmac_secret::A_N_019::mabzt",
+    "trust_prior": 94,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_020",
+    "display_name": "forensic-20",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_020",
+    "private_key_ref": "demo-keyring/A_N_020",
+    "hmac_secret": "demo_hmac_secret::A_N_020::mabzt",
+    "trust_prior": 94,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_021",
+    "display_name": "planner-21",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_N_021",
+    "private_key_ref": "demo-keyring/A_N_021",
+    "hmac_secret": "demo_hmac_secret::A_N_021::mabzt",
+    "trust_prior": 91,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_022",
+    "display_name": "verifier-22",
+    "role": "verifier",
+    "permissions": [
+      "risk_judgment",
+      "verification",
+      "challenge_response"
+    ],
+    "public_key_id": "pk_A_N_022",
+    "private_key_ref": "demo-keyring/A_N_022",
+    "hmac_secret": "demo_hmac_secret::A_N_022::mabzt",
+    "trust_prior": 93,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_023",
+    "display_name": "comm_monitor-23",
+    "role": "comm_monitor",
+    "permissions": [
+      "transport_audit",
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_023",
+    "private_key_ref": "demo-keyring/A_N_023",
+    "hmac_secret": "demo_hmac_secret::A_N_023::mabzt",
+    "trust_prior": 90,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_024",
+    "display_name": "watcher-24",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_024",
+    "private_key_ref": "demo-keyring/A_N_024",
+    "hmac_secret": "demo_hmac_secret::A_N_024::mabzt",
+    "trust_prior": 91,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_025",
+    "display_name": "rag_reader-25",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_025",
+    "private_key_ref": "demo-keyring/A_N_025",
+    "hmac_secret": "demo_hmac_secret::A_N_025::mabzt",
+    "trust_prior": 86,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_026",
+    "display_name": "forensic-26",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_026",
+    "private_key_ref": "demo-keyring/A_N_026",
+    "hmac_secret": "demo_hmac_secret::A_N_026::mabzt",
+    "trust_prior": 93,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_027",
+    "display_name": "planner-27",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_N_027",
+    "private_key_ref": "demo-keyring/A_N_027",
+    "hmac_secret": "demo_hmac_secret::A_N_027::mabzt",
+    "trust_prior": 92,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_028",
+    "display_name": "verifier-28",
+    "role": "verifier",
+    "permissions": [
+      "risk_judgment",
+      "verification",
+      "challenge_response"
+    ],
+    "public_key_id": "pk_A_N_028",
+    "private_key_ref": "demo-keyring/A_N_028",
+    "hmac_secret": "demo_hmac_secret::A_N_028::mabzt",
+    "trust_prior": 95,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_029",
+    "display_name": "comm_monitor-29",
+    "role": "comm_monitor",
+    "permissions": [
+      "transport_audit",
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_029",
+    "private_key_ref": "demo-keyring/A_N_029",
+    "hmac_secret": "demo_hmac_secret::A_N_029::mabzt",
+    "trust_prior": 87,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_030",
+    "display_name": "watcher-30",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_N_030",
+    "private_key_ref": "demo-keyring/A_N_030",
+    "hmac_secret": "demo_hmac_secret::A_N_030::mabzt",
+    "trust_prior": 89,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_031",
+    "display_name": "rag_reader-31",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_031",
+    "private_key_ref": "demo-keyring/A_N_031",
+    "hmac_secret": "demo_hmac_secret::A_N_031::mabzt",
+    "trust_prior": 86,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_N_032",
+    "display_name": "forensic-32",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_N_032",
+    "private_key_ref": "demo-keyring/A_N_032",
+    "hmac_secret": "demo_hmac_secret::A_N_032::mabzt",
+    "trust_prior": 97,
+    "attack_type": "none",
+    "description": "Synthetic none agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_001",
+    "display_name": "rag_reader-01",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_BYZ_001",
+    "private_key_ref": "demo-keyring/A_BYZ_001",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_001::mabzt",
+    "trust_prior": 48,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_002",
+    "display_name": "planner-02",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_BYZ_002",
+    "private_key_ref": "demo-keyring/A_BYZ_002",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_002::mabzt",
+    "trust_prior": 55,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_003",
+    "display_name": "rag_reader-03",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_BYZ_003",
+    "private_key_ref": "demo-keyring/A_BYZ_003",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_003::mabzt",
+    "trust_prior": 43,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_004",
+    "display_name": "planner-04",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_BYZ_004",
+    "private_key_ref": "demo-keyring/A_BYZ_004",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_004::mabzt",
+    "trust_prior": 57,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_005",
+    "display_name": "forensic-05",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_BYZ_005",
+    "private_key_ref": "demo-keyring/A_BYZ_005",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_005::mabzt",
+    "trust_prior": 49,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_006",
+    "display_name": "watcher-06",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_BYZ_006",
+    "private_key_ref": "demo-keyring/A_BYZ_006",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_006::mabzt",
+    "trust_prior": 47,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_007",
+    "display_name": "rag_reader-07",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_BYZ_007",
+    "private_key_ref": "demo-keyring/A_BYZ_007",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_007::mabzt",
+    "trust_prior": 44,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_BYZ_008",
+    "display_name": "planner-08",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_BYZ_008",
+    "private_key_ref": "demo-keyring/A_BYZ_008",
+    "hmac_secret": "demo_hmac_secret::A_BYZ_008::mabzt",
+    "trust_prior": 45,
+    "attack_type": "byzantine_agent",
+    "description": "Synthetic byzantine_agent agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_POISON_001",
+    "display_name": "rag_reader-01",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_POISON_001",
+    "private_key_ref": "demo-keyring/A_POISON_001",
+    "hmac_secret": "demo_hmac_secret::A_POISON_001::mabzt",
+    "trust_prior": 66,
+    "attack_type": "evidence_poisoning",
+    "description": "Synthetic evidence_poisoning agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_POISON_002",
+    "display_name": "rag_reader-02",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_POISON_002",
+    "private_key_ref": "demo-keyring/A_POISON_002",
+    "hmac_secret": "demo_hmac_secret::A_POISON_002::mabzt",
+    "trust_prior": 65,
+    "attack_type": "evidence_poisoning",
+    "description": "Synthetic evidence_poisoning agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_POISON_003",
+    "display_name": "forensic-03",
+    "role": "forensic",
+    "permissions": [
+      "risk_judgment",
+      "root_cause",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_POISON_003",
+    "private_key_ref": "demo-keyring/A_POISON_003",
+    "hmac_secret": "demo_hmac_secret::A_POISON_003::mabzt",
+    "trust_prior": 77,
+    "attack_type": "evidence_poisoning",
+    "description": "Synthetic evidence_poisoning agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_POISON_004",
+    "display_name": "rag_reader-04",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_POISON_004",
+    "private_key_ref": "demo-keyring/A_POISON_004",
+    "hmac_secret": "demo_hmac_secret::A_POISON_004::mabzt",
+    "trust_prior": 68,
+    "attack_type": "evidence_poisoning",
+    "description": "Synthetic evidence_poisoning agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_POISON_005",
+    "display_name": "watcher-05",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_POISON_005",
+    "private_key_ref": "demo-keyring/A_POISON_005",
+    "hmac_secret": "demo_hmac_secret::A_POISON_005::mabzt",
+    "trust_prior": 62,
+    "attack_type": "evidence_poisoning",
+    "description": "Synthetic evidence_poisoning agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_POISON_006",
+    "display_name": "planner-06",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_POISON_006",
+    "private_key_ref": "demo-keyring/A_POISON_006",
+    "hmac_secret": "demo_hmac_secret::A_POISON_006::mabzt",
+    "trust_prior": 70,
+    "attack_type": "evidence_poisoning",
+    "description": "Synthetic evidence_poisoning agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_COMM_001",
+    "display_name": "comm_monitor-01",
+    "role": "comm_monitor",
+    "permissions": [
+      "transport_audit",
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_COMM_001",
+    "private_key_ref": "demo-keyring/A_COMM_001",
+    "hmac_secret": "demo_hmac_secret::A_COMM_001::mabzt",
+    "trust_prior": 83,
+    "attack_type": "communication_tampering",
+    "description": "Synthetic communication_tampering agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_COMM_002",
+    "display_name": "rag_reader-02",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_COMM_002",
+    "private_key_ref": "demo-keyring/A_COMM_002",
+    "hmac_secret": "demo_hmac_secret::A_COMM_002::mabzt",
+    "trust_prior": 87,
+    "attack_type": "communication_tampering",
+    "description": "Synthetic communication_tampering agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_COMM_003",
+    "display_name": "comm_monitor-03",
+    "role": "comm_monitor",
+    "permissions": [
+      "transport_audit",
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_COMM_003",
+    "private_key_ref": "demo-keyring/A_COMM_003",
+    "hmac_secret": "demo_hmac_secret::A_COMM_003::mabzt",
+    "trust_prior": 88,
+    "attack_type": "communication_tampering",
+    "description": "Synthetic communication_tampering agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_COMM_004",
+    "display_name": "rag_reader-04",
+    "role": "rag_reader",
+    "permissions": [
+      "risk_judgment",
+      "evidence_summary"
+    ],
+    "public_key_id": "pk_A_COMM_004",
+    "private_key_ref": "demo-keyring/A_COMM_004",
+    "hmac_secret": "demo_hmac_secret::A_COMM_004::mabzt",
+    "trust_prior": 84,
+    "attack_type": "communication_tampering",
+    "description": "Synthetic communication_tampering agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_WATCH_001",
+    "display_name": "watcher-01",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_WATCH_001",
+    "private_key_ref": "demo-keyring/A_WATCH_001",
+    "hmac_secret": "demo_hmac_secret::A_WATCH_001::mabzt",
+    "trust_prior": 76,
+    "attack_type": "noisy_watch",
+    "description": "Synthetic noisy_watch agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_WATCH_002",
+    "display_name": "planner-02",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_WATCH_002",
+    "private_key_ref": "demo-keyring/A_WATCH_002",
+    "hmac_secret": "demo_hmac_secret::A_WATCH_002::mabzt",
+    "trust_prior": 69,
+    "attack_type": "noisy_watch",
+    "description": "Synthetic noisy_watch agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_WATCH_003",
+    "display_name": "watcher-03",
+    "role": "watcher",
+    "permissions": [
+      "risk_judgment"
+    ],
+    "public_key_id": "pk_A_WATCH_003",
+    "private_key_ref": "demo-keyring/A_WATCH_003",
+    "hmac_secret": "demo_hmac_secret::A_WATCH_003::mabzt",
+    "trust_prior": 80,
+    "attack_type": "noisy_watch",
+    "description": "Synthetic noisy_watch agent for zero-trust multi-agent communication experiments."
+  },
+  {
+    "agent_id": "A_WATCH_004",
+    "display_name": "planner-04",
+    "role": "planner",
+    "permissions": [
+      "risk_judgment",
+      "action_recommendation"
+    ],
+    "public_key_id": "pk_A_WATCH_004",
+    "private_key_ref": "demo-keyring/A_WATCH_004",
+    "hmac_secret": "demo_hmac_secret::A_WATCH_004::mabzt",
+    "trust_prior": 78,
+    "attack_type": "noisy_watch",
+    "description": "Synthetic noisy_watch agent for zero-trust multi-agent communication experiments."
+  }
+]

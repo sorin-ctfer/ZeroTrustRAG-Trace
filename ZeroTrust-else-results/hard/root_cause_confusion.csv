@@ -1,0 +1,10 @@
+﻿ground_truth,predicted_root_cause,count
+byzantine_agent,none,12
+communication_tampering,communication_tampering,1
+communication_tampering,none,3
+evidence_poisoning,evidence_poisoning,8
+noisy_watch,none,6
+none,none,30
+stealthy_collusion,none,18
+strategic_attack,byzantine_agent,4
+strategic_attack,none,8

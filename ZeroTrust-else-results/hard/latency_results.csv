@@ -1,0 +1,6 @@
+﻿stage,total_ms,count,avg_ms
+claim_package_generation,77.897,4890,0.01593
+zero_trust_validation,106.819,4890,0.021844
+bss_risk_scoring,35.496,90,0.394394
+weighted_consensus,34.806,1167,0.029826
+graph_build,62.533,47656,0.001312

@@ -1,0 +1,189 @@
+{
+  "dataset": {
+    "agents": 90,
+    "tasks": 300,
+    "evidence": 1881,
+    "comm_events": 4890,
+    "claims": 4890,
+    "tool_calls": 4890,
+    "challenges": 300,
+    "consensus_groups": 1180,
+    "scenario_byzantine": 600,
+    "scenario_clean": 1202,
+    "scenario_communication_tampering": 98,
+    "scenario_evidence_poisoning": 600,
+    "scenario_noisy_watch": 300,
+    "scenario_stealthy_collusion": 1890,
+    "scenario_strategic_attack": 200,
+    "fail_I_perm": 415,
+    "validation_passed": 4475,
+    "validation_failed": 415
+  },
+  "validation_pass_rate": 0.915133,
+  "risk_top5": [
+    {
+      "agent_id": "A_COMM_002",
+      "role": "rag_reader",
+      "ground_truth": "communication_tampering",
+      "H": 0.36,
+      "R": 0.0,
+      "P": 0.0,
+      "S": 0.0,
+      "D": 0.36,
+      "F": 0.0,
+      "O": 0.12,
+      "M": 0.0,
+      "bss": 0.1284,
+      "status": "normal",
+      "root_cause": "communication_tampering",
+      "sample_count": 75
+    },
+    {
+      "agent_id": "A_POISON_001",
+      "role": "rag_reader",
+      "ground_truth": "evidence_poisoning",
+      "H": 0.0,
+      "R": 0.0,
+      "P": 0.56701,
+      "S": 0.0,
+      "D": 0.010309,
+      "F": 0.0,
+      "O": 0.010309,
+      "M": 0.0,
+      "bss": 0.119237,
+      "status": "normal",
+      "root_cause": "evidence_poisoning",
+      "sample_count": 97
+    },
+    {
+      "agent_id": "A_POISON_002",
+      "role": "rag_reader",
+      "ground_truth": "evidence_poisoning",
+      "H": 0.0,
+      "R": 0.0,
+      "P": 0.556701,
+      "S": 0.0,
+      "D": 0.010309,
+      "F": 0.0,
+      "O": 0.010309,
+      "M": 0.0,
+      "bss": 0.116854,
+      "status": "normal",
+      "root_cause": "evidence_poisoning",
+      "sample_count": 97
+    },
+    {
+      "agent_id": "A_COMM_001",
+      "role": "comm_monitor",
+      "ground_truth": "communication_tampering",
+      "H": 0.333333,
+      "R": 0.0,
+      "P": 0.0,
+      "S": 0.0,
+      "D": 0.333333,
+      "F": 0.0,
+      "O": 0.053333,
+      "M": 0.0,
+      "bss": 0.114267,
+      "status": "normal",
+      "root_cause": "none",
+      "sample_count": 75
+    },
+    {
+      "agent_id": "A_COMM_003",
+      "role": "comm_monitor",
+      "ground_truth": "communication_tampering",
+      "H": 0.32,
+      "R": 0.0,
+      "P": 0.0,
+      "S": 0.0,
+      "D": 0.28,
+      "F": 0.0,
+      "O": 0.133333,
+      "M": 0.0,
+      "bss": 0.110267,
+      "status": "normal",
+      "root_cause": "none",
+      "sample_count": 75
+    }
+  ],
+  "baseline": [
+    {
+      "method": "unprotected_direct_trust",
+      "tasks": 300,
+      "accuracy": 0.343333,
+      "false_block_rate": 0.955556,
+      "missed_threat_rate": 0.208333,
+      "attack_success_rate": 0.656667
+    },
+    {
+      "method": "majority_vote",
+      "tasks": 300,
+      "accuracy": 0.306667,
+      "false_block_rate": 0.688889,
+      "missed_threat_rate": 0.7,
+      "attack_success_rate": 0.693333
+    },
+    {
+      "method": "single_verifier_agent",
+      "tasks": 300,
+      "accuracy": 0.6,
+      "false_block_rate": 0.0,
+      "missed_threat_rate": 1.0,
+      "attack_success_rate": 0.4
+    },
+    {
+      "method": "zero_trust_weighted_consensus",
+      "tasks": 300,
+      "accuracy": 0.983333,
+      "false_block_rate": 0.011111,
+      "missed_threat_rate": 0.025,
+      "attack_success_rate": 0.016667
+    }
+  ],
+  "latency": [
+    {
+      "stage": "claim_package_generation",
+      "total_ms": 77.897,
+      "count": 4890,
+      "avg_ms": 0.01593
+    },
+    {
+      "stage": "zero_trust_validation",
+      "total_ms": 106.819,
+      "count": 4890,
+      "avg_ms": 0.021844
+    },
+    {
+      "stage": "bss_risk_scoring",
+      "total_ms": 35.496,
+      "count": 90,
+      "avg_ms": 0.394394
+    },
+    {
+      "stage": "weighted_consensus",
+      "total_ms": 34.806,
+      "count": 1167,
+      "avg_ms": 0.029826
+    },
+    {
+      "stage": "graph_build",
+      "total_ms": 62.533,
+      "count": 47656,
+      "avg_ms": 0.001312
+    }
+  ],
+  "files": {
+    "packages": "实验结果\\hard\\claim_packages.json",
+    "validation": "实验结果\\hard\\validation_results.csv",
+    "risk": "实验结果\\hard\\risk_scores.csv",
+    "consensus": "实验结果\\hard\\consensus_results.csv",
+    "graph": "实验结果\\hard\\graph_snapshot.json",
+    "neo4j_cypher": "实验结果\\hard\\neo4j_import.cypher",
+    "report": "实验结果\\hard\\agent_demo_report.md",
+    "validation_summary": "实验结果\\hard\\validation_summary.csv",
+    "root_cause_confusion": "实验结果\\hard\\root_cause_confusion.csv",
+    "risk_detection_summary": "实验结果\\hard\\risk_detection_summary.csv",
+    "consensus_decision_summary": "实验结果\\hard\\consensus_decision_summary.csv"
+  }
+}

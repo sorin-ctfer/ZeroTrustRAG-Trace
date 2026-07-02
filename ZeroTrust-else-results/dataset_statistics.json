@@ -1,0 +1,23 @@
+{
+  "agents": 54,
+  "tasks": 120,
+  "evidence": 480,
+  "comm_events": 1200,
+  "claims": 1200,
+  "tool_calls": 1200,
+  "challenges": 120,
+  "consensus_groups": 480,
+  "scenario_byzantine": 240,
+  "scenario_clean": 480,
+  "scenario_communication_tampering": 120,
+  "scenario_evidence_poisoning": 240,
+  "scenario_noisy_watch": 120,
+  "fail_I_ev": 120,
+  "fail_I_sig": 117,
+  "fail_I_tool": 54,
+  "fail_I_schema": 7,
+  "fail_I_nonce": 10,
+  "fail_I_time": 5,
+  "validation_passed": 967,
+  "validation_failed": 233
+}

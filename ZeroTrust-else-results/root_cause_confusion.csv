@@ -1,0 +1,7 @@
+﻿ground_truth,predicted_root_cause,count
+byzantine_agent,byzantine_agent,6
+byzantine_agent,none,2
+communication_tampering,communication_tampering,4
+evidence_poisoning,evidence_poisoning,6
+noisy_watch,none,4
+none,none,32

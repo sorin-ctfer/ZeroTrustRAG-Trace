@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>多 Agent 动态发包与声明图谱验收台</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/echarts.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="kicker">Dynamic Agent Packet Simulation</div>
+      <h1>多 Agent 动态发包、声明包中继与拜占庭分数验收台</h1>
+      <p>默认数据集进入页面后自动入库；点击“开始发包”后逐条生成通信、网关声明包、声明图谱、冲突与 BSS。</p>
+    </div>
+    <div class="actions">
+      <select id="dsSelect" style="padding:6px 10px;border-radius:6px;border:1px solid #ccc;font-size:14px;margin-right:8px;">
+        <option value="easy">Easy（明显攻击）</option>
+        <option value="hard">Hard（隐蔽攻击）</option>
+      </select>
+      <button id="btnReset">重新加载默认数据集</button>
+      <button id="btnStart" class="dark">开始发包</button>
+      <button id="btnPause">暂停</button>
+      <button id="btnRunAll">快速跑完整个数据集</button>
+    </div>
+  </header>
+
+  <section class="summary">
+    <div class="stat"><b id="stNodes">0</b><span>节点入库</span></div>
+    <div class="stat"><b id="stProcessed">0</b><span>已发包</span></div>
+    <div class="stat"><b id="stClaims">0</b><span>动态声明包</span></div>
+    <div class="stat"><b id="stConflicts">0</b><span>动态冲突</span></div>
+    <div class="stat wide"><b id="stProgress">0%</b><span>数据集进度</span><div class="bar"><i id="progressBar"></i></div></div>
+  </section>
+
+  <main class="layout">
+    <section class="panel large">
+      <div class="panel-title">
+        <h2>Agent 离散通信图 / 网关中继动态发包</h2>
+        <span class="hint">点击节点查看实时 BSS；发包线条为当前批次通信路径：Agent → 网关 → 中继器 → 接收方。</span>
+      </div>
+      <div id="commChart" class="chart tall"></div>
+    </section>
+
+    <aside class="panel side">
+      <h2>实时节点状态</h2>
+      <pre id="nodeDetail" class="detail">点击左侧节点查看实时 H/R/P/S/D/F/O/M 与 BSS。</pre>
+      <h2>最新声明包</h2>
+      <pre id="claimDetail" class="detail small">点击声明图中的 Claim 节点，或等待发包后自动展示。</pre>
+    </aside>
+
+    <section class="panel large">
+      <div class="panel-title">
+        <h2>中继器构建的声明图谱</h2>
+        <span class="hint">Claim、Evidence、Tool、ClaimGroup 在发包过程中动态加入；红色虚线表示冲突声明组。</span>
+      </div>
+      <div id="claimChart" class="chart tall"></div>
+    </section>
+
+    <aside class="panel side">
+      <h2>动态冲突流</h2>
+      <div id="conflictList" class="feed empty">暂无冲突</div>
+      <h2>事件流</h2>
+      <div id="eventFeed" class="feed"></div>
+    </aside>
+
+    <section class="panel full">
+      <div class="panel-title">
+        <h2>跑完后生成的实验图表</h2>
+        <span class="hint">数据集处理完成后自动生成，也可中途查看当前累计结果。</span>
+      </div>
+      <div class="charts-grid">
+        <div id="statusPie" class="chart mini"></div>
+        <div id="validationBar" class="chart mini"></div>
+        <div id="riskBar" class="chart mini"></div>
+        <div id="conflictLine" class="chart mini"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    SQLite 动态库：<code>实验结果/dynamic_runtime.db</code>；动态导出：<code>dynamic_nodes.csv</code>、<code>dynamic_claims.csv</code>、<code>dynamic_conflicts.csv</code>、<code>dynamic_final_charts.json</code>
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

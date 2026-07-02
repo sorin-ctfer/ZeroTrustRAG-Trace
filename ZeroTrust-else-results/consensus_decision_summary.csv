@@ -1,0 +1,11 @@
+﻿group_kind,label,decision,count,avg_score,avg_ess,avg_q_bar
+action,benign,accepted,72,0.926324,0.87378,0.890637
+action,benign,rejected,10,0.081606,0.7329,0.35164
+action,malicious,accepted,47,0.920689,0.875695,0.888036
+action,malicious,rejected,32,0.096457,0.745713,0.362027
+risk,benign,accepted,39,0.918736,0.870507,0.891876
+risk,benign,challenged,33,0.663292,0.788074,0.802246
+risk,benign,rejected,48,0.163942,0.614117,0.557783
+risk,malicious,accepted,26,0.922308,0.877538,0.887831
+risk,malicious,challenged,22,0.643644,0.782143,0.801418
+risk,malicious,rejected,72,0.163123,0.627562,0.557931

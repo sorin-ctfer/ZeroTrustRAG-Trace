@@ -1,0 +1,34 @@
+[
+  {
+    "method": "unprotected_direct_trust",
+    "tasks": 300,
+    "accuracy": 0.343333,
+    "false_block_rate": 0.955556,
+    "missed_threat_rate": 0.208333,
+    "attack_success_rate": 0.656667
+  },
+  {
+    "method": "majority_vote",
+    "tasks": 300,
+    "accuracy": 0.306667,
+    "false_block_rate": 0.688889,
+    "missed_threat_rate": 0.7,
+    "attack_success_rate": 0.693333
+  },
+  {
+    "method": "single_verifier_agent",
+    "tasks": 300,
+    "accuracy": 0.6,
+    "false_block_rate": 0.0,
+    "missed_threat_rate": 1.0,
+    "attack_success_rate": 0.4
+  },
+  {
+    "method": "zero_trust_weighted_consensus",
+    "tasks": 300,
+    "accuracy": 0.983333,
+    "false_block_rate": 0.011111,
+    "missed_threat_rate": 0.025,
+    "attack_success_rate": 0.016667
+  }
+]

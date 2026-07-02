@@ -1,0 +1,22 @@
+@echo off
+setlocal EnableExtensions
+set "ROOT=%~dp0"
+if "%ROOT:~-1%"=="\" set "ROOT=%ROOT:~0,-1%"
+set "JAVA_HOME=%ROOT%\runtime\java21"
+set "NEO4J_HOME=%ROOT%\runtime\neo4j"
+set "PYTHONHOME=%ROOT%\runtime\python312"
+set "PYTHONPATH=%ROOT%\app;%ROOT%\runtime\python_site"
+set "PATH=%JAVA_HOME%\bin;%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%"
+set "HOST=0.0.0.0"
+set "PORT=5000"
+set "FLASK_DEBUG=0"
+set "NEO4J_USER=neo4j"
+set "NEO4J_PASSWORD=Lzj.123456"
+set "NEO4J_URI=bolt://127.0.0.1:7687"
+set "MABZT_DATASET_DIR=%ROOT%\data\mabzt_comm_dataset"
+set "MABZT_RESULTS_DIR=%ROOT%\results"
+set "MABZT_OTHER_DIR=%ROOT%\docs"
+set "MABZT_SQLITE_PATH=%ROOT%\results\runtime.db"
+if not exist "%ROOT%\logs" mkdir "%ROOT%\logs"
+cd /d "%ROOT%\app"
+"%PYTHONHOME%\python.exe" -m agent_demo_app.app >> "%ROOT%\logs\flask.log" 2>&1

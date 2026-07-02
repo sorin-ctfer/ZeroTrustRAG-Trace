@@ -1,0 +1,24 @@
+{
+  "dataset_id": "MABZT-Comm-2026-synthetic-v1",
+  "schema_version": "mabzt-claim-v1",
+  "seed": 20260628,
+  "description": "Synthetic multi-agent communication dataset (EASY — naive attackers).",
+  "scale": {
+    "agents": 54,
+    "tasks": 120,
+    "comm_events": 1200,
+    "claims": 1200,
+    "evidence": 480,
+    "tool_calls": 1200,
+    "consensus_groups": 480,
+    "challenges": 120
+  },
+  "attack_families": [
+    "none",
+    "evidence_poisoning",
+    "byzantine_agent",
+    "communication_tampering",
+    "noisy_watch"
+  ],
+  "generated_at": "2026-07-01T20:58:52+08:00"
+}

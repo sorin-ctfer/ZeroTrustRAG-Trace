@@ -1,0 +1,8 @@
+﻿ground_truth,agent_count,avg_bss,restricted_or_isolated,normal_or_watch
+byzantine_agent,12,0.0,0,12
+communication_tampering,4,0.114567,0,4
+evidence_poisoning,8,0.102447,0,8
+noisy_watch,6,0.0,0,6
+none,30,0.0,0,30
+stealthy_collusion,18,0.011284,0,18
+strategic_attack,12,0.022,0,12
