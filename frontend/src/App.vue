@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import {
+  Check,
   Coin,
   DataAnalysis,
   Document,
@@ -60,8 +61,12 @@ const currentTitle = computed(() => {
   <el-container class="app-shell" :class="{ 'is-collapsed': collapsed }">
     <el-aside :width="collapsed ? '72px' : '252px'" class="sidebar">
       <div class="sidebar-head">
-        <el-button text :icon="collapsed ? MenuIcon : Fold" @click="collapsed = !collapsed" />
-        <span v-if="!collapsed">系统菜单</span>
+        <div class="brand-mark">智</div>
+        <div v-if="!collapsed" class="brand-copy">
+          <strong>智源净域</strong>
+          <span>Zero Trust RAG Lab</span>
+        </div>
+        <el-button text class="sidebar-toggle" :icon="collapsed ? MenuIcon : Fold" @click="collapsed = !collapsed" />
       </div>
 
       <el-menu :default-active="route.path" router class="nav-menu" :collapse="collapsed">
@@ -83,14 +88,19 @@ const currentTitle = computed(() => {
       <el-header class="topbar">
         <div class="topbar-left">
           <el-button text class="mobile-menu" :icon="collapsed ? MenuIcon : Fold" @click="collapsed = !collapsed" />
-          <el-breadcrumb separator="/">
-            <el-breadcrumb-item>工作台</el-breadcrumb-item>
-            <el-breadcrumb-item>{{ currentTitle }}</el-breadcrumb-item>
-          </el-breadcrumb>
-          <strong>{{ currentTitle }}</strong>
+          <div>
+            <el-breadcrumb separator="/">
+              <el-breadcrumb-item>可信工作台</el-breadcrumb-item>
+              <el-breadcrumb-item>{{ currentTitle }}</el-breadcrumb-item>
+            </el-breadcrumb>
+            <strong>{{ currentTitle }}</strong>
+          </div>
         </div>
         <div class="topbar-actions">
-          <el-tag type="success" effect="plain">服务正常</el-tag>
+          <el-tag type="success" effect="light">
+            <el-icon><Check /></el-icon>
+            服务正常
+          </el-tag>
         </div>
       </el-header>
       <el-main class="main-content"><router-view /></el-main>
