@@ -54,6 +54,15 @@ def test_safe_rag_conversion_keeps_non_mortgage_targets_dataset_specific(tmp_pat
     assert MORTGAGE_TRUSTED_CHUNK not in rows[0]["clean_chunks"]
 
 
+def test_public_sources_include_local_converted_rag_datasets() -> None:
+    sources = {item["key"]: item for item in PublicDatasetIngestionService().sources()}
+
+    for key in {"poisonedrag", "ragtruth", "alce", "agentdojo_prompt_infection"}:
+        assert key in sources
+        assert sources[key]["local_only"] is True
+        assert sources[key]["converted_path"].startswith("data/public_datasets/converted/")
+
+
 def test_training_model_metrics_are_computed(tmp_path: Path) -> None:
     service = RagDetectorTrainingService(tmp_path / "datasets.json", tmp_path / "artifacts")
     rows = [

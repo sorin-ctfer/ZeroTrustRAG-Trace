@@ -45,6 +45,7 @@ class PublicDatasetSource:
     converted_path: Path
     default_limit: int
     description: str
+    local_only: bool = False
 
 
 SOURCES: dict[str, PublicDatasetSource] = {
@@ -65,6 +66,46 @@ SOURCES: dict[str, PublicDatasetSource] = {
         converted_path=CONVERTED_DIR / "rgb_zh_fact.jsonl",
         default_limit=120,
         description="Chinese factual-conflict subset from RGB RAG robustness benchmark.",
+    ),
+    "poisonedrag": PublicDatasetSource(
+        key="poisonedrag",
+        name="PoisonedRAG",
+        url="https://github.com/sleeepeer/PoisonedRAG",
+        raw_path=PROJECT_ROOT / "data" / "raw" / "poisonedrag",
+        converted_path=CONVERTED_DIR / "poisonedrag.jsonl",
+        default_limit=120,
+        description="Local converted PoisonedRAG knowledge-poisoning samples.",
+        local_only=True,
+    ),
+    "ragtruth": PublicDatasetSource(
+        key="ragtruth",
+        name="RAGTruth",
+        url="https://github.com/ParticleMedia/RAGTruth",
+        raw_path=PROJECT_ROOT / "data" / "raw" / "ragtruth",
+        converted_path=CONVERTED_DIR / "ragtruth.jsonl",
+        default_limit=120,
+        description="Local converted RAGTruth hallucination and unsupported-answer samples.",
+        local_only=True,
+    ),
+    "alce": PublicDatasetSource(
+        key="alce",
+        name="ALCE",
+        url="https://github.com/princeton-nlp/ALCE",
+        raw_path=PROJECT_ROOT / "data" / "raw" / "alce",
+        converted_path=CONVERTED_DIR / "alce.jsonl",
+        default_limit=120,
+        description="Local ALCE citation-required clean RAG evidence samples.",
+        local_only=True,
+    ),
+    "agentdojo_prompt_infection": PublicDatasetSource(
+        key="agentdojo_prompt_infection",
+        name="AgentDojo Prompt Infection",
+        url="https://github.com/ethz-spylab/agentdojo",
+        raw_path=PROJECT_ROOT / "data" / "raw" / "agentdojo",
+        converted_path=CONVERTED_DIR / "agentdojo.jsonl",
+        default_limit=120,
+        description="Local converted AgentDojo prompt-infection attack scenarios.",
+        local_only=True,
     ),
 }
 
@@ -90,7 +131,13 @@ def _list_texts(value: Any) -> list[str]:
         value = [value]
     if not isinstance(value, list):
         return []
-    return [text for item in value if (text := _compact_text(item))]
+    texts: list[str] = []
+    for item in value:
+        if isinstance(item, dict):
+            item = item.get("text") or item.get("content") or item.get("passage") or item.get("source")
+        if text := _compact_text(item):
+            texts.append(text)
+    return texts
 
 
 def _is_mortgage_policy_query(query: str) -> bool:
@@ -110,6 +157,7 @@ class PublicDatasetIngestionService:
                 "converted": item.converted_path.exists(),
                 "default_limit": item.default_limit,
                 "description": item.description,
+                "local_only": item.local_only,
             }
             for item in SOURCES.values()
         ]
@@ -122,6 +170,19 @@ class PublicDatasetIngestionService:
         selected = self._select_sources(source_keys)
         results = []
         for source in selected:
+            if source.local_only:
+                if source.key == "alce" and not source.converted_path.exists():
+                    self._create_alce_converted(source.default_limit)
+                if not source.converted_path.exists():
+                    raise FileNotFoundError(f"Local converted dataset not found: {source.converted_path}")
+                results.append({
+                    "key": source.key,
+                    "raw_path": str(source.raw_path.relative_to(PROJECT_ROOT)) if source.raw_path.exists() else str(source.raw_path),
+                    "converted_path": str(source.converted_path.relative_to(PROJECT_ROOT)),
+                    "bytes": source.converted_path.stat().st_size,
+                    "local_only": True,
+                })
+                continue
             source.raw_path.parent.mkdir(parents=True, exist_ok=True)
             if force or not source.raw_path.exists():
                 urllib.request.urlretrieve(source.url, source.raw_path)
@@ -134,6 +195,21 @@ class PublicDatasetIngestionService:
 
     def convert(self, source_key: str, limit: int | None = None) -> dict[str, Any]:
         source = SOURCES[source_key]
+        if source.local_only:
+            if source.key == "alce" and not source.converted_path.exists():
+                self._create_alce_converted(limit or source.default_limit)
+            if not source.converted_path.exists():
+                raise FileNotFoundError(f"Local converted dataset not found: {source.converted_path}")
+            rows = self._read_jsonl_rows(source.converted_path, limit or source.default_limit)
+            if not rows:
+                raise ValueError(f"No rows converted from {source_key}")
+            return {
+                "key": source.key,
+                "converted_path": str(source.converted_path.relative_to(PROJECT_ROOT)),
+                "row_count": len(rows),
+                "sample": rows[0],
+                "local_only": True,
+            }
         if not source.raw_path.exists():
             self.download([source_key])
         limit = limit or source.default_limit
@@ -162,7 +238,7 @@ class PublicDatasetIngestionService:
     def import_training(self, source_key: str, limit: int | None = None) -> dict[str, Any]:
         converted = self.convert(source_key, limit)
         source = SOURCES[source_key]
-        raw_jsonl = source.converted_path.read_text(encoding="utf-8")
+        raw_jsonl = self._read_limited_jsonl_text(source.converted_path, limit or source.default_limit)
         dataset = rag_detector_training_service.import_jsonl(raw_jsonl, source.name)
         return {"converted": converted, "dataset": dataset}
 
@@ -173,7 +249,7 @@ class PublicDatasetIngestionService:
         converted = self.convert(source_key, limit)
         source = SOURCES[source_key]
         chunks = external_knowledge_service.import_dataset_clean(
-            source.converted_path.read_text(encoding="utf-8"),
+            self._read_limited_jsonl_text(source.converted_path, limit or source.default_limit),
             source.name,
         )
         return {"converted": converted, "created_chunks": len(chunks)}
@@ -185,6 +261,85 @@ class PublicDatasetIngestionService:
         if unknown:
             raise ValueError(f"Unknown public dataset source: {', '.join(unknown)}")
         return [SOURCES[key] for key in source_keys]
+
+    def _read_jsonl_rows(self, path: Path, limit: int | None = None) -> list[dict[str, Any]]:
+        rows: list[dict[str, Any]] = []
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            rows.append(json.loads(line))
+            if limit and len(rows) >= limit:
+                break
+        return rows
+
+    def _read_limited_jsonl_text(self, path: Path, limit: int | None = None) -> str:
+        lines: list[str] = []
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            lines.append(line)
+            if limit and len(lines) >= limit:
+                break
+        return "\n".join(lines) + ("\n" if lines else "")
+
+    def _create_alce_converted(self, limit: int) -> dict[str, Any]:
+        raw_path = PROJECT_ROOT / "data" / "raw" / "alce" / "sample.jsonl"
+        if not raw_path.exists():
+            processed_rows = []
+            for split in ("train", "validation", "test"):
+                processed_path = PROJECT_ROOT / "data" / "processed" / f"{split}.jsonl"
+                if processed_path.exists():
+                    processed_rows.extend(
+                        row for row in self._read_jsonl_rows(processed_path)
+                        if str(row.get("dataset", "")).lower() == "alce"
+                    )
+            rows = [
+                {
+                    "query": row.get("query", ""),
+                    "clean_chunks": row.get("clean_contexts", []),
+                    "poison_chunks": [],
+                    "benign_error_chunks": [],
+                    "correct_answer": row.get("gold_answer", "") or "",
+                    "target_wrong_answer": "",
+                    "source_dataset": "ALCE",
+                    "source_category": row.get("task_type", "clean"),
+                    "sample_id": row.get("sample_id", ""),
+                }
+                for row in processed_rows[:limit]
+                if row.get("query") and row.get("clean_contexts")
+            ]
+        else:
+            rows = []
+            for item in self._read_jsonl_rows(raw_path, limit):
+                query = _compact_text(item.get("question") or item.get("query"))
+                clean_chunks = _list_texts(item.get("docs") or item.get("retrieved_docs") or item.get("passages") or item.get("contexts"))
+                answers = item.get("answers") if isinstance(item.get("answers"), list) else [item.get("answer")]
+                correct_answer = "; ".join(_compact_text(answer, 300) for answer in answers if _compact_text(answer, 300))
+                if query and clean_chunks:
+                    rows.append({
+                        "query": query,
+                        "clean_chunks": clean_chunks,
+                        "poison_chunks": [],
+                        "benign_error_chunks": [],
+                        "correct_answer": correct_answer,
+                        "target_wrong_answer": "",
+                        "source_dataset": "ALCE",
+                        "source_category": item.get("subset") or item.get("dataset") or "clean",
+                        "sample_id": item.get("id") or item.get("sample_id") or "",
+                    })
+        if not rows:
+            raise ValueError("No ALCE rows available for conversion")
+        SOURCES["alce"].converted_path.parent.mkdir(parents=True, exist_ok=True)
+        SOURCES["alce"].converted_path.write_text(
+            "\n".join(json.dumps(row, ensure_ascii=False) for row in rows) + "\n",
+            encoding="utf-8",
+        )
+        return {
+            "key": "alce",
+            "converted_path": str(SOURCES["alce"].converted_path.relative_to(PROJECT_ROOT)),
+            "row_count": len(rows),
+            "sample": rows[0],
+        }
 
     def _convert_safe_rag(self, path: Path, limit: int) -> list[dict[str, Any]]:
         data = _read_json_or_jsonl(path)
