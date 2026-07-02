@@ -1,0 +1,5 @@
+﻿method,tasks,accuracy,false_block_rate,missed_threat_rate,attack_success_rate
+unprotected_direct_trust,120,0.333333,1.0,0.166667,0.666667
+majority_vote,120,0.0,1.0,1.0,1.0
+single_verifier_agent,120,1.0,0.0,0.0,0.0
+zero_trust_weighted_consensus,120,1.0,0.0,0.0,0.0

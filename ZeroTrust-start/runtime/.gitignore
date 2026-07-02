@@ -1,0 +1,14 @@
+﻿# Runtime binaries are intentionally not committed.
+# Keep only placeholder files for these local runtime directories:
+#   java21/
+#   neo4j/
+#   python312/
+
+java21/*
+!java21/.gitkeep
+
+neo4j/*
+!neo4j/.gitkeep
+
+python312/*
+!python312/.gitkeep

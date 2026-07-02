@@ -1,0 +1,26 @@
+{
+  "dataset_id": "MABZT-Comm-2026-hard-v1",
+  "schema_version": "mabzt-claim-v1",
+  "seed": 20260715,
+  "description": "Synthetic multi-agent communication dataset (HARD — stealthy, validation-aware attackers at scale).",
+  "scale": {
+    "agents": 90,
+    "tasks": 300,
+    "comm_events": 4890,
+    "claims": 4890,
+    "evidence": 1881,
+    "tool_calls": 4890,
+    "consensus_groups": 1180,
+    "challenges": 300
+  },
+  "attack_families": [
+    "none",
+    "evidence_poisoning",
+    "byzantine_agent",
+    "communication_tampering",
+    "noisy_watch",
+    "stealthy_collusion",
+    "strategic_attack"
+  ],
+  "generated_at": "2026-07-01T21:06:46+08:00"
+}

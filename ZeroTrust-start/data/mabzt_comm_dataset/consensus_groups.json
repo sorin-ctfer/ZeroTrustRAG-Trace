@@ -1,0 +1,5282 @@
+[
+  {
+    "claim_group_id": "G_T_0001_risk_benign",
+    "task_id": "T_0001",
+    "subject": "10.3.7.23",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0001_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0001_action_benign",
+    "task_id": "T_0001",
+    "subject": "10.3.7.23",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0001_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0001_risk_malicious",
+    "task_id": "T_0001",
+    "subject": "10.3.7.23",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0001_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0001_action_malicious",
+    "task_id": "T_0001",
+    "subject": "10.3.7.23",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0001_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0002_risk_malicious",
+    "task_id": "T_0002",
+    "subject": "10.6.14.36",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0002_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0002_action_malicious",
+    "task_id": "T_0002",
+    "subject": "10.6.14.36",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0002_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0002_risk_benign",
+    "task_id": "T_0002",
+    "subject": "10.6.14.36",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0002_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0002_action_benign",
+    "task_id": "T_0002",
+    "subject": "10.6.14.36",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0002_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0003_risk_benign",
+    "task_id": "T_0003",
+    "subject": "10.9.21.49",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0003_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0003_action_benign",
+    "task_id": "T_0003",
+    "subject": "10.9.21.49",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0003_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0003_risk_malicious",
+    "task_id": "T_0003",
+    "subject": "10.9.21.49",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0003_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0003_action_malicious",
+    "task_id": "T_0003",
+    "subject": "10.9.21.49",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0003_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0004_risk_benign",
+    "task_id": "T_0004",
+    "subject": "10.12.28.62",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0004_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0004_action_benign",
+    "task_id": "T_0004",
+    "subject": "10.12.28.62",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0004_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0004_risk_malicious",
+    "task_id": "T_0004",
+    "subject": "10.12.28.62",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0004_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0004_action_malicious",
+    "task_id": "T_0004",
+    "subject": "10.12.28.62",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0004_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0005_risk_malicious",
+    "task_id": "T_0005",
+    "subject": "10.15.35.75",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0005_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0005_action_malicious",
+    "task_id": "T_0005",
+    "subject": "10.15.35.75",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0005_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0005_risk_benign",
+    "task_id": "T_0005",
+    "subject": "10.15.35.75",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0005_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0005_action_benign",
+    "task_id": "T_0005",
+    "subject": "10.15.35.75",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0005_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0006_risk_benign",
+    "task_id": "T_0006",
+    "subject": "10.18.42.88",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0006_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0006_action_benign",
+    "task_id": "T_0006",
+    "subject": "10.18.42.88",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0006_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0006_risk_malicious",
+    "task_id": "T_0006",
+    "subject": "10.18.42.88",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0006_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0006_action_malicious",
+    "task_id": "T_0006",
+    "subject": "10.18.42.88",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0006_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0007_risk_malicious",
+    "task_id": "T_0007",
+    "subject": "10.21.49.101",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0007_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0007_action_malicious",
+    "task_id": "T_0007",
+    "subject": "10.21.49.101",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0007_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0007_risk_benign",
+    "task_id": "T_0007",
+    "subject": "10.21.49.101",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0007_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0007_action_benign",
+    "task_id": "T_0007",
+    "subject": "10.21.49.101",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0007_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0008_risk_benign",
+    "task_id": "T_0008",
+    "subject": "10.24.56.114",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0008_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0008_action_benign",
+    "task_id": "T_0008",
+    "subject": "10.24.56.114",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0008_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0008_risk_malicious",
+    "task_id": "T_0008",
+    "subject": "10.24.56.114",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0008_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0008_action_malicious",
+    "task_id": "T_0008",
+    "subject": "10.24.56.114",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0008_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0009_risk_benign",
+    "task_id": "T_0009",
+    "subject": "10.27.63.127",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0009_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0009_action_benign",
+    "task_id": "T_0009",
+    "subject": "10.27.63.127",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0009_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0009_risk_malicious",
+    "task_id": "T_0009",
+    "subject": "10.27.63.127",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0009_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0009_action_malicious",
+    "task_id": "T_0009",
+    "subject": "10.27.63.127",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0009_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0010_risk_malicious",
+    "task_id": "T_0010",
+    "subject": "10.30.70.140",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0010_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0010_action_malicious",
+    "task_id": "T_0010",
+    "subject": "10.30.70.140",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0010_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0010_risk_benign",
+    "task_id": "T_0010",
+    "subject": "10.30.70.140",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0010_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0010_action_benign",
+    "task_id": "T_0010",
+    "subject": "10.30.70.140",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0010_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0011_risk_benign",
+    "task_id": "T_0011",
+    "subject": "10.33.77.153",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0011_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0011_action_benign",
+    "task_id": "T_0011",
+    "subject": "10.33.77.153",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0011_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0011_risk_malicious",
+    "task_id": "T_0011",
+    "subject": "10.33.77.153",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0011_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0011_action_malicious",
+    "task_id": "T_0011",
+    "subject": "10.33.77.153",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0011_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0012_risk_malicious",
+    "task_id": "T_0012",
+    "subject": "10.36.84.166",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0012_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0012_action_malicious",
+    "task_id": "T_0012",
+    "subject": "10.36.84.166",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0012_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0012_risk_benign",
+    "task_id": "T_0012",
+    "subject": "10.36.84.166",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0012_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0012_action_benign",
+    "task_id": "T_0012",
+    "subject": "10.36.84.166",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0012_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0013_risk_benign",
+    "task_id": "T_0013",
+    "subject": "10.39.91.179",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0013_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0013_action_benign",
+    "task_id": "T_0013",
+    "subject": "10.39.91.179",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0013_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0013_risk_malicious",
+    "task_id": "T_0013",
+    "subject": "10.39.91.179",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0013_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0013_action_malicious",
+    "task_id": "T_0013",
+    "subject": "10.39.91.179",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0013_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0014_risk_benign",
+    "task_id": "T_0014",
+    "subject": "10.42.98.192",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0014_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0014_action_benign",
+    "task_id": "T_0014",
+    "subject": "10.42.98.192",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0014_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0014_risk_malicious",
+    "task_id": "T_0014",
+    "subject": "10.42.98.192",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0014_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0014_action_malicious",
+    "task_id": "T_0014",
+    "subject": "10.42.98.192",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0014_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0015_risk_malicious",
+    "task_id": "T_0015",
+    "subject": "10.45.105.205",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0015_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0015_action_malicious",
+    "task_id": "T_0015",
+    "subject": "10.45.105.205",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0015_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0015_risk_benign",
+    "task_id": "T_0015",
+    "subject": "10.45.105.205",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0015_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0015_action_benign",
+    "task_id": "T_0015",
+    "subject": "10.45.105.205",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0015_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0016_risk_benign",
+    "task_id": "T_0016",
+    "subject": "10.48.112.218",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0016_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0016_action_benign",
+    "task_id": "T_0016",
+    "subject": "10.48.112.218",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0016_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0016_risk_malicious",
+    "task_id": "T_0016",
+    "subject": "10.48.112.218",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0016_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0016_action_malicious",
+    "task_id": "T_0016",
+    "subject": "10.48.112.218",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0016_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0017_risk_malicious",
+    "task_id": "T_0017",
+    "subject": "10.51.119.231",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0017_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0017_action_malicious",
+    "task_id": "T_0017",
+    "subject": "10.51.119.231",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0017_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0017_risk_benign",
+    "task_id": "T_0017",
+    "subject": "10.51.119.231",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0017_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0017_action_benign",
+    "task_id": "T_0017",
+    "subject": "10.51.119.231",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0017_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0018_risk_benign",
+    "task_id": "T_0018",
+    "subject": "10.54.126.244",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0018_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0018_action_benign",
+    "task_id": "T_0018",
+    "subject": "10.54.126.244",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0018_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0018_risk_malicious",
+    "task_id": "T_0018",
+    "subject": "10.54.126.244",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0018_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0018_action_malicious",
+    "task_id": "T_0018",
+    "subject": "10.54.126.244",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0018_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0019_risk_benign",
+    "task_id": "T_0019",
+    "subject": "10.57.133.17",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0019_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0019_action_benign",
+    "task_id": "T_0019",
+    "subject": "10.57.133.17",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0019_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0019_risk_malicious",
+    "task_id": "T_0019",
+    "subject": "10.57.133.17",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0019_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0019_action_malicious",
+    "task_id": "T_0019",
+    "subject": "10.57.133.17",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0019_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0020_risk_malicious",
+    "task_id": "T_0020",
+    "subject": "10.60.140.30",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0020_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0020_action_malicious",
+    "task_id": "T_0020",
+    "subject": "10.60.140.30",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0020_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0020_risk_benign",
+    "task_id": "T_0020",
+    "subject": "10.60.140.30",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0020_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0020_action_benign",
+    "task_id": "T_0020",
+    "subject": "10.60.140.30",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0020_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0021_risk_benign",
+    "task_id": "T_0021",
+    "subject": "10.63.147.43",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0021_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0021_action_benign",
+    "task_id": "T_0021",
+    "subject": "10.63.147.43",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0021_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0021_risk_malicious",
+    "task_id": "T_0021",
+    "subject": "10.63.147.43",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0021_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0021_action_malicious",
+    "task_id": "T_0021",
+    "subject": "10.63.147.43",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0021_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0022_risk_malicious",
+    "task_id": "T_0022",
+    "subject": "10.66.154.56",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0022_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0022_action_malicious",
+    "task_id": "T_0022",
+    "subject": "10.66.154.56",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0022_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0022_risk_benign",
+    "task_id": "T_0022",
+    "subject": "10.66.154.56",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0022_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0022_action_benign",
+    "task_id": "T_0022",
+    "subject": "10.66.154.56",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0022_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0023_risk_benign",
+    "task_id": "T_0023",
+    "subject": "10.69.161.69",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0023_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0023_action_benign",
+    "task_id": "T_0023",
+    "subject": "10.69.161.69",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0023_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0023_risk_malicious",
+    "task_id": "T_0023",
+    "subject": "10.69.161.69",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0023_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0023_action_malicious",
+    "task_id": "T_0023",
+    "subject": "10.69.161.69",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0023_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0024_risk_benign",
+    "task_id": "T_0024",
+    "subject": "10.72.168.82",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0024_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0024_action_benign",
+    "task_id": "T_0024",
+    "subject": "10.72.168.82",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0024_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0024_risk_malicious",
+    "task_id": "T_0024",
+    "subject": "10.72.168.82",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0024_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0024_action_malicious",
+    "task_id": "T_0024",
+    "subject": "10.72.168.82",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0024_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0025_risk_malicious",
+    "task_id": "T_0025",
+    "subject": "10.75.175.95",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0025_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0025_action_malicious",
+    "task_id": "T_0025",
+    "subject": "10.75.175.95",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0025_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0025_risk_benign",
+    "task_id": "T_0025",
+    "subject": "10.75.175.95",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0025_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0025_action_benign",
+    "task_id": "T_0025",
+    "subject": "10.75.175.95",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0025_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0026_risk_benign",
+    "task_id": "T_0026",
+    "subject": "10.78.182.108",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0026_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0026_action_benign",
+    "task_id": "T_0026",
+    "subject": "10.78.182.108",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0026_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0026_risk_malicious",
+    "task_id": "T_0026",
+    "subject": "10.78.182.108",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0026_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0026_action_malicious",
+    "task_id": "T_0026",
+    "subject": "10.78.182.108",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0026_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0027_risk_malicious",
+    "task_id": "T_0027",
+    "subject": "10.81.189.121",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0027_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0027_action_malicious",
+    "task_id": "T_0027",
+    "subject": "10.81.189.121",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0027_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0027_risk_benign",
+    "task_id": "T_0027",
+    "subject": "10.81.189.121",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0027_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0027_action_benign",
+    "task_id": "T_0027",
+    "subject": "10.81.189.121",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0027_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0028_risk_benign",
+    "task_id": "T_0028",
+    "subject": "10.84.196.134",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0028_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0028_action_benign",
+    "task_id": "T_0028",
+    "subject": "10.84.196.134",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0028_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0028_risk_malicious",
+    "task_id": "T_0028",
+    "subject": "10.84.196.134",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0028_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0028_action_malicious",
+    "task_id": "T_0028",
+    "subject": "10.84.196.134",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0028_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0029_risk_benign",
+    "task_id": "T_0029",
+    "subject": "10.87.203.147",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0029_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0029_action_benign",
+    "task_id": "T_0029",
+    "subject": "10.87.203.147",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0029_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0029_risk_malicious",
+    "task_id": "T_0029",
+    "subject": "10.87.203.147",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0029_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0029_action_malicious",
+    "task_id": "T_0029",
+    "subject": "10.87.203.147",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0029_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0030_risk_malicious",
+    "task_id": "T_0030",
+    "subject": "10.90.210.160",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0030_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0030_action_malicious",
+    "task_id": "T_0030",
+    "subject": "10.90.210.160",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0030_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0030_risk_benign",
+    "task_id": "T_0030",
+    "subject": "10.90.210.160",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0030_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0030_action_benign",
+    "task_id": "T_0030",
+    "subject": "10.90.210.160",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0030_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0031_risk_benign",
+    "task_id": "T_0031",
+    "subject": "10.93.217.173",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0031_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0031_action_benign",
+    "task_id": "T_0031",
+    "subject": "10.93.217.173",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0031_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0031_risk_malicious",
+    "task_id": "T_0031",
+    "subject": "10.93.217.173",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0031_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0031_action_malicious",
+    "task_id": "T_0031",
+    "subject": "10.93.217.173",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0031_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0032_risk_malicious",
+    "task_id": "T_0032",
+    "subject": "10.96.224.186",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0032_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0032_action_malicious",
+    "task_id": "T_0032",
+    "subject": "10.96.224.186",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0032_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0032_risk_benign",
+    "task_id": "T_0032",
+    "subject": "10.96.224.186",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0032_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0032_action_benign",
+    "task_id": "T_0032",
+    "subject": "10.96.224.186",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0032_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0033_risk_benign",
+    "task_id": "T_0033",
+    "subject": "10.99.231.199",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0033_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0033_action_benign",
+    "task_id": "T_0033",
+    "subject": "10.99.231.199",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0033_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0033_risk_malicious",
+    "task_id": "T_0033",
+    "subject": "10.99.231.199",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0033_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0033_action_malicious",
+    "task_id": "T_0033",
+    "subject": "10.99.231.199",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0033_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0034_risk_benign",
+    "task_id": "T_0034",
+    "subject": "10.102.238.212",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0034_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0034_action_benign",
+    "task_id": "T_0034",
+    "subject": "10.102.238.212",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0034_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0034_risk_malicious",
+    "task_id": "T_0034",
+    "subject": "10.102.238.212",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0034_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0034_action_malicious",
+    "task_id": "T_0034",
+    "subject": "10.102.238.212",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0034_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0035_risk_malicious",
+    "task_id": "T_0035",
+    "subject": "10.105.245.225",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0035_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0035_action_malicious",
+    "task_id": "T_0035",
+    "subject": "10.105.245.225",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0035_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0035_risk_benign",
+    "task_id": "T_0035",
+    "subject": "10.105.245.225",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0035_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0035_action_benign",
+    "task_id": "T_0035",
+    "subject": "10.105.245.225",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0035_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0036_risk_benign",
+    "task_id": "T_0036",
+    "subject": "10.108.2.238",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0036_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0036_action_benign",
+    "task_id": "T_0036",
+    "subject": "10.108.2.238",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0036_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0036_risk_malicious",
+    "task_id": "T_0036",
+    "subject": "10.108.2.238",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0036_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0036_action_malicious",
+    "task_id": "T_0036",
+    "subject": "10.108.2.238",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0036_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0037_risk_malicious",
+    "task_id": "T_0037",
+    "subject": "10.111.9.11",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0037_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0037_action_malicious",
+    "task_id": "T_0037",
+    "subject": "10.111.9.11",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0037_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0037_risk_benign",
+    "task_id": "T_0037",
+    "subject": "10.111.9.11",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0037_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0037_action_benign",
+    "task_id": "T_0037",
+    "subject": "10.111.9.11",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0037_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0038_risk_benign",
+    "task_id": "T_0038",
+    "subject": "10.114.16.24",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0038_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0038_action_benign",
+    "task_id": "T_0038",
+    "subject": "10.114.16.24",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0038_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0038_risk_malicious",
+    "task_id": "T_0038",
+    "subject": "10.114.16.24",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0038_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0038_action_malicious",
+    "task_id": "T_0038",
+    "subject": "10.114.16.24",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0038_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0039_risk_benign",
+    "task_id": "T_0039",
+    "subject": "10.117.23.37",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0039_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0039_action_benign",
+    "task_id": "T_0039",
+    "subject": "10.117.23.37",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0039_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0039_risk_malicious",
+    "task_id": "T_0039",
+    "subject": "10.117.23.37",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0039_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0039_action_malicious",
+    "task_id": "T_0039",
+    "subject": "10.117.23.37",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0039_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0040_risk_malicious",
+    "task_id": "T_0040",
+    "subject": "10.120.30.50",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0040_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0040_action_malicious",
+    "task_id": "T_0040",
+    "subject": "10.120.30.50",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0040_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0040_risk_benign",
+    "task_id": "T_0040",
+    "subject": "10.120.30.50",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0040_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0040_action_benign",
+    "task_id": "T_0040",
+    "subject": "10.120.30.50",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0040_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0041_risk_benign",
+    "task_id": "T_0041",
+    "subject": "10.123.37.63",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0041_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0041_action_benign",
+    "task_id": "T_0041",
+    "subject": "10.123.37.63",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0041_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0041_risk_malicious",
+    "task_id": "T_0041",
+    "subject": "10.123.37.63",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0041_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0041_action_malicious",
+    "task_id": "T_0041",
+    "subject": "10.123.37.63",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0041_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0042_risk_malicious",
+    "task_id": "T_0042",
+    "subject": "10.126.44.76",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0042_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0042_action_malicious",
+    "task_id": "T_0042",
+    "subject": "10.126.44.76",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0042_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0042_risk_benign",
+    "task_id": "T_0042",
+    "subject": "10.126.44.76",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0042_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0042_action_benign",
+    "task_id": "T_0042",
+    "subject": "10.126.44.76",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0042_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0043_risk_benign",
+    "task_id": "T_0043",
+    "subject": "10.129.51.89",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0043_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0043_action_benign",
+    "task_id": "T_0043",
+    "subject": "10.129.51.89",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0043_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0043_risk_malicious",
+    "task_id": "T_0043",
+    "subject": "10.129.51.89",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0043_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0043_action_malicious",
+    "task_id": "T_0043",
+    "subject": "10.129.51.89",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0043_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0044_risk_benign",
+    "task_id": "T_0044",
+    "subject": "10.132.58.102",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0044_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0044_action_benign",
+    "task_id": "T_0044",
+    "subject": "10.132.58.102",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0044_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0044_risk_malicious",
+    "task_id": "T_0044",
+    "subject": "10.132.58.102",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0044_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0044_action_malicious",
+    "task_id": "T_0044",
+    "subject": "10.132.58.102",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0044_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0045_risk_malicious",
+    "task_id": "T_0045",
+    "subject": "10.135.65.115",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0045_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0045_action_malicious",
+    "task_id": "T_0045",
+    "subject": "10.135.65.115",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0045_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0045_risk_benign",
+    "task_id": "T_0045",
+    "subject": "10.135.65.115",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0045_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0045_action_benign",
+    "task_id": "T_0045",
+    "subject": "10.135.65.115",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0045_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0046_risk_benign",
+    "task_id": "T_0046",
+    "subject": "10.138.72.128",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0046_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0046_action_benign",
+    "task_id": "T_0046",
+    "subject": "10.138.72.128",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0046_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0046_risk_malicious",
+    "task_id": "T_0046",
+    "subject": "10.138.72.128",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0046_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0046_action_malicious",
+    "task_id": "T_0046",
+    "subject": "10.138.72.128",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0046_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0047_risk_malicious",
+    "task_id": "T_0047",
+    "subject": "10.141.79.141",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0047_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0047_action_malicious",
+    "task_id": "T_0047",
+    "subject": "10.141.79.141",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0047_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0047_risk_benign",
+    "task_id": "T_0047",
+    "subject": "10.141.79.141",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0047_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0047_action_benign",
+    "task_id": "T_0047",
+    "subject": "10.141.79.141",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0047_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0048_risk_benign",
+    "task_id": "T_0048",
+    "subject": "10.144.86.154",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0048_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0048_action_benign",
+    "task_id": "T_0048",
+    "subject": "10.144.86.154",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0048_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0048_risk_malicious",
+    "task_id": "T_0048",
+    "subject": "10.144.86.154",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0048_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0048_action_malicious",
+    "task_id": "T_0048",
+    "subject": "10.144.86.154",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0048_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0049_risk_benign",
+    "task_id": "T_0049",
+    "subject": "10.147.93.167",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0049_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0049_action_benign",
+    "task_id": "T_0049",
+    "subject": "10.147.93.167",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0049_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0049_risk_malicious",
+    "task_id": "T_0049",
+    "subject": "10.147.93.167",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0049_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0049_action_malicious",
+    "task_id": "T_0049",
+    "subject": "10.147.93.167",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0049_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0050_risk_malicious",
+    "task_id": "T_0050",
+    "subject": "10.150.100.180",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0050_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0050_action_malicious",
+    "task_id": "T_0050",
+    "subject": "10.150.100.180",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0050_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0050_risk_benign",
+    "task_id": "T_0050",
+    "subject": "10.150.100.180",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0050_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0050_action_benign",
+    "task_id": "T_0050",
+    "subject": "10.150.100.180",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0050_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0051_risk_benign",
+    "task_id": "T_0051",
+    "subject": "10.153.107.193",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0051_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0051_action_benign",
+    "task_id": "T_0051",
+    "subject": "10.153.107.193",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0051_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0051_risk_malicious",
+    "task_id": "T_0051",
+    "subject": "10.153.107.193",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0051_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0051_action_malicious",
+    "task_id": "T_0051",
+    "subject": "10.153.107.193",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0051_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0052_risk_malicious",
+    "task_id": "T_0052",
+    "subject": "10.156.114.206",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0052_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0052_action_malicious",
+    "task_id": "T_0052",
+    "subject": "10.156.114.206",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0052_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0052_risk_benign",
+    "task_id": "T_0052",
+    "subject": "10.156.114.206",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0052_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0052_action_benign",
+    "task_id": "T_0052",
+    "subject": "10.156.114.206",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0052_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0053_risk_benign",
+    "task_id": "T_0053",
+    "subject": "10.159.121.219",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0053_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0053_action_benign",
+    "task_id": "T_0053",
+    "subject": "10.159.121.219",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0053_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0053_risk_malicious",
+    "task_id": "T_0053",
+    "subject": "10.159.121.219",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0053_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0053_action_malicious",
+    "task_id": "T_0053",
+    "subject": "10.159.121.219",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0053_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0054_risk_benign",
+    "task_id": "T_0054",
+    "subject": "10.162.128.232",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0054_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0054_action_benign",
+    "task_id": "T_0054",
+    "subject": "10.162.128.232",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0054_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0054_risk_malicious",
+    "task_id": "T_0054",
+    "subject": "10.162.128.232",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0054_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0054_action_malicious",
+    "task_id": "T_0054",
+    "subject": "10.162.128.232",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0054_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0055_risk_malicious",
+    "task_id": "T_0055",
+    "subject": "10.165.135.245",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0055_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0055_action_malicious",
+    "task_id": "T_0055",
+    "subject": "10.165.135.245",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0055_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0055_risk_benign",
+    "task_id": "T_0055",
+    "subject": "10.165.135.245",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0055_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0055_action_benign",
+    "task_id": "T_0055",
+    "subject": "10.165.135.245",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0055_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0056_risk_benign",
+    "task_id": "T_0056",
+    "subject": "10.168.142.18",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0056_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0056_action_benign",
+    "task_id": "T_0056",
+    "subject": "10.168.142.18",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0056_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0056_risk_malicious",
+    "task_id": "T_0056",
+    "subject": "10.168.142.18",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0056_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0056_action_malicious",
+    "task_id": "T_0056",
+    "subject": "10.168.142.18",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0056_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0057_risk_malicious",
+    "task_id": "T_0057",
+    "subject": "10.171.149.31",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0057_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0057_action_malicious",
+    "task_id": "T_0057",
+    "subject": "10.171.149.31",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0057_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0057_risk_benign",
+    "task_id": "T_0057",
+    "subject": "10.171.149.31",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0057_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0057_action_benign",
+    "task_id": "T_0057",
+    "subject": "10.171.149.31",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0057_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0058_risk_benign",
+    "task_id": "T_0058",
+    "subject": "10.174.156.44",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0058_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0058_action_benign",
+    "task_id": "T_0058",
+    "subject": "10.174.156.44",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0058_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0058_risk_malicious",
+    "task_id": "T_0058",
+    "subject": "10.174.156.44",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0058_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0058_action_malicious",
+    "task_id": "T_0058",
+    "subject": "10.174.156.44",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0058_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0059_risk_benign",
+    "task_id": "T_0059",
+    "subject": "10.177.163.57",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0059_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0059_action_benign",
+    "task_id": "T_0059",
+    "subject": "10.177.163.57",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0059_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0059_risk_malicious",
+    "task_id": "T_0059",
+    "subject": "10.177.163.57",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0059_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0059_action_malicious",
+    "task_id": "T_0059",
+    "subject": "10.177.163.57",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0059_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0060_risk_malicious",
+    "task_id": "T_0060",
+    "subject": "10.180.170.70",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0060_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0060_action_malicious",
+    "task_id": "T_0060",
+    "subject": "10.180.170.70",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0060_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0060_risk_benign",
+    "task_id": "T_0060",
+    "subject": "10.180.170.70",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0060_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0060_action_benign",
+    "task_id": "T_0060",
+    "subject": "10.180.170.70",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0060_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0061_risk_benign",
+    "task_id": "T_0061",
+    "subject": "10.183.177.83",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0061_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0061_action_benign",
+    "task_id": "T_0061",
+    "subject": "10.183.177.83",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0061_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0061_risk_malicious",
+    "task_id": "T_0061",
+    "subject": "10.183.177.83",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0061_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0061_action_malicious",
+    "task_id": "T_0061",
+    "subject": "10.183.177.83",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0061_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0062_risk_malicious",
+    "task_id": "T_0062",
+    "subject": "10.186.184.96",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0062_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0062_action_malicious",
+    "task_id": "T_0062",
+    "subject": "10.186.184.96",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0062_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0062_risk_benign",
+    "task_id": "T_0062",
+    "subject": "10.186.184.96",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0062_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0062_action_benign",
+    "task_id": "T_0062",
+    "subject": "10.186.184.96",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0062_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0063_risk_benign",
+    "task_id": "T_0063",
+    "subject": "10.189.191.109",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0063_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0063_action_benign",
+    "task_id": "T_0063",
+    "subject": "10.189.191.109",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0063_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0063_risk_malicious",
+    "task_id": "T_0063",
+    "subject": "10.189.191.109",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0063_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0063_action_malicious",
+    "task_id": "T_0063",
+    "subject": "10.189.191.109",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0063_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0064_risk_benign",
+    "task_id": "T_0064",
+    "subject": "10.192.198.122",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0064_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0064_action_benign",
+    "task_id": "T_0064",
+    "subject": "10.192.198.122",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0064_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0064_risk_malicious",
+    "task_id": "T_0064",
+    "subject": "10.192.198.122",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0064_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0064_action_malicious",
+    "task_id": "T_0064",
+    "subject": "10.192.198.122",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0064_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0065_risk_malicious",
+    "task_id": "T_0065",
+    "subject": "10.195.205.135",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0065_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0065_action_malicious",
+    "task_id": "T_0065",
+    "subject": "10.195.205.135",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0065_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0065_risk_benign",
+    "task_id": "T_0065",
+    "subject": "10.195.205.135",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0065_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0065_action_benign",
+    "task_id": "T_0065",
+    "subject": "10.195.205.135",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0065_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0066_risk_benign",
+    "task_id": "T_0066",
+    "subject": "10.198.212.148",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0066_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0066_action_benign",
+    "task_id": "T_0066",
+    "subject": "10.198.212.148",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0066_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0066_risk_malicious",
+    "task_id": "T_0066",
+    "subject": "10.198.212.148",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0066_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0066_action_malicious",
+    "task_id": "T_0066",
+    "subject": "10.198.212.148",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0066_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0067_risk_malicious",
+    "task_id": "T_0067",
+    "subject": "10.201.219.161",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0067_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0067_action_malicious",
+    "task_id": "T_0067",
+    "subject": "10.201.219.161",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0067_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0067_risk_benign",
+    "task_id": "T_0067",
+    "subject": "10.201.219.161",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0067_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0067_action_benign",
+    "task_id": "T_0067",
+    "subject": "10.201.219.161",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0067_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0068_risk_benign",
+    "task_id": "T_0068",
+    "subject": "10.204.226.174",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0068_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0068_action_benign",
+    "task_id": "T_0068",
+    "subject": "10.204.226.174",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0068_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0068_risk_malicious",
+    "task_id": "T_0068",
+    "subject": "10.204.226.174",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0068_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0068_action_malicious",
+    "task_id": "T_0068",
+    "subject": "10.204.226.174",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0068_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0069_risk_benign",
+    "task_id": "T_0069",
+    "subject": "10.207.233.187",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0069_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0069_action_benign",
+    "task_id": "T_0069",
+    "subject": "10.207.233.187",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0069_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0069_risk_malicious",
+    "task_id": "T_0069",
+    "subject": "10.207.233.187",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0069_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0069_action_malicious",
+    "task_id": "T_0069",
+    "subject": "10.207.233.187",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0069_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0070_risk_malicious",
+    "task_id": "T_0070",
+    "subject": "10.210.240.200",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0070_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0070_action_malicious",
+    "task_id": "T_0070",
+    "subject": "10.210.240.200",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0070_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0070_risk_benign",
+    "task_id": "T_0070",
+    "subject": "10.210.240.200",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0070_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0070_action_benign",
+    "task_id": "T_0070",
+    "subject": "10.210.240.200",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0070_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0071_risk_benign",
+    "task_id": "T_0071",
+    "subject": "10.213.247.213",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0071_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0071_action_benign",
+    "task_id": "T_0071",
+    "subject": "10.213.247.213",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0071_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0071_risk_malicious",
+    "task_id": "T_0071",
+    "subject": "10.213.247.213",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0071_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0071_action_malicious",
+    "task_id": "T_0071",
+    "subject": "10.213.247.213",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0071_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0072_risk_malicious",
+    "task_id": "T_0072",
+    "subject": "10.216.4.226",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0072_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0072_action_malicious",
+    "task_id": "T_0072",
+    "subject": "10.216.4.226",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0072_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0072_risk_benign",
+    "task_id": "T_0072",
+    "subject": "10.216.4.226",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0072_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0072_action_benign",
+    "task_id": "T_0072",
+    "subject": "10.216.4.226",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0072_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0073_risk_benign",
+    "task_id": "T_0073",
+    "subject": "10.219.11.239",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0073_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0073_action_benign",
+    "task_id": "T_0073",
+    "subject": "10.219.11.239",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0073_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0073_risk_malicious",
+    "task_id": "T_0073",
+    "subject": "10.219.11.239",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0073_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0073_action_malicious",
+    "task_id": "T_0073",
+    "subject": "10.219.11.239",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0073_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0074_risk_benign",
+    "task_id": "T_0074",
+    "subject": "10.222.18.12",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0074_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0074_action_benign",
+    "task_id": "T_0074",
+    "subject": "10.222.18.12",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0074_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0074_risk_malicious",
+    "task_id": "T_0074",
+    "subject": "10.222.18.12",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0074_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0074_action_malicious",
+    "task_id": "T_0074",
+    "subject": "10.222.18.12",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0074_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0075_risk_malicious",
+    "task_id": "T_0075",
+    "subject": "10.225.25.25",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0075_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0075_action_malicious",
+    "task_id": "T_0075",
+    "subject": "10.225.25.25",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0075_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0075_risk_benign",
+    "task_id": "T_0075",
+    "subject": "10.225.25.25",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0075_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0075_action_benign",
+    "task_id": "T_0075",
+    "subject": "10.225.25.25",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0075_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0076_risk_benign",
+    "task_id": "T_0076",
+    "subject": "10.228.32.38",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0076_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0076_action_benign",
+    "task_id": "T_0076",
+    "subject": "10.228.32.38",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0076_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0076_risk_malicious",
+    "task_id": "T_0076",
+    "subject": "10.228.32.38",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0076_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0076_action_malicious",
+    "task_id": "T_0076",
+    "subject": "10.228.32.38",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0076_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0077_risk_malicious",
+    "task_id": "T_0077",
+    "subject": "10.231.39.51",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0077_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0077_action_malicious",
+    "task_id": "T_0077",
+    "subject": "10.231.39.51",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0077_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0077_risk_benign",
+    "task_id": "T_0077",
+    "subject": "10.231.39.51",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0077_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0077_action_benign",
+    "task_id": "T_0077",
+    "subject": "10.231.39.51",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0077_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0078_risk_benign",
+    "task_id": "T_0078",
+    "subject": "10.234.46.64",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0078_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0078_action_benign",
+    "task_id": "T_0078",
+    "subject": "10.234.46.64",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0078_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0078_risk_malicious",
+    "task_id": "T_0078",
+    "subject": "10.234.46.64",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0078_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0078_action_malicious",
+    "task_id": "T_0078",
+    "subject": "10.234.46.64",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0078_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0079_risk_benign",
+    "task_id": "T_0079",
+    "subject": "10.237.53.77",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0079_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0079_action_benign",
+    "task_id": "T_0079",
+    "subject": "10.237.53.77",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0079_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0079_risk_malicious",
+    "task_id": "T_0079",
+    "subject": "10.237.53.77",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0079_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0079_action_malicious",
+    "task_id": "T_0079",
+    "subject": "10.237.53.77",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0079_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0080_risk_malicious",
+    "task_id": "T_0080",
+    "subject": "10.240.60.90",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0080_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0080_action_malicious",
+    "task_id": "T_0080",
+    "subject": "10.240.60.90",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0080_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0080_risk_benign",
+    "task_id": "T_0080",
+    "subject": "10.240.60.90",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0080_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0080_action_benign",
+    "task_id": "T_0080",
+    "subject": "10.240.60.90",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0080_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0081_risk_benign",
+    "task_id": "T_0081",
+    "subject": "10.243.67.103",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0081_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0081_action_benign",
+    "task_id": "T_0081",
+    "subject": "10.243.67.103",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0081_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0081_risk_malicious",
+    "task_id": "T_0081",
+    "subject": "10.243.67.103",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0081_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0081_action_malicious",
+    "task_id": "T_0081",
+    "subject": "10.243.67.103",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0081_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0082_risk_malicious",
+    "task_id": "T_0082",
+    "subject": "10.246.74.116",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0082_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0082_action_malicious",
+    "task_id": "T_0082",
+    "subject": "10.246.74.116",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0082_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0082_risk_benign",
+    "task_id": "T_0082",
+    "subject": "10.246.74.116",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0082_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0082_action_benign",
+    "task_id": "T_0082",
+    "subject": "10.246.74.116",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0082_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0083_risk_benign",
+    "task_id": "T_0083",
+    "subject": "10.249.81.129",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0083_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0083_action_benign",
+    "task_id": "T_0083",
+    "subject": "10.249.81.129",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0083_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0083_risk_malicious",
+    "task_id": "T_0083",
+    "subject": "10.249.81.129",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0083_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0083_action_malicious",
+    "task_id": "T_0083",
+    "subject": "10.249.81.129",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0083_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0084_risk_benign",
+    "task_id": "T_0084",
+    "subject": "10.2.88.142",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0084_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0084_action_benign",
+    "task_id": "T_0084",
+    "subject": "10.2.88.142",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0084_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0084_risk_malicious",
+    "task_id": "T_0084",
+    "subject": "10.2.88.142",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0084_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0084_action_malicious",
+    "task_id": "T_0084",
+    "subject": "10.2.88.142",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0084_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0085_risk_malicious",
+    "task_id": "T_0085",
+    "subject": "10.5.95.155",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0085_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0085_action_malicious",
+    "task_id": "T_0085",
+    "subject": "10.5.95.155",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0085_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0085_risk_benign",
+    "task_id": "T_0085",
+    "subject": "10.5.95.155",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0085_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0085_action_benign",
+    "task_id": "T_0085",
+    "subject": "10.5.95.155",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0085_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0086_risk_benign",
+    "task_id": "T_0086",
+    "subject": "10.8.102.168",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0086_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0086_action_benign",
+    "task_id": "T_0086",
+    "subject": "10.8.102.168",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0086_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0086_risk_malicious",
+    "task_id": "T_0086",
+    "subject": "10.8.102.168",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0086_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0086_action_malicious",
+    "task_id": "T_0086",
+    "subject": "10.8.102.168",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0086_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0087_risk_malicious",
+    "task_id": "T_0087",
+    "subject": "10.11.109.181",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0087_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0087_action_malicious",
+    "task_id": "T_0087",
+    "subject": "10.11.109.181",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0087_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0087_risk_benign",
+    "task_id": "T_0087",
+    "subject": "10.11.109.181",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0087_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0087_action_benign",
+    "task_id": "T_0087",
+    "subject": "10.11.109.181",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0087_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0088_risk_benign",
+    "task_id": "T_0088",
+    "subject": "10.14.116.194",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0088_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0088_action_benign",
+    "task_id": "T_0088",
+    "subject": "10.14.116.194",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0088_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0088_risk_malicious",
+    "task_id": "T_0088",
+    "subject": "10.14.116.194",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0088_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0088_action_malicious",
+    "task_id": "T_0088",
+    "subject": "10.14.116.194",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0088_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0089_risk_benign",
+    "task_id": "T_0089",
+    "subject": "10.17.123.207",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0089_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0089_action_benign",
+    "task_id": "T_0089",
+    "subject": "10.17.123.207",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0089_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0089_risk_malicious",
+    "task_id": "T_0089",
+    "subject": "10.17.123.207",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0089_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0089_action_malicious",
+    "task_id": "T_0089",
+    "subject": "10.17.123.207",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0089_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0090_risk_malicious",
+    "task_id": "T_0090",
+    "subject": "10.20.130.220",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0090_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0090_action_malicious",
+    "task_id": "T_0090",
+    "subject": "10.20.130.220",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0090_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0090_risk_benign",
+    "task_id": "T_0090",
+    "subject": "10.20.130.220",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0090_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0090_action_benign",
+    "task_id": "T_0090",
+    "subject": "10.20.130.220",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0090_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0091_risk_benign",
+    "task_id": "T_0091",
+    "subject": "10.23.137.233",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0091_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0091_action_benign",
+    "task_id": "T_0091",
+    "subject": "10.23.137.233",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0091_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0091_risk_malicious",
+    "task_id": "T_0091",
+    "subject": "10.23.137.233",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0091_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0091_action_malicious",
+    "task_id": "T_0091",
+    "subject": "10.23.137.233",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0091_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0092_risk_malicious",
+    "task_id": "T_0092",
+    "subject": "10.26.144.246",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0092_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0092_action_malicious",
+    "task_id": "T_0092",
+    "subject": "10.26.144.246",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0092_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0092_risk_benign",
+    "task_id": "T_0092",
+    "subject": "10.26.144.246",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0092_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0092_action_benign",
+    "task_id": "T_0092",
+    "subject": "10.26.144.246",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0092_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0093_risk_benign",
+    "task_id": "T_0093",
+    "subject": "10.29.151.19",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0093_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0093_action_benign",
+    "task_id": "T_0093",
+    "subject": "10.29.151.19",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0093_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0093_risk_malicious",
+    "task_id": "T_0093",
+    "subject": "10.29.151.19",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0093_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0093_action_malicious",
+    "task_id": "T_0093",
+    "subject": "10.29.151.19",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0093_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0094_risk_benign",
+    "task_id": "T_0094",
+    "subject": "10.32.158.32",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0094_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0094_action_benign",
+    "task_id": "T_0094",
+    "subject": "10.32.158.32",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0094_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0094_risk_malicious",
+    "task_id": "T_0094",
+    "subject": "10.32.158.32",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0094_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0094_action_malicious",
+    "task_id": "T_0094",
+    "subject": "10.32.158.32",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0094_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0095_risk_malicious",
+    "task_id": "T_0095",
+    "subject": "10.35.165.45",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0095_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0095_action_malicious",
+    "task_id": "T_0095",
+    "subject": "10.35.165.45",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0095_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0095_risk_benign",
+    "task_id": "T_0095",
+    "subject": "10.35.165.45",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0095_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0095_action_benign",
+    "task_id": "T_0095",
+    "subject": "10.35.165.45",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0095_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0096_risk_benign",
+    "task_id": "T_0096",
+    "subject": "10.38.172.58",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0096_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0096_action_benign",
+    "task_id": "T_0096",
+    "subject": "10.38.172.58",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0096_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0096_risk_malicious",
+    "task_id": "T_0096",
+    "subject": "10.38.172.58",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0096_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0096_action_malicious",
+    "task_id": "T_0096",
+    "subject": "10.38.172.58",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0096_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0097_risk_malicious",
+    "task_id": "T_0097",
+    "subject": "10.41.179.71",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0097_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0097_action_malicious",
+    "task_id": "T_0097",
+    "subject": "10.41.179.71",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0097_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0097_risk_benign",
+    "task_id": "T_0097",
+    "subject": "10.41.179.71",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0097_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0097_action_benign",
+    "task_id": "T_0097",
+    "subject": "10.41.179.71",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0097_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0098_risk_benign",
+    "task_id": "T_0098",
+    "subject": "10.44.186.84",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0098_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0098_action_benign",
+    "task_id": "T_0098",
+    "subject": "10.44.186.84",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0098_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0098_risk_malicious",
+    "task_id": "T_0098",
+    "subject": "10.44.186.84",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0098_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0098_action_malicious",
+    "task_id": "T_0098",
+    "subject": "10.44.186.84",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0098_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0099_risk_benign",
+    "task_id": "T_0099",
+    "subject": "10.47.193.97",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0099_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0099_action_benign",
+    "task_id": "T_0099",
+    "subject": "10.47.193.97",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0099_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0099_risk_malicious",
+    "task_id": "T_0099",
+    "subject": "10.47.193.97",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0099_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0099_action_malicious",
+    "task_id": "T_0099",
+    "subject": "10.47.193.97",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0099_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0100_risk_malicious",
+    "task_id": "T_0100",
+    "subject": "10.50.200.110",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0100_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0100_action_malicious",
+    "task_id": "T_0100",
+    "subject": "10.50.200.110",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0100_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0100_risk_benign",
+    "task_id": "T_0100",
+    "subject": "10.50.200.110",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0100_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0100_action_benign",
+    "task_id": "T_0100",
+    "subject": "10.50.200.110",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0100_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0101_risk_benign",
+    "task_id": "T_0101",
+    "subject": "10.53.207.123",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0101_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0101_action_benign",
+    "task_id": "T_0101",
+    "subject": "10.53.207.123",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0101_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0101_risk_malicious",
+    "task_id": "T_0101",
+    "subject": "10.53.207.123",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0101_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0101_action_malicious",
+    "task_id": "T_0101",
+    "subject": "10.53.207.123",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0101_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0102_risk_malicious",
+    "task_id": "T_0102",
+    "subject": "10.56.214.136",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0102_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0102_action_malicious",
+    "task_id": "T_0102",
+    "subject": "10.56.214.136",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0102_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0102_risk_benign",
+    "task_id": "T_0102",
+    "subject": "10.56.214.136",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0102_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0102_action_benign",
+    "task_id": "T_0102",
+    "subject": "10.56.214.136",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0102_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0103_risk_benign",
+    "task_id": "T_0103",
+    "subject": "10.59.221.149",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0103_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0103_action_benign",
+    "task_id": "T_0103",
+    "subject": "10.59.221.149",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0103_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0103_risk_malicious",
+    "task_id": "T_0103",
+    "subject": "10.59.221.149",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0103_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0103_action_malicious",
+    "task_id": "T_0103",
+    "subject": "10.59.221.149",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0103_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0104_risk_benign",
+    "task_id": "T_0104",
+    "subject": "10.62.228.162",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0104_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0104_action_benign",
+    "task_id": "T_0104",
+    "subject": "10.62.228.162",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0104_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0104_risk_malicious",
+    "task_id": "T_0104",
+    "subject": "10.62.228.162",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0104_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0104_action_malicious",
+    "task_id": "T_0104",
+    "subject": "10.62.228.162",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0104_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0105_risk_malicious",
+    "task_id": "T_0105",
+    "subject": "10.65.235.175",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0105_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0105_action_malicious",
+    "task_id": "T_0105",
+    "subject": "10.65.235.175",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0105_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0105_risk_benign",
+    "task_id": "T_0105",
+    "subject": "10.65.235.175",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0105_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0105_action_benign",
+    "task_id": "T_0105",
+    "subject": "10.65.235.175",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0105_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0106_risk_benign",
+    "task_id": "T_0106",
+    "subject": "10.68.242.188",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0106_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0106_action_benign",
+    "task_id": "T_0106",
+    "subject": "10.68.242.188",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0106_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0106_risk_malicious",
+    "task_id": "T_0106",
+    "subject": "10.68.242.188",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0106_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0106_action_malicious",
+    "task_id": "T_0106",
+    "subject": "10.68.242.188",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0106_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0107_risk_malicious",
+    "task_id": "T_0107",
+    "subject": "10.71.249.201",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0107_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0107_action_malicious",
+    "task_id": "T_0107",
+    "subject": "10.71.249.201",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0107_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0107_risk_benign",
+    "task_id": "T_0107",
+    "subject": "10.71.249.201",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0107_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0107_action_benign",
+    "task_id": "T_0107",
+    "subject": "10.71.249.201",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0107_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0108_risk_benign",
+    "task_id": "T_0108",
+    "subject": "10.74.6.214",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0108_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0108_action_benign",
+    "task_id": "T_0108",
+    "subject": "10.74.6.214",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0108_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0108_risk_malicious",
+    "task_id": "T_0108",
+    "subject": "10.74.6.214",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0108_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0108_action_malicious",
+    "task_id": "T_0108",
+    "subject": "10.74.6.214",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0108_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0109_risk_benign",
+    "task_id": "T_0109",
+    "subject": "10.77.13.227",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0109_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0109_action_benign",
+    "task_id": "T_0109",
+    "subject": "10.77.13.227",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0109_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0109_risk_malicious",
+    "task_id": "T_0109",
+    "subject": "10.77.13.227",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0109_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0109_action_malicious",
+    "task_id": "T_0109",
+    "subject": "10.77.13.227",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0109_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0110_risk_malicious",
+    "task_id": "T_0110",
+    "subject": "10.80.20.240",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0110_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0110_action_malicious",
+    "task_id": "T_0110",
+    "subject": "10.80.20.240",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0110_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0110_risk_benign",
+    "task_id": "T_0110",
+    "subject": "10.80.20.240",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0110_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0110_action_benign",
+    "task_id": "T_0110",
+    "subject": "10.80.20.240",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0110_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0111_risk_benign",
+    "task_id": "T_0111",
+    "subject": "10.83.27.13",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0111_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0111_action_benign",
+    "task_id": "T_0111",
+    "subject": "10.83.27.13",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0111_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0111_risk_malicious",
+    "task_id": "T_0111",
+    "subject": "10.83.27.13",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0111_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0111_action_malicious",
+    "task_id": "T_0111",
+    "subject": "10.83.27.13",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0111_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0112_risk_malicious",
+    "task_id": "T_0112",
+    "subject": "10.86.34.26",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0112_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0112_action_malicious",
+    "task_id": "T_0112",
+    "subject": "10.86.34.26",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0112_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0112_risk_benign",
+    "task_id": "T_0112",
+    "subject": "10.86.34.26",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0112_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0112_action_benign",
+    "task_id": "T_0112",
+    "subject": "10.86.34.26",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0112_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0113_risk_benign",
+    "task_id": "T_0113",
+    "subject": "10.89.41.39",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0113_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0113_action_benign",
+    "task_id": "T_0113",
+    "subject": "10.89.41.39",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0113_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0113_risk_malicious",
+    "task_id": "T_0113",
+    "subject": "10.89.41.39",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0113_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0113_action_malicious",
+    "task_id": "T_0113",
+    "subject": "10.89.41.39",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0113_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0114_risk_benign",
+    "task_id": "T_0114",
+    "subject": "10.92.48.52",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0114_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0114_action_benign",
+    "task_id": "T_0114",
+    "subject": "10.92.48.52",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0114_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0114_risk_malicious",
+    "task_id": "T_0114",
+    "subject": "10.92.48.52",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0114_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0114_action_malicious",
+    "task_id": "T_0114",
+    "subject": "10.92.48.52",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0114_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0115_risk_malicious",
+    "task_id": "T_0115",
+    "subject": "10.95.55.65",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0115_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0115_action_malicious",
+    "task_id": "T_0115",
+    "subject": "10.95.55.65",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0115_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0115_risk_benign",
+    "task_id": "T_0115",
+    "subject": "10.95.55.65",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0115_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0115_action_benign",
+    "task_id": "T_0115",
+    "subject": "10.95.55.65",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0115_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0116_risk_benign",
+    "task_id": "T_0116",
+    "subject": "10.98.62.78",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0116_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0116_action_benign",
+    "task_id": "T_0116",
+    "subject": "10.98.62.78",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0116_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0116_risk_malicious",
+    "task_id": "T_0116",
+    "subject": "10.98.62.78",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0116_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0116_action_malicious",
+    "task_id": "T_0116",
+    "subject": "10.98.62.78",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0116_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0117_risk_malicious",
+    "task_id": "T_0117",
+    "subject": "10.101.69.91",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0117_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0117_action_malicious",
+    "task_id": "T_0117",
+    "subject": "10.101.69.91",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0117_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0117_risk_benign",
+    "task_id": "T_0117",
+    "subject": "10.101.69.91",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0117_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0117_action_benign",
+    "task_id": "T_0117",
+    "subject": "10.101.69.91",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0117_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0118_risk_benign",
+    "task_id": "T_0118",
+    "subject": "10.104.76.104",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0118_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0118_action_benign",
+    "task_id": "T_0118",
+    "subject": "10.104.76.104",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0118_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0118_risk_malicious",
+    "task_id": "T_0118",
+    "subject": "10.104.76.104",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0118_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0118_action_malicious",
+    "task_id": "T_0118",
+    "subject": "10.104.76.104",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0118_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0119_risk_benign",
+    "task_id": "T_0119",
+    "subject": "10.107.83.117",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0119_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0119_action_benign",
+    "task_id": "T_0119",
+    "subject": "10.107.83.117",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0119_action_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0119_risk_malicious",
+    "task_id": "T_0119",
+    "subject": "10.107.83.117",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0119_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0119_action_malicious",
+    "task_id": "T_0119",
+    "subject": "10.107.83.117",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0119_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0120_risk_malicious",
+    "task_id": "T_0120",
+    "subject": "10.110.90.130",
+    "group_kind": "risk",
+    "label": "malicious",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0120_risk_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0120_action_malicious",
+    "task_id": "T_0120",
+    "subject": "10.110.90.130",
+    "group_kind": "action",
+    "label": "malicious",
+    "high_risk_action": true,
+    "conflicts_with": [
+      "G_T_0120_action_benign"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0120_risk_benign",
+    "task_id": "T_0120",
+    "subject": "10.110.90.130",
+    "group_kind": "risk",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0120_risk_malicious"
+    ]
+  },
+  {
+    "claim_group_id": "G_T_0120_action_benign",
+    "task_id": "T_0120",
+    "subject": "10.110.90.130",
+    "group_kind": "action",
+    "label": "benign",
+    "high_risk_action": false,
+    "conflicts_with": [
+      "G_T_0120_action_malicious"
+    ]
+  }
+]

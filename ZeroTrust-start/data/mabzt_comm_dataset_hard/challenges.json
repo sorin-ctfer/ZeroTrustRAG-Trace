@@ -1,0 +1,3002 @@
+[
+  {
+    "challenge_id": "CH_T_0001",
+    "task_id": "T_0001",
+    "verifier_agent": "A_N_010",
+    "subject": "10.3.7.23",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.3.7.23."
+  },
+  {
+    "challenge_id": "CH_T_0002",
+    "task_id": "T_0002",
+    "verifier_agent": "A_N_016",
+    "subject": "10.6.14.36",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.6.14.36."
+  },
+  {
+    "challenge_id": "CH_T_0003",
+    "task_id": "T_0003",
+    "verifier_agent": "A_N_022",
+    "subject": "10.9.21.49",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.9.21.49."
+  },
+  {
+    "challenge_id": "CH_T_0004",
+    "task_id": "T_0004",
+    "verifier_agent": "A_N_028",
+    "subject": "10.12.28.62",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.12.28.62."
+  },
+  {
+    "challenge_id": "CH_T_0005",
+    "task_id": "T_0005",
+    "verifier_agent": "A_N_004",
+    "subject": "10.15.35.75",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.15.35.75."
+  },
+  {
+    "challenge_id": "CH_T_0006",
+    "task_id": "T_0006",
+    "verifier_agent": "A_N_010",
+    "subject": "10.18.42.88",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.18.42.88."
+  },
+  {
+    "challenge_id": "CH_T_0007",
+    "task_id": "T_0007",
+    "verifier_agent": "A_N_016",
+    "subject": "10.21.49.101",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.21.49.101."
+  },
+  {
+    "challenge_id": "CH_T_0008",
+    "task_id": "T_0008",
+    "verifier_agent": "A_N_022",
+    "subject": "10.24.56.114",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.24.56.114."
+  },
+  {
+    "challenge_id": "CH_T_0009",
+    "task_id": "T_0009",
+    "verifier_agent": "A_N_028",
+    "subject": "10.27.63.127",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.27.63.127."
+  },
+  {
+    "challenge_id": "CH_T_0010",
+    "task_id": "T_0010",
+    "verifier_agent": "A_N_004",
+    "subject": "10.30.70.140",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.30.70.140."
+  },
+  {
+    "challenge_id": "CH_T_0011",
+    "task_id": "T_0011",
+    "verifier_agent": "A_N_010",
+    "subject": "10.33.77.153",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.33.77.153."
+  },
+  {
+    "challenge_id": "CH_T_0012",
+    "task_id": "T_0012",
+    "verifier_agent": "A_N_016",
+    "subject": "10.36.84.166",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.36.84.166."
+  },
+  {
+    "challenge_id": "CH_T_0013",
+    "task_id": "T_0013",
+    "verifier_agent": "A_N_022",
+    "subject": "10.39.91.179",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.39.91.179."
+  },
+  {
+    "challenge_id": "CH_T_0014",
+    "task_id": "T_0014",
+    "verifier_agent": "A_N_028",
+    "subject": "10.42.98.192",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.42.98.192."
+  },
+  {
+    "challenge_id": "CH_T_0015",
+    "task_id": "T_0015",
+    "verifier_agent": "A_N_004",
+    "subject": "10.45.105.205",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.45.105.205."
+  },
+  {
+    "challenge_id": "CH_T_0016",
+    "task_id": "T_0016",
+    "verifier_agent": "A_N_010",
+    "subject": "10.48.112.218",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.48.112.218."
+  },
+  {
+    "challenge_id": "CH_T_0017",
+    "task_id": "T_0017",
+    "verifier_agent": "A_N_016",
+    "subject": "10.51.119.231",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.51.119.231."
+  },
+  {
+    "challenge_id": "CH_T_0018",
+    "task_id": "T_0018",
+    "verifier_agent": "A_N_022",
+    "subject": "10.54.126.244",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.54.126.244."
+  },
+  {
+    "challenge_id": "CH_T_0019",
+    "task_id": "T_0019",
+    "verifier_agent": "A_N_028",
+    "subject": "10.57.133.17",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.57.133.17."
+  },
+  {
+    "challenge_id": "CH_T_0020",
+    "task_id": "T_0020",
+    "verifier_agent": "A_N_004",
+    "subject": "10.60.140.30",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.60.140.30."
+  },
+  {
+    "challenge_id": "CH_T_0021",
+    "task_id": "T_0021",
+    "verifier_agent": "A_N_010",
+    "subject": "10.63.147.43",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.63.147.43."
+  },
+  {
+    "challenge_id": "CH_T_0022",
+    "task_id": "T_0022",
+    "verifier_agent": "A_N_016",
+    "subject": "10.66.154.56",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.66.154.56."
+  },
+  {
+    "challenge_id": "CH_T_0023",
+    "task_id": "T_0023",
+    "verifier_agent": "A_N_022",
+    "subject": "10.69.161.69",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.69.161.69."
+  },
+  {
+    "challenge_id": "CH_T_0024",
+    "task_id": "T_0024",
+    "verifier_agent": "A_N_028",
+    "subject": "10.72.168.82",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.72.168.82."
+  },
+  {
+    "challenge_id": "CH_T_0025",
+    "task_id": "T_0025",
+    "verifier_agent": "A_N_004",
+    "subject": "10.75.175.95",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.75.175.95."
+  },
+  {
+    "challenge_id": "CH_T_0026",
+    "task_id": "T_0026",
+    "verifier_agent": "A_N_010",
+    "subject": "10.78.182.108",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.78.182.108."
+  },
+  {
+    "challenge_id": "CH_T_0027",
+    "task_id": "T_0027",
+    "verifier_agent": "A_N_016",
+    "subject": "10.81.189.121",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.81.189.121."
+  },
+  {
+    "challenge_id": "CH_T_0028",
+    "task_id": "T_0028",
+    "verifier_agent": "A_N_022",
+    "subject": "10.84.196.134",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.84.196.134."
+  },
+  {
+    "challenge_id": "CH_T_0029",
+    "task_id": "T_0029",
+    "verifier_agent": "A_N_028",
+    "subject": "10.87.203.147",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.87.203.147."
+  },
+  {
+    "challenge_id": "CH_T_0030",
+    "task_id": "T_0030",
+    "verifier_agent": "A_N_004",
+    "subject": "10.90.210.160",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.90.210.160."
+  },
+  {
+    "challenge_id": "CH_T_0031",
+    "task_id": "T_0031",
+    "verifier_agent": "A_N_010",
+    "subject": "10.93.217.173",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.93.217.173."
+  },
+  {
+    "challenge_id": "CH_T_0032",
+    "task_id": "T_0032",
+    "verifier_agent": "A_N_016",
+    "subject": "10.96.224.186",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.96.224.186."
+  },
+  {
+    "challenge_id": "CH_T_0033",
+    "task_id": "T_0033",
+    "verifier_agent": "A_N_022",
+    "subject": "10.99.231.199",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.99.231.199."
+  },
+  {
+    "challenge_id": "CH_T_0034",
+    "task_id": "T_0034",
+    "verifier_agent": "A_N_028",
+    "subject": "10.102.238.212",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.102.238.212."
+  },
+  {
+    "challenge_id": "CH_T_0035",
+    "task_id": "T_0035",
+    "verifier_agent": "A_N_004",
+    "subject": "10.105.245.225",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.105.245.225."
+  },
+  {
+    "challenge_id": "CH_T_0036",
+    "task_id": "T_0036",
+    "verifier_agent": "A_N_010",
+    "subject": "10.108.2.238",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.108.2.238."
+  },
+  {
+    "challenge_id": "CH_T_0037",
+    "task_id": "T_0037",
+    "verifier_agent": "A_N_016",
+    "subject": "10.111.9.11",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.111.9.11."
+  },
+  {
+    "challenge_id": "CH_T_0038",
+    "task_id": "T_0038",
+    "verifier_agent": "A_N_022",
+    "subject": "10.114.16.24",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.114.16.24."
+  },
+  {
+    "challenge_id": "CH_T_0039",
+    "task_id": "T_0039",
+    "verifier_agent": "A_N_028",
+    "subject": "10.117.23.37",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.117.23.37."
+  },
+  {
+    "challenge_id": "CH_T_0040",
+    "task_id": "T_0040",
+    "verifier_agent": "A_N_004",
+    "subject": "10.120.30.50",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.120.30.50."
+  },
+  {
+    "challenge_id": "CH_T_0041",
+    "task_id": "T_0041",
+    "verifier_agent": "A_N_010",
+    "subject": "10.123.37.63",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.123.37.63."
+  },
+  {
+    "challenge_id": "CH_T_0042",
+    "task_id": "T_0042",
+    "verifier_agent": "A_N_016",
+    "subject": "10.126.44.76",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.126.44.76."
+  },
+  {
+    "challenge_id": "CH_T_0043",
+    "task_id": "T_0043",
+    "verifier_agent": "A_N_022",
+    "subject": "10.129.51.89",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.129.51.89."
+  },
+  {
+    "challenge_id": "CH_T_0044",
+    "task_id": "T_0044",
+    "verifier_agent": "A_N_028",
+    "subject": "10.132.58.102",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.132.58.102."
+  },
+  {
+    "challenge_id": "CH_T_0045",
+    "task_id": "T_0045",
+    "verifier_agent": "A_N_004",
+    "subject": "10.135.65.115",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.135.65.115."
+  },
+  {
+    "challenge_id": "CH_T_0046",
+    "task_id": "T_0046",
+    "verifier_agent": "A_N_010",
+    "subject": "10.138.72.128",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.138.72.128."
+  },
+  {
+    "challenge_id": "CH_T_0047",
+    "task_id": "T_0047",
+    "verifier_agent": "A_N_016",
+    "subject": "10.141.79.141",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.141.79.141."
+  },
+  {
+    "challenge_id": "CH_T_0048",
+    "task_id": "T_0048",
+    "verifier_agent": "A_N_022",
+    "subject": "10.144.86.154",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.144.86.154."
+  },
+  {
+    "challenge_id": "CH_T_0049",
+    "task_id": "T_0049",
+    "verifier_agent": "A_N_028",
+    "subject": "10.147.93.167",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.147.93.167."
+  },
+  {
+    "challenge_id": "CH_T_0050",
+    "task_id": "T_0050",
+    "verifier_agent": "A_N_004",
+    "subject": "10.150.100.180",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.150.100.180."
+  },
+  {
+    "challenge_id": "CH_T_0051",
+    "task_id": "T_0051",
+    "verifier_agent": "A_N_010",
+    "subject": "10.153.107.193",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.153.107.193."
+  },
+  {
+    "challenge_id": "CH_T_0052",
+    "task_id": "T_0052",
+    "verifier_agent": "A_N_016",
+    "subject": "10.156.114.206",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.156.114.206."
+  },
+  {
+    "challenge_id": "CH_T_0053",
+    "task_id": "T_0053",
+    "verifier_agent": "A_N_022",
+    "subject": "10.159.121.219",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.159.121.219."
+  },
+  {
+    "challenge_id": "CH_T_0054",
+    "task_id": "T_0054",
+    "verifier_agent": "A_N_028",
+    "subject": "10.162.128.232",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.162.128.232."
+  },
+  {
+    "challenge_id": "CH_T_0055",
+    "task_id": "T_0055",
+    "verifier_agent": "A_N_004",
+    "subject": "10.165.135.245",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.165.135.245."
+  },
+  {
+    "challenge_id": "CH_T_0056",
+    "task_id": "T_0056",
+    "verifier_agent": "A_N_010",
+    "subject": "10.168.142.18",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.168.142.18."
+  },
+  {
+    "challenge_id": "CH_T_0057",
+    "task_id": "T_0057",
+    "verifier_agent": "A_N_016",
+    "subject": "10.171.149.31",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.171.149.31."
+  },
+  {
+    "challenge_id": "CH_T_0058",
+    "task_id": "T_0058",
+    "verifier_agent": "A_N_022",
+    "subject": "10.174.156.44",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.174.156.44."
+  },
+  {
+    "challenge_id": "CH_T_0059",
+    "task_id": "T_0059",
+    "verifier_agent": "A_N_028",
+    "subject": "10.177.163.57",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.177.163.57."
+  },
+  {
+    "challenge_id": "CH_T_0060",
+    "task_id": "T_0060",
+    "verifier_agent": "A_N_004",
+    "subject": "10.180.170.70",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.180.170.70."
+  },
+  {
+    "challenge_id": "CH_T_0061",
+    "task_id": "T_0061",
+    "verifier_agent": "A_N_010",
+    "subject": "10.183.177.83",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.183.177.83."
+  },
+  {
+    "challenge_id": "CH_T_0062",
+    "task_id": "T_0062",
+    "verifier_agent": "A_N_016",
+    "subject": "10.186.184.96",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.186.184.96."
+  },
+  {
+    "challenge_id": "CH_T_0063",
+    "task_id": "T_0063",
+    "verifier_agent": "A_N_022",
+    "subject": "10.189.191.109",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.189.191.109."
+  },
+  {
+    "challenge_id": "CH_T_0064",
+    "task_id": "T_0064",
+    "verifier_agent": "A_N_028",
+    "subject": "10.192.198.122",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.192.198.122."
+  },
+  {
+    "challenge_id": "CH_T_0065",
+    "task_id": "T_0065",
+    "verifier_agent": "A_N_004",
+    "subject": "10.195.205.135",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.195.205.135."
+  },
+  {
+    "challenge_id": "CH_T_0066",
+    "task_id": "T_0066",
+    "verifier_agent": "A_N_010",
+    "subject": "10.198.212.148",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.198.212.148."
+  },
+  {
+    "challenge_id": "CH_T_0067",
+    "task_id": "T_0067",
+    "verifier_agent": "A_N_016",
+    "subject": "10.201.219.161",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.201.219.161."
+  },
+  {
+    "challenge_id": "CH_T_0068",
+    "task_id": "T_0068",
+    "verifier_agent": "A_N_022",
+    "subject": "10.204.226.174",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.204.226.174."
+  },
+  {
+    "challenge_id": "CH_T_0069",
+    "task_id": "T_0069",
+    "verifier_agent": "A_N_028",
+    "subject": "10.207.233.187",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.207.233.187."
+  },
+  {
+    "challenge_id": "CH_T_0070",
+    "task_id": "T_0070",
+    "verifier_agent": "A_N_004",
+    "subject": "10.210.240.200",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.210.240.200."
+  },
+  {
+    "challenge_id": "CH_T_0071",
+    "task_id": "T_0071",
+    "verifier_agent": "A_N_010",
+    "subject": "10.213.247.213",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.213.247.213."
+  },
+  {
+    "challenge_id": "CH_T_0072",
+    "task_id": "T_0072",
+    "verifier_agent": "A_N_016",
+    "subject": "10.216.4.226",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.216.4.226."
+  },
+  {
+    "challenge_id": "CH_T_0073",
+    "task_id": "T_0073",
+    "verifier_agent": "A_N_022",
+    "subject": "10.219.11.239",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.219.11.239."
+  },
+  {
+    "challenge_id": "CH_T_0074",
+    "task_id": "T_0074",
+    "verifier_agent": "A_N_028",
+    "subject": "10.222.18.12",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.222.18.12."
+  },
+  {
+    "challenge_id": "CH_T_0075",
+    "task_id": "T_0075",
+    "verifier_agent": "A_N_004",
+    "subject": "10.225.25.25",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.225.25.25."
+  },
+  {
+    "challenge_id": "CH_T_0076",
+    "task_id": "T_0076",
+    "verifier_agent": "A_N_010",
+    "subject": "10.228.32.38",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.228.32.38."
+  },
+  {
+    "challenge_id": "CH_T_0077",
+    "task_id": "T_0077",
+    "verifier_agent": "A_N_016",
+    "subject": "10.231.39.51",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.231.39.51."
+  },
+  {
+    "challenge_id": "CH_T_0078",
+    "task_id": "T_0078",
+    "verifier_agent": "A_N_022",
+    "subject": "10.234.46.64",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.234.46.64."
+  },
+  {
+    "challenge_id": "CH_T_0079",
+    "task_id": "T_0079",
+    "verifier_agent": "A_N_028",
+    "subject": "10.237.53.77",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.237.53.77."
+  },
+  {
+    "challenge_id": "CH_T_0080",
+    "task_id": "T_0080",
+    "verifier_agent": "A_N_004",
+    "subject": "10.240.60.90",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.240.60.90."
+  },
+  {
+    "challenge_id": "CH_T_0081",
+    "task_id": "T_0081",
+    "verifier_agent": "A_N_010",
+    "subject": "10.243.67.103",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.243.67.103."
+  },
+  {
+    "challenge_id": "CH_T_0082",
+    "task_id": "T_0082",
+    "verifier_agent": "A_N_016",
+    "subject": "10.246.74.116",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.246.74.116."
+  },
+  {
+    "challenge_id": "CH_T_0083",
+    "task_id": "T_0083",
+    "verifier_agent": "A_N_022",
+    "subject": "10.249.81.129",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.249.81.129."
+  },
+  {
+    "challenge_id": "CH_T_0084",
+    "task_id": "T_0084",
+    "verifier_agent": "A_N_028",
+    "subject": "10.2.88.142",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.2.88.142."
+  },
+  {
+    "challenge_id": "CH_T_0085",
+    "task_id": "T_0085",
+    "verifier_agent": "A_N_004",
+    "subject": "10.5.95.155",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.5.95.155."
+  },
+  {
+    "challenge_id": "CH_T_0086",
+    "task_id": "T_0086",
+    "verifier_agent": "A_N_010",
+    "subject": "10.8.102.168",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.8.102.168."
+  },
+  {
+    "challenge_id": "CH_T_0087",
+    "task_id": "T_0087",
+    "verifier_agent": "A_N_016",
+    "subject": "10.11.109.181",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.11.109.181."
+  },
+  {
+    "challenge_id": "CH_T_0088",
+    "task_id": "T_0088",
+    "verifier_agent": "A_N_022",
+    "subject": "10.14.116.194",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.14.116.194."
+  },
+  {
+    "challenge_id": "CH_T_0089",
+    "task_id": "T_0089",
+    "verifier_agent": "A_N_028",
+    "subject": "10.17.123.207",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.17.123.207."
+  },
+  {
+    "challenge_id": "CH_T_0090",
+    "task_id": "T_0090",
+    "verifier_agent": "A_N_004",
+    "subject": "10.20.130.220",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.20.130.220."
+  },
+  {
+    "challenge_id": "CH_T_0091",
+    "task_id": "T_0091",
+    "verifier_agent": "A_N_010",
+    "subject": "10.23.137.233",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.23.137.233."
+  },
+  {
+    "challenge_id": "CH_T_0092",
+    "task_id": "T_0092",
+    "verifier_agent": "A_N_016",
+    "subject": "10.26.144.246",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.26.144.246."
+  },
+  {
+    "challenge_id": "CH_T_0093",
+    "task_id": "T_0093",
+    "verifier_agent": "A_N_022",
+    "subject": "10.29.151.19",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.29.151.19."
+  },
+  {
+    "challenge_id": "CH_T_0094",
+    "task_id": "T_0094",
+    "verifier_agent": "A_N_028",
+    "subject": "10.32.158.32",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.32.158.32."
+  },
+  {
+    "challenge_id": "CH_T_0095",
+    "task_id": "T_0095",
+    "verifier_agent": "A_N_004",
+    "subject": "10.35.165.45",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.35.165.45."
+  },
+  {
+    "challenge_id": "CH_T_0096",
+    "task_id": "T_0096",
+    "verifier_agent": "A_N_010",
+    "subject": "10.38.172.58",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.38.172.58."
+  },
+  {
+    "challenge_id": "CH_T_0097",
+    "task_id": "T_0097",
+    "verifier_agent": "A_N_016",
+    "subject": "10.41.179.71",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.41.179.71."
+  },
+  {
+    "challenge_id": "CH_T_0098",
+    "task_id": "T_0098",
+    "verifier_agent": "A_N_022",
+    "subject": "10.44.186.84",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.44.186.84."
+  },
+  {
+    "challenge_id": "CH_T_0099",
+    "task_id": "T_0099",
+    "verifier_agent": "A_N_028",
+    "subject": "10.47.193.97",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.47.193.97."
+  },
+  {
+    "challenge_id": "CH_T_0100",
+    "task_id": "T_0100",
+    "verifier_agent": "A_N_004",
+    "subject": "10.50.200.110",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.50.200.110."
+  },
+  {
+    "challenge_id": "CH_T_0101",
+    "task_id": "T_0101",
+    "verifier_agent": "A_N_010",
+    "subject": "10.53.207.123",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.53.207.123."
+  },
+  {
+    "challenge_id": "CH_T_0102",
+    "task_id": "T_0102",
+    "verifier_agent": "A_N_016",
+    "subject": "10.56.214.136",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.56.214.136."
+  },
+  {
+    "challenge_id": "CH_T_0103",
+    "task_id": "T_0103",
+    "verifier_agent": "A_N_022",
+    "subject": "10.59.221.149",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.59.221.149."
+  },
+  {
+    "challenge_id": "CH_T_0104",
+    "task_id": "T_0104",
+    "verifier_agent": "A_N_028",
+    "subject": "10.62.228.162",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.62.228.162."
+  },
+  {
+    "challenge_id": "CH_T_0105",
+    "task_id": "T_0105",
+    "verifier_agent": "A_N_004",
+    "subject": "10.65.235.175",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.65.235.175."
+  },
+  {
+    "challenge_id": "CH_T_0106",
+    "task_id": "T_0106",
+    "verifier_agent": "A_N_010",
+    "subject": "10.68.242.188",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.68.242.188."
+  },
+  {
+    "challenge_id": "CH_T_0107",
+    "task_id": "T_0107",
+    "verifier_agent": "A_N_016",
+    "subject": "10.71.249.201",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.71.249.201."
+  },
+  {
+    "challenge_id": "CH_T_0108",
+    "task_id": "T_0108",
+    "verifier_agent": "A_N_022",
+    "subject": "10.74.6.214",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.74.6.214."
+  },
+  {
+    "challenge_id": "CH_T_0109",
+    "task_id": "T_0109",
+    "verifier_agent": "A_N_028",
+    "subject": "10.77.13.227",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.77.13.227."
+  },
+  {
+    "challenge_id": "CH_T_0110",
+    "task_id": "T_0110",
+    "verifier_agent": "A_N_004",
+    "subject": "10.80.20.240",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.80.20.240."
+  },
+  {
+    "challenge_id": "CH_T_0111",
+    "task_id": "T_0111",
+    "verifier_agent": "A_N_010",
+    "subject": "10.83.27.13",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.83.27.13."
+  },
+  {
+    "challenge_id": "CH_T_0112",
+    "task_id": "T_0112",
+    "verifier_agent": "A_N_016",
+    "subject": "10.86.34.26",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.86.34.26."
+  },
+  {
+    "challenge_id": "CH_T_0113",
+    "task_id": "T_0113",
+    "verifier_agent": "A_N_022",
+    "subject": "10.89.41.39",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.89.41.39."
+  },
+  {
+    "challenge_id": "CH_T_0114",
+    "task_id": "T_0114",
+    "verifier_agent": "A_N_028",
+    "subject": "10.92.48.52",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.92.48.52."
+  },
+  {
+    "challenge_id": "CH_T_0115",
+    "task_id": "T_0115",
+    "verifier_agent": "A_N_004",
+    "subject": "10.95.55.65",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.95.55.65."
+  },
+  {
+    "challenge_id": "CH_T_0116",
+    "task_id": "T_0116",
+    "verifier_agent": "A_N_010",
+    "subject": "10.98.62.78",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.98.62.78."
+  },
+  {
+    "challenge_id": "CH_T_0117",
+    "task_id": "T_0117",
+    "verifier_agent": "A_N_016",
+    "subject": "10.101.69.91",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.101.69.91."
+  },
+  {
+    "challenge_id": "CH_T_0118",
+    "task_id": "T_0118",
+    "verifier_agent": "A_N_022",
+    "subject": "10.104.76.104",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.104.76.104."
+  },
+  {
+    "challenge_id": "CH_T_0119",
+    "task_id": "T_0119",
+    "verifier_agent": "A_N_028",
+    "subject": "10.107.83.117",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.107.83.117."
+  },
+  {
+    "challenge_id": "CH_T_0120",
+    "task_id": "T_0120",
+    "verifier_agent": "A_N_004",
+    "subject": "10.110.90.130",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.110.90.130."
+  },
+  {
+    "challenge_id": "CH_T_0121",
+    "task_id": "T_0121",
+    "verifier_agent": "A_N_010",
+    "subject": "10.113.97.143",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.113.97.143."
+  },
+  {
+    "challenge_id": "CH_T_0122",
+    "task_id": "T_0122",
+    "verifier_agent": "A_N_016",
+    "subject": "10.116.104.156",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.116.104.156."
+  },
+  {
+    "challenge_id": "CH_T_0123",
+    "task_id": "T_0123",
+    "verifier_agent": "A_N_022",
+    "subject": "10.119.111.169",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.119.111.169."
+  },
+  {
+    "challenge_id": "CH_T_0124",
+    "task_id": "T_0124",
+    "verifier_agent": "A_N_028",
+    "subject": "10.122.118.182",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.122.118.182."
+  },
+  {
+    "challenge_id": "CH_T_0125",
+    "task_id": "T_0125",
+    "verifier_agent": "A_N_004",
+    "subject": "10.125.125.195",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.125.125.195."
+  },
+  {
+    "challenge_id": "CH_T_0126",
+    "task_id": "T_0126",
+    "verifier_agent": "A_N_010",
+    "subject": "10.128.132.208",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.128.132.208."
+  },
+  {
+    "challenge_id": "CH_T_0127",
+    "task_id": "T_0127",
+    "verifier_agent": "A_N_016",
+    "subject": "10.131.139.221",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.131.139.221."
+  },
+  {
+    "challenge_id": "CH_T_0128",
+    "task_id": "T_0128",
+    "verifier_agent": "A_N_022",
+    "subject": "10.134.146.234",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.134.146.234."
+  },
+  {
+    "challenge_id": "CH_T_0129",
+    "task_id": "T_0129",
+    "verifier_agent": "A_N_028",
+    "subject": "10.137.153.247",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.137.153.247."
+  },
+  {
+    "challenge_id": "CH_T_0130",
+    "task_id": "T_0130",
+    "verifier_agent": "A_N_004",
+    "subject": "10.140.160.20",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.140.160.20."
+  },
+  {
+    "challenge_id": "CH_T_0131",
+    "task_id": "T_0131",
+    "verifier_agent": "A_N_010",
+    "subject": "10.143.167.33",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.143.167.33."
+  },
+  {
+    "challenge_id": "CH_T_0132",
+    "task_id": "T_0132",
+    "verifier_agent": "A_N_016",
+    "subject": "10.146.174.46",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.146.174.46."
+  },
+  {
+    "challenge_id": "CH_T_0133",
+    "task_id": "T_0133",
+    "verifier_agent": "A_N_022",
+    "subject": "10.149.181.59",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.149.181.59."
+  },
+  {
+    "challenge_id": "CH_T_0134",
+    "task_id": "T_0134",
+    "verifier_agent": "A_N_028",
+    "subject": "10.152.188.72",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.152.188.72."
+  },
+  {
+    "challenge_id": "CH_T_0135",
+    "task_id": "T_0135",
+    "verifier_agent": "A_N_004",
+    "subject": "10.155.195.85",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.155.195.85."
+  },
+  {
+    "challenge_id": "CH_T_0136",
+    "task_id": "T_0136",
+    "verifier_agent": "A_N_010",
+    "subject": "10.158.202.98",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.158.202.98."
+  },
+  {
+    "challenge_id": "CH_T_0137",
+    "task_id": "T_0137",
+    "verifier_agent": "A_N_016",
+    "subject": "10.161.209.111",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.161.209.111."
+  },
+  {
+    "challenge_id": "CH_T_0138",
+    "task_id": "T_0138",
+    "verifier_agent": "A_N_022",
+    "subject": "10.164.216.124",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.164.216.124."
+  },
+  {
+    "challenge_id": "CH_T_0139",
+    "task_id": "T_0139",
+    "verifier_agent": "A_N_028",
+    "subject": "10.167.223.137",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.167.223.137."
+  },
+  {
+    "challenge_id": "CH_T_0140",
+    "task_id": "T_0140",
+    "verifier_agent": "A_N_004",
+    "subject": "10.170.230.150",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.170.230.150."
+  },
+  {
+    "challenge_id": "CH_T_0141",
+    "task_id": "T_0141",
+    "verifier_agent": "A_N_010",
+    "subject": "10.173.237.163",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.173.237.163."
+  },
+  {
+    "challenge_id": "CH_T_0142",
+    "task_id": "T_0142",
+    "verifier_agent": "A_N_016",
+    "subject": "10.176.244.176",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.176.244.176."
+  },
+  {
+    "challenge_id": "CH_T_0143",
+    "task_id": "T_0143",
+    "verifier_agent": "A_N_022",
+    "subject": "10.179.1.189",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.179.1.189."
+  },
+  {
+    "challenge_id": "CH_T_0144",
+    "task_id": "T_0144",
+    "verifier_agent": "A_N_028",
+    "subject": "10.182.8.202",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.182.8.202."
+  },
+  {
+    "challenge_id": "CH_T_0145",
+    "task_id": "T_0145",
+    "verifier_agent": "A_N_004",
+    "subject": "10.185.15.215",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.185.15.215."
+  },
+  {
+    "challenge_id": "CH_T_0146",
+    "task_id": "T_0146",
+    "verifier_agent": "A_N_010",
+    "subject": "10.188.22.228",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.188.22.228."
+  },
+  {
+    "challenge_id": "CH_T_0147",
+    "task_id": "T_0147",
+    "verifier_agent": "A_N_016",
+    "subject": "10.191.29.241",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.191.29.241."
+  },
+  {
+    "challenge_id": "CH_T_0148",
+    "task_id": "T_0148",
+    "verifier_agent": "A_N_022",
+    "subject": "10.194.36.14",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.194.36.14."
+  },
+  {
+    "challenge_id": "CH_T_0149",
+    "task_id": "T_0149",
+    "verifier_agent": "A_N_028",
+    "subject": "10.197.43.27",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.197.43.27."
+  },
+  {
+    "challenge_id": "CH_T_0150",
+    "task_id": "T_0150",
+    "verifier_agent": "A_N_004",
+    "subject": "10.200.50.40",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.200.50.40."
+  },
+  {
+    "challenge_id": "CH_T_0151",
+    "task_id": "T_0151",
+    "verifier_agent": "A_N_010",
+    "subject": "10.203.57.53",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.203.57.53."
+  },
+  {
+    "challenge_id": "CH_T_0152",
+    "task_id": "T_0152",
+    "verifier_agent": "A_N_016",
+    "subject": "10.206.64.66",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.206.64.66."
+  },
+  {
+    "challenge_id": "CH_T_0153",
+    "task_id": "T_0153",
+    "verifier_agent": "A_N_022",
+    "subject": "10.209.71.79",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.209.71.79."
+  },
+  {
+    "challenge_id": "CH_T_0154",
+    "task_id": "T_0154",
+    "verifier_agent": "A_N_028",
+    "subject": "10.212.78.92",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.212.78.92."
+  },
+  {
+    "challenge_id": "CH_T_0155",
+    "task_id": "T_0155",
+    "verifier_agent": "A_N_004",
+    "subject": "10.215.85.105",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.215.85.105."
+  },
+  {
+    "challenge_id": "CH_T_0156",
+    "task_id": "T_0156",
+    "verifier_agent": "A_N_010",
+    "subject": "10.218.92.118",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.218.92.118."
+  },
+  {
+    "challenge_id": "CH_T_0157",
+    "task_id": "T_0157",
+    "verifier_agent": "A_N_016",
+    "subject": "10.221.99.131",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.221.99.131."
+  },
+  {
+    "challenge_id": "CH_T_0158",
+    "task_id": "T_0158",
+    "verifier_agent": "A_N_022",
+    "subject": "10.224.106.144",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.224.106.144."
+  },
+  {
+    "challenge_id": "CH_T_0159",
+    "task_id": "T_0159",
+    "verifier_agent": "A_N_028",
+    "subject": "10.227.113.157",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.227.113.157."
+  },
+  {
+    "challenge_id": "CH_T_0160",
+    "task_id": "T_0160",
+    "verifier_agent": "A_N_004",
+    "subject": "10.230.120.170",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.230.120.170."
+  },
+  {
+    "challenge_id": "CH_T_0161",
+    "task_id": "T_0161",
+    "verifier_agent": "A_N_010",
+    "subject": "10.233.127.183",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.233.127.183."
+  },
+  {
+    "challenge_id": "CH_T_0162",
+    "task_id": "T_0162",
+    "verifier_agent": "A_N_016",
+    "subject": "10.236.134.196",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.236.134.196."
+  },
+  {
+    "challenge_id": "CH_T_0163",
+    "task_id": "T_0163",
+    "verifier_agent": "A_N_022",
+    "subject": "10.239.141.209",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.239.141.209."
+  },
+  {
+    "challenge_id": "CH_T_0164",
+    "task_id": "T_0164",
+    "verifier_agent": "A_N_028",
+    "subject": "10.242.148.222",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.242.148.222."
+  },
+  {
+    "challenge_id": "CH_T_0165",
+    "task_id": "T_0165",
+    "verifier_agent": "A_N_004",
+    "subject": "10.245.155.235",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.245.155.235."
+  },
+  {
+    "challenge_id": "CH_T_0166",
+    "task_id": "T_0166",
+    "verifier_agent": "A_N_010",
+    "subject": "10.248.162.248",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.248.162.248."
+  },
+  {
+    "challenge_id": "CH_T_0167",
+    "task_id": "T_0167",
+    "verifier_agent": "A_N_016",
+    "subject": "10.1.169.21",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.1.169.21."
+  },
+  {
+    "challenge_id": "CH_T_0168",
+    "task_id": "T_0168",
+    "verifier_agent": "A_N_022",
+    "subject": "10.4.176.34",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.4.176.34."
+  },
+  {
+    "challenge_id": "CH_T_0169",
+    "task_id": "T_0169",
+    "verifier_agent": "A_N_028",
+    "subject": "10.7.183.47",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.7.183.47."
+  },
+  {
+    "challenge_id": "CH_T_0170",
+    "task_id": "T_0170",
+    "verifier_agent": "A_N_004",
+    "subject": "10.10.190.60",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.10.190.60."
+  },
+  {
+    "challenge_id": "CH_T_0171",
+    "task_id": "T_0171",
+    "verifier_agent": "A_N_010",
+    "subject": "10.13.197.73",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.13.197.73."
+  },
+  {
+    "challenge_id": "CH_T_0172",
+    "task_id": "T_0172",
+    "verifier_agent": "A_N_016",
+    "subject": "10.16.204.86",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.16.204.86."
+  },
+  {
+    "challenge_id": "CH_T_0173",
+    "task_id": "T_0173",
+    "verifier_agent": "A_N_022",
+    "subject": "10.19.211.99",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.19.211.99."
+  },
+  {
+    "challenge_id": "CH_T_0174",
+    "task_id": "T_0174",
+    "verifier_agent": "A_N_028",
+    "subject": "10.22.218.112",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.22.218.112."
+  },
+  {
+    "challenge_id": "CH_T_0175",
+    "task_id": "T_0175",
+    "verifier_agent": "A_N_004",
+    "subject": "10.25.225.125",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.25.225.125."
+  },
+  {
+    "challenge_id": "CH_T_0176",
+    "task_id": "T_0176",
+    "verifier_agent": "A_N_010",
+    "subject": "10.28.232.138",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.28.232.138."
+  },
+  {
+    "challenge_id": "CH_T_0177",
+    "task_id": "T_0177",
+    "verifier_agent": "A_N_016",
+    "subject": "10.31.239.151",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.31.239.151."
+  },
+  {
+    "challenge_id": "CH_T_0178",
+    "task_id": "T_0178",
+    "verifier_agent": "A_N_022",
+    "subject": "10.34.246.164",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.34.246.164."
+  },
+  {
+    "challenge_id": "CH_T_0179",
+    "task_id": "T_0179",
+    "verifier_agent": "A_N_028",
+    "subject": "10.37.3.177",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.37.3.177."
+  },
+  {
+    "challenge_id": "CH_T_0180",
+    "task_id": "T_0180",
+    "verifier_agent": "A_N_004",
+    "subject": "10.40.10.190",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.40.10.190."
+  },
+  {
+    "challenge_id": "CH_T_0181",
+    "task_id": "T_0181",
+    "verifier_agent": "A_N_010",
+    "subject": "10.43.17.203",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.43.17.203."
+  },
+  {
+    "challenge_id": "CH_T_0182",
+    "task_id": "T_0182",
+    "verifier_agent": "A_N_016",
+    "subject": "10.46.24.216",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.46.24.216."
+  },
+  {
+    "challenge_id": "CH_T_0183",
+    "task_id": "T_0183",
+    "verifier_agent": "A_N_022",
+    "subject": "10.49.31.229",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.49.31.229."
+  },
+  {
+    "challenge_id": "CH_T_0184",
+    "task_id": "T_0184",
+    "verifier_agent": "A_N_028",
+    "subject": "10.52.38.242",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.52.38.242."
+  },
+  {
+    "challenge_id": "CH_T_0185",
+    "task_id": "T_0185",
+    "verifier_agent": "A_N_004",
+    "subject": "10.55.45.15",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.55.45.15."
+  },
+  {
+    "challenge_id": "CH_T_0186",
+    "task_id": "T_0186",
+    "verifier_agent": "A_N_010",
+    "subject": "10.58.52.28",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.58.52.28."
+  },
+  {
+    "challenge_id": "CH_T_0187",
+    "task_id": "T_0187",
+    "verifier_agent": "A_N_016",
+    "subject": "10.61.59.41",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.61.59.41."
+  },
+  {
+    "challenge_id": "CH_T_0188",
+    "task_id": "T_0188",
+    "verifier_agent": "A_N_022",
+    "subject": "10.64.66.54",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.64.66.54."
+  },
+  {
+    "challenge_id": "CH_T_0189",
+    "task_id": "T_0189",
+    "verifier_agent": "A_N_028",
+    "subject": "10.67.73.67",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.67.73.67."
+  },
+  {
+    "challenge_id": "CH_T_0190",
+    "task_id": "T_0190",
+    "verifier_agent": "A_N_004",
+    "subject": "10.70.80.80",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.70.80.80."
+  },
+  {
+    "challenge_id": "CH_T_0191",
+    "task_id": "T_0191",
+    "verifier_agent": "A_N_010",
+    "subject": "10.73.87.93",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.73.87.93."
+  },
+  {
+    "challenge_id": "CH_T_0192",
+    "task_id": "T_0192",
+    "verifier_agent": "A_N_016",
+    "subject": "10.76.94.106",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.76.94.106."
+  },
+  {
+    "challenge_id": "CH_T_0193",
+    "task_id": "T_0193",
+    "verifier_agent": "A_N_022",
+    "subject": "10.79.101.119",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.79.101.119."
+  },
+  {
+    "challenge_id": "CH_T_0194",
+    "task_id": "T_0194",
+    "verifier_agent": "A_N_028",
+    "subject": "10.82.108.132",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.82.108.132."
+  },
+  {
+    "challenge_id": "CH_T_0195",
+    "task_id": "T_0195",
+    "verifier_agent": "A_N_004",
+    "subject": "10.85.115.145",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.85.115.145."
+  },
+  {
+    "challenge_id": "CH_T_0196",
+    "task_id": "T_0196",
+    "verifier_agent": "A_N_010",
+    "subject": "10.88.122.158",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.88.122.158."
+  },
+  {
+    "challenge_id": "CH_T_0197",
+    "task_id": "T_0197",
+    "verifier_agent": "A_N_016",
+    "subject": "10.91.129.171",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.91.129.171."
+  },
+  {
+    "challenge_id": "CH_T_0198",
+    "task_id": "T_0198",
+    "verifier_agent": "A_N_022",
+    "subject": "10.94.136.184",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.94.136.184."
+  },
+  {
+    "challenge_id": "CH_T_0199",
+    "task_id": "T_0199",
+    "verifier_agent": "A_N_028",
+    "subject": "10.97.143.197",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.97.143.197."
+  },
+  {
+    "challenge_id": "CH_T_0200",
+    "task_id": "T_0200",
+    "verifier_agent": "A_N_004",
+    "subject": "10.100.150.210",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.100.150.210."
+  },
+  {
+    "challenge_id": "CH_T_0201",
+    "task_id": "T_0201",
+    "verifier_agent": "A_N_010",
+    "subject": "10.103.157.223",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.103.157.223."
+  },
+  {
+    "challenge_id": "CH_T_0202",
+    "task_id": "T_0202",
+    "verifier_agent": "A_N_016",
+    "subject": "10.106.164.236",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.106.164.236."
+  },
+  {
+    "challenge_id": "CH_T_0203",
+    "task_id": "T_0203",
+    "verifier_agent": "A_N_022",
+    "subject": "10.109.171.249",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.109.171.249."
+  },
+  {
+    "challenge_id": "CH_T_0204",
+    "task_id": "T_0204",
+    "verifier_agent": "A_N_028",
+    "subject": "10.112.178.22",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.112.178.22."
+  },
+  {
+    "challenge_id": "CH_T_0205",
+    "task_id": "T_0205",
+    "verifier_agent": "A_N_004",
+    "subject": "10.115.185.35",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.115.185.35."
+  },
+  {
+    "challenge_id": "CH_T_0206",
+    "task_id": "T_0206",
+    "verifier_agent": "A_N_010",
+    "subject": "10.118.192.48",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.118.192.48."
+  },
+  {
+    "challenge_id": "CH_T_0207",
+    "task_id": "T_0207",
+    "verifier_agent": "A_N_016",
+    "subject": "10.121.199.61",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.121.199.61."
+  },
+  {
+    "challenge_id": "CH_T_0208",
+    "task_id": "T_0208",
+    "verifier_agent": "A_N_022",
+    "subject": "10.124.206.74",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.124.206.74."
+  },
+  {
+    "challenge_id": "CH_T_0209",
+    "task_id": "T_0209",
+    "verifier_agent": "A_N_028",
+    "subject": "10.127.213.87",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.127.213.87."
+  },
+  {
+    "challenge_id": "CH_T_0210",
+    "task_id": "T_0210",
+    "verifier_agent": "A_N_004",
+    "subject": "10.130.220.100",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.130.220.100."
+  },
+  {
+    "challenge_id": "CH_T_0211",
+    "task_id": "T_0211",
+    "verifier_agent": "A_N_010",
+    "subject": "10.133.227.113",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.133.227.113."
+  },
+  {
+    "challenge_id": "CH_T_0212",
+    "task_id": "T_0212",
+    "verifier_agent": "A_N_016",
+    "subject": "10.136.234.126",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.136.234.126."
+  },
+  {
+    "challenge_id": "CH_T_0213",
+    "task_id": "T_0213",
+    "verifier_agent": "A_N_022",
+    "subject": "10.139.241.139",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.139.241.139."
+  },
+  {
+    "challenge_id": "CH_T_0214",
+    "task_id": "T_0214",
+    "verifier_agent": "A_N_028",
+    "subject": "10.142.248.152",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.142.248.152."
+  },
+  {
+    "challenge_id": "CH_T_0215",
+    "task_id": "T_0215",
+    "verifier_agent": "A_N_004",
+    "subject": "10.145.5.165",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.145.5.165."
+  },
+  {
+    "challenge_id": "CH_T_0216",
+    "task_id": "T_0216",
+    "verifier_agent": "A_N_010",
+    "subject": "10.148.12.178",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.148.12.178."
+  },
+  {
+    "challenge_id": "CH_T_0217",
+    "task_id": "T_0217",
+    "verifier_agent": "A_N_016",
+    "subject": "10.151.19.191",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.151.19.191."
+  },
+  {
+    "challenge_id": "CH_T_0218",
+    "task_id": "T_0218",
+    "verifier_agent": "A_N_022",
+    "subject": "10.154.26.204",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.154.26.204."
+  },
+  {
+    "challenge_id": "CH_T_0219",
+    "task_id": "T_0219",
+    "verifier_agent": "A_N_028",
+    "subject": "10.157.33.217",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.157.33.217."
+  },
+  {
+    "challenge_id": "CH_T_0220",
+    "task_id": "T_0220",
+    "verifier_agent": "A_N_004",
+    "subject": "10.160.40.230",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.160.40.230."
+  },
+  {
+    "challenge_id": "CH_T_0221",
+    "task_id": "T_0221",
+    "verifier_agent": "A_N_010",
+    "subject": "10.163.47.243",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.163.47.243."
+  },
+  {
+    "challenge_id": "CH_T_0222",
+    "task_id": "T_0222",
+    "verifier_agent": "A_N_016",
+    "subject": "10.166.54.16",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.166.54.16."
+  },
+  {
+    "challenge_id": "CH_T_0223",
+    "task_id": "T_0223",
+    "verifier_agent": "A_N_022",
+    "subject": "10.169.61.29",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.169.61.29."
+  },
+  {
+    "challenge_id": "CH_T_0224",
+    "task_id": "T_0224",
+    "verifier_agent": "A_N_028",
+    "subject": "10.172.68.42",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.172.68.42."
+  },
+  {
+    "challenge_id": "CH_T_0225",
+    "task_id": "T_0225",
+    "verifier_agent": "A_N_004",
+    "subject": "10.175.75.55",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.175.75.55."
+  },
+  {
+    "challenge_id": "CH_T_0226",
+    "task_id": "T_0226",
+    "verifier_agent": "A_N_010",
+    "subject": "10.178.82.68",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.178.82.68."
+  },
+  {
+    "challenge_id": "CH_T_0227",
+    "task_id": "T_0227",
+    "verifier_agent": "A_N_016",
+    "subject": "10.181.89.81",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.181.89.81."
+  },
+  {
+    "challenge_id": "CH_T_0228",
+    "task_id": "T_0228",
+    "verifier_agent": "A_N_022",
+    "subject": "10.184.96.94",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.184.96.94."
+  },
+  {
+    "challenge_id": "CH_T_0229",
+    "task_id": "T_0229",
+    "verifier_agent": "A_N_028",
+    "subject": "10.187.103.107",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.187.103.107."
+  },
+  {
+    "challenge_id": "CH_T_0230",
+    "task_id": "T_0230",
+    "verifier_agent": "A_N_004",
+    "subject": "10.190.110.120",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.190.110.120."
+  },
+  {
+    "challenge_id": "CH_T_0231",
+    "task_id": "T_0231",
+    "verifier_agent": "A_N_010",
+    "subject": "10.193.117.133",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.193.117.133."
+  },
+  {
+    "challenge_id": "CH_T_0232",
+    "task_id": "T_0232",
+    "verifier_agent": "A_N_016",
+    "subject": "10.196.124.146",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.196.124.146."
+  },
+  {
+    "challenge_id": "CH_T_0233",
+    "task_id": "T_0233",
+    "verifier_agent": "A_N_022",
+    "subject": "10.199.131.159",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.199.131.159."
+  },
+  {
+    "challenge_id": "CH_T_0234",
+    "task_id": "T_0234",
+    "verifier_agent": "A_N_028",
+    "subject": "10.202.138.172",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.202.138.172."
+  },
+  {
+    "challenge_id": "CH_T_0235",
+    "task_id": "T_0235",
+    "verifier_agent": "A_N_004",
+    "subject": "10.205.145.185",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.205.145.185."
+  },
+  {
+    "challenge_id": "CH_T_0236",
+    "task_id": "T_0236",
+    "verifier_agent": "A_N_010",
+    "subject": "10.208.152.198",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.208.152.198."
+  },
+  {
+    "challenge_id": "CH_T_0237",
+    "task_id": "T_0237",
+    "verifier_agent": "A_N_016",
+    "subject": "10.211.159.211",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.211.159.211."
+  },
+  {
+    "challenge_id": "CH_T_0238",
+    "task_id": "T_0238",
+    "verifier_agent": "A_N_022",
+    "subject": "10.214.166.224",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.214.166.224."
+  },
+  {
+    "challenge_id": "CH_T_0239",
+    "task_id": "T_0239",
+    "verifier_agent": "A_N_028",
+    "subject": "10.217.173.237",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.217.173.237."
+  },
+  {
+    "challenge_id": "CH_T_0240",
+    "task_id": "T_0240",
+    "verifier_agent": "A_N_004",
+    "subject": "10.220.180.10",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.220.180.10."
+  },
+  {
+    "challenge_id": "CH_T_0241",
+    "task_id": "T_0241",
+    "verifier_agent": "A_N_010",
+    "subject": "10.223.187.23",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.223.187.23."
+  },
+  {
+    "challenge_id": "CH_T_0242",
+    "task_id": "T_0242",
+    "verifier_agent": "A_N_016",
+    "subject": "10.226.194.36",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.226.194.36."
+  },
+  {
+    "challenge_id": "CH_T_0243",
+    "task_id": "T_0243",
+    "verifier_agent": "A_N_022",
+    "subject": "10.229.201.49",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.229.201.49."
+  },
+  {
+    "challenge_id": "CH_T_0244",
+    "task_id": "T_0244",
+    "verifier_agent": "A_N_028",
+    "subject": "10.232.208.62",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.232.208.62."
+  },
+  {
+    "challenge_id": "CH_T_0245",
+    "task_id": "T_0245",
+    "verifier_agent": "A_N_004",
+    "subject": "10.235.215.75",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.235.215.75."
+  },
+  {
+    "challenge_id": "CH_T_0246",
+    "task_id": "T_0246",
+    "verifier_agent": "A_N_010",
+    "subject": "10.238.222.88",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.238.222.88."
+  },
+  {
+    "challenge_id": "CH_T_0247",
+    "task_id": "T_0247",
+    "verifier_agent": "A_N_016",
+    "subject": "10.241.229.101",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.241.229.101."
+  },
+  {
+    "challenge_id": "CH_T_0248",
+    "task_id": "T_0248",
+    "verifier_agent": "A_N_022",
+    "subject": "10.244.236.114",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.244.236.114."
+  },
+  {
+    "challenge_id": "CH_T_0249",
+    "task_id": "T_0249",
+    "verifier_agent": "A_N_028",
+    "subject": "10.247.243.127",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.247.243.127."
+  },
+  {
+    "challenge_id": "CH_T_0250",
+    "task_id": "T_0250",
+    "verifier_agent": "A_N_004",
+    "subject": "10.0.0.140",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.0.0.140."
+  },
+  {
+    "challenge_id": "CH_T_0251",
+    "task_id": "T_0251",
+    "verifier_agent": "A_N_010",
+    "subject": "10.3.7.153",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.3.7.153."
+  },
+  {
+    "challenge_id": "CH_T_0252",
+    "task_id": "T_0252",
+    "verifier_agent": "A_N_016",
+    "subject": "10.6.14.166",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.6.14.166."
+  },
+  {
+    "challenge_id": "CH_T_0253",
+    "task_id": "T_0253",
+    "verifier_agent": "A_N_022",
+    "subject": "10.9.21.179",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.9.21.179."
+  },
+  {
+    "challenge_id": "CH_T_0254",
+    "task_id": "T_0254",
+    "verifier_agent": "A_N_028",
+    "subject": "10.12.28.192",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.12.28.192."
+  },
+  {
+    "challenge_id": "CH_T_0255",
+    "task_id": "T_0255",
+    "verifier_agent": "A_N_004",
+    "subject": "10.15.35.205",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.15.35.205."
+  },
+  {
+    "challenge_id": "CH_T_0256",
+    "task_id": "T_0256",
+    "verifier_agent": "A_N_010",
+    "subject": "10.18.42.218",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.18.42.218."
+  },
+  {
+    "challenge_id": "CH_T_0257",
+    "task_id": "T_0257",
+    "verifier_agent": "A_N_016",
+    "subject": "10.21.49.231",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.21.49.231."
+  },
+  {
+    "challenge_id": "CH_T_0258",
+    "task_id": "T_0258",
+    "verifier_agent": "A_N_022",
+    "subject": "10.24.56.244",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.24.56.244."
+  },
+  {
+    "challenge_id": "CH_T_0259",
+    "task_id": "T_0259",
+    "verifier_agent": "A_N_028",
+    "subject": "10.27.63.17",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.27.63.17."
+  },
+  {
+    "challenge_id": "CH_T_0260",
+    "task_id": "T_0260",
+    "verifier_agent": "A_N_004",
+    "subject": "10.30.70.30",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.30.70.30."
+  },
+  {
+    "challenge_id": "CH_T_0261",
+    "task_id": "T_0261",
+    "verifier_agent": "A_N_010",
+    "subject": "10.33.77.43",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.33.77.43."
+  },
+  {
+    "challenge_id": "CH_T_0262",
+    "task_id": "T_0262",
+    "verifier_agent": "A_N_016",
+    "subject": "10.36.84.56",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.36.84.56."
+  },
+  {
+    "challenge_id": "CH_T_0263",
+    "task_id": "T_0263",
+    "verifier_agent": "A_N_022",
+    "subject": "10.39.91.69",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.39.91.69."
+  },
+  {
+    "challenge_id": "CH_T_0264",
+    "task_id": "T_0264",
+    "verifier_agent": "A_N_028",
+    "subject": "10.42.98.82",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.42.98.82."
+  },
+  {
+    "challenge_id": "CH_T_0265",
+    "task_id": "T_0265",
+    "verifier_agent": "A_N_004",
+    "subject": "10.45.105.95",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.45.105.95."
+  },
+  {
+    "challenge_id": "CH_T_0266",
+    "task_id": "T_0266",
+    "verifier_agent": "A_N_010",
+    "subject": "10.48.112.108",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.48.112.108."
+  },
+  {
+    "challenge_id": "CH_T_0267",
+    "task_id": "T_0267",
+    "verifier_agent": "A_N_016",
+    "subject": "10.51.119.121",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.51.119.121."
+  },
+  {
+    "challenge_id": "CH_T_0268",
+    "task_id": "T_0268",
+    "verifier_agent": "A_N_022",
+    "subject": "10.54.126.134",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.54.126.134."
+  },
+  {
+    "challenge_id": "CH_T_0269",
+    "task_id": "T_0269",
+    "verifier_agent": "A_N_028",
+    "subject": "10.57.133.147",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.57.133.147."
+  },
+  {
+    "challenge_id": "CH_T_0270",
+    "task_id": "T_0270",
+    "verifier_agent": "A_N_004",
+    "subject": "10.60.140.160",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.60.140.160."
+  },
+  {
+    "challenge_id": "CH_T_0271",
+    "task_id": "T_0271",
+    "verifier_agent": "A_N_010",
+    "subject": "10.63.147.173",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.63.147.173."
+  },
+  {
+    "challenge_id": "CH_T_0272",
+    "task_id": "T_0272",
+    "verifier_agent": "A_N_016",
+    "subject": "10.66.154.186",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.66.154.186."
+  },
+  {
+    "challenge_id": "CH_T_0273",
+    "task_id": "T_0273",
+    "verifier_agent": "A_N_022",
+    "subject": "10.69.161.199",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.69.161.199."
+  },
+  {
+    "challenge_id": "CH_T_0274",
+    "task_id": "T_0274",
+    "verifier_agent": "A_N_028",
+    "subject": "10.72.168.212",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.72.168.212."
+  },
+  {
+    "challenge_id": "CH_T_0275",
+    "task_id": "T_0275",
+    "verifier_agent": "A_N_004",
+    "subject": "10.75.175.225",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.75.175.225."
+  },
+  {
+    "challenge_id": "CH_T_0276",
+    "task_id": "T_0276",
+    "verifier_agent": "A_N_010",
+    "subject": "10.78.182.238",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.78.182.238."
+  },
+  {
+    "challenge_id": "CH_T_0277",
+    "task_id": "T_0277",
+    "verifier_agent": "A_N_016",
+    "subject": "10.81.189.11",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.81.189.11."
+  },
+  {
+    "challenge_id": "CH_T_0278",
+    "task_id": "T_0278",
+    "verifier_agent": "A_N_022",
+    "subject": "10.84.196.24",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.84.196.24."
+  },
+  {
+    "challenge_id": "CH_T_0279",
+    "task_id": "T_0279",
+    "verifier_agent": "A_N_028",
+    "subject": "10.87.203.37",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.87.203.37."
+  },
+  {
+    "challenge_id": "CH_T_0280",
+    "task_id": "T_0280",
+    "verifier_agent": "A_N_004",
+    "subject": "10.90.210.50",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.90.210.50."
+  },
+  {
+    "challenge_id": "CH_T_0281",
+    "task_id": "T_0281",
+    "verifier_agent": "A_N_010",
+    "subject": "10.93.217.63",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.93.217.63."
+  },
+  {
+    "challenge_id": "CH_T_0282",
+    "task_id": "T_0282",
+    "verifier_agent": "A_N_016",
+    "subject": "10.96.224.76",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.96.224.76."
+  },
+  {
+    "challenge_id": "CH_T_0283",
+    "task_id": "T_0283",
+    "verifier_agent": "A_N_022",
+    "subject": "10.99.231.89",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.99.231.89."
+  },
+  {
+    "challenge_id": "CH_T_0284",
+    "task_id": "T_0284",
+    "verifier_agent": "A_N_028",
+    "subject": "10.102.238.102",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.102.238.102."
+  },
+  {
+    "challenge_id": "CH_T_0285",
+    "task_id": "T_0285",
+    "verifier_agent": "A_N_004",
+    "subject": "10.105.245.115",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.105.245.115."
+  },
+  {
+    "challenge_id": "CH_T_0286",
+    "task_id": "T_0286",
+    "verifier_agent": "A_N_010",
+    "subject": "10.108.2.128",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.108.2.128."
+  },
+  {
+    "challenge_id": "CH_T_0287",
+    "task_id": "T_0287",
+    "verifier_agent": "A_N_016",
+    "subject": "10.111.9.141",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.111.9.141."
+  },
+  {
+    "challenge_id": "CH_T_0288",
+    "task_id": "T_0288",
+    "verifier_agent": "A_N_022",
+    "subject": "10.114.16.154",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.114.16.154."
+  },
+  {
+    "challenge_id": "CH_T_0289",
+    "task_id": "T_0289",
+    "verifier_agent": "A_N_028",
+    "subject": "10.117.23.167",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.117.23.167."
+  },
+  {
+    "challenge_id": "CH_T_0290",
+    "task_id": "T_0290",
+    "verifier_agent": "A_N_004",
+    "subject": "10.120.30.180",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.120.30.180."
+  },
+  {
+    "challenge_id": "CH_T_0291",
+    "task_id": "T_0291",
+    "verifier_agent": "A_N_010",
+    "subject": "10.123.37.193",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.123.37.193."
+  },
+  {
+    "challenge_id": "CH_T_0292",
+    "task_id": "T_0292",
+    "verifier_agent": "A_N_016",
+    "subject": "10.126.44.206",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.126.44.206."
+  },
+  {
+    "challenge_id": "CH_T_0293",
+    "task_id": "T_0293",
+    "verifier_agent": "A_N_022",
+    "subject": "10.129.51.219",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.129.51.219."
+  },
+  {
+    "challenge_id": "CH_T_0294",
+    "task_id": "T_0294",
+    "verifier_agent": "A_N_028",
+    "subject": "10.132.58.232",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.132.58.232."
+  },
+  {
+    "challenge_id": "CH_T_0295",
+    "task_id": "T_0295",
+    "verifier_agent": "A_N_004",
+    "subject": "10.135.65.245",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.135.65.245."
+  },
+  {
+    "challenge_id": "CH_T_0296",
+    "task_id": "T_0296",
+    "verifier_agent": "A_N_010",
+    "subject": "10.138.72.18",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.138.72.18."
+  },
+  {
+    "challenge_id": "CH_T_0297",
+    "task_id": "T_0297",
+    "verifier_agent": "A_N_016",
+    "subject": "10.141.79.31",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.141.79.31."
+  },
+  {
+    "challenge_id": "CH_T_0298",
+    "task_id": "T_0298",
+    "verifier_agent": "A_N_022",
+    "subject": "10.144.86.44",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.144.86.44."
+  },
+  {
+    "challenge_id": "CH_T_0299",
+    "task_id": "T_0299",
+    "verifier_agent": "A_N_028",
+    "subject": "10.147.93.57",
+    "approved_label": "benign",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves benign for 10.147.93.57."
+  },
+  {
+    "challenge_id": "CH_T_0300",
+    "task_id": "T_0300",
+    "verifier_agent": "A_N_004",
+    "subject": "10.150.100.70",
+    "approved_label": "malicious",
+    "verifier_approve": 1,
+    "challenge_type": "active_cross_evidence_check",
+    "result": "Verifier approves malicious for 10.150.100.70."
+  }
+]

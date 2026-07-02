@@ -1,0 +1,183 @@
+Directories in use:
+home:         M:\runtime\neo4j
+config:       M:\runtime\neo4j\conf
+logs:         M:\runtime\neo4j\logs
+plugins:      M:\runtime\neo4j\plugins
+import:       M:\runtime\neo4j\import
+data:         M:\runtime\neo4j\data
+certificates: M:\runtime\neo4j\certificates
+licenses:     M:\runtime\neo4j\licenses
+run:          M:\runtime\neo4j\run
+Starting Neo4j.
+2026-06-28 04:01:41.858+0000 INFO  Logging config in use: File 'M:\runtime\neo4j\conf\user-logs.xml'
+2026-06-28 04:01:41.866+0000 INFO  Starting...
+2026-06-28 04:01:42.463+0000 INFO  This instance is ServerId{fd285e47} (fd285e47-921d-4775-97f1-fbfee8823f79)
+2026-06-28 04:01:43.419+0000 INFO  ======== Neo4j 2026.02.2 ========
+2026-06-28 04:01:45.025+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-06-28 04:01:45.606+0000 INFO  Bolt enabled on localhost:7687.
+2026-06-28 04:01:47.601+0000 INFO  HTTP enabled on localhost:7474.
+2026-06-28 04:01:47.601+0000 INFO  Remote interface available at http://localhost:7474/
+2026-06-28 04:01:47.604+0000 INFO  id: 3A16F20B5CD8A4DD447EF3BE7EAB3D524100533AE816FAB63FC179E00C94D32C
+2026-06-28 04:01:47.605+0000 INFO  name: system
+2026-06-28 04:01:47.605+0000 INFO  creationDate: 2026-06-28T04:01:44.527Z
+2026-06-28 04:01:47.605+0000 INFO  Started.
+Owner 'sorin\CodexSandboxOffline' of 'M:\runtime\neo4j' and user running this process 'SORIN\22007' differs, potentially resulting in a file permission problem. Ensure that the file has the same owner, or at least has write access for the user running the Neo4j process trying to use it.
+-----------------------------------------------------
+Command Failed
+Neo4j web server failed to start. See log for more info.
+-----------------------------------------------------
+Directories in use:
+home:         M:\runtime\neo4j
+config:       M:\runtime\neo4j\conf
+logs:         M:\runtime\neo4j\logs
+plugins:      M:\runtime\neo4j\plugins
+import:       M:\runtime\neo4j\import
+data:         M:\runtime\neo4j\data
+certificates: M:\runtime\neo4j\certificates
+licenses:     M:\runtime\neo4j\licenses
+run:          M:\runtime\neo4j\run
+Starting Neo4j.
+2026-06-28 04:05:00.461+0000 INFO  Logging config in use: File 'M:\runtime\neo4j\conf\user-logs.xml'
+2026-06-28 04:05:00.469+0000 INFO  Starting...
+2026-06-28 04:05:01.085+0000 INFO  This instance is ServerId{fd285e47} (fd285e47-921d-4775-97f1-fbfee8823f79)
+2026-06-28 04:05:02.017+0000 INFO  ======== Neo4j 2026.02.2 ========
+2026-06-28 04:05:03.758+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-06-28 04:05:04.882+0000 INFO  Bolt enabled on localhost:7687.
+2026-06-28 04:05:06.714+0000 INFO  HTTP enabled on localhost:7474.
+2026-06-28 04:05:06.714+0000 INFO  Remote interface available at http://localhost:7474/
+2026-06-28 04:05:06.716+0000 INFO  id: 3A16F20B5CD8A4DD447EF3BE7EAB3D524100533AE816FAB63FC179E00C94D32C
+2026-06-28 04:05:06.716+0000 INFO  name: system
+2026-06-28 04:05:06.716+0000 INFO  creationDate: 2026-06-28T04:01:44.527Z
+2026-06-28 04:05:06.717+0000 INFO  Started.
+Owner 'sorin\CodexSandboxOffline' of 'M:\runtime\neo4j' and user running this process 'SORIN\22007' differs, potentially resulting in a file permission problem. Ensure that the file has the same owner, or at least has write access for the user running the Neo4j process trying to use it.
+-----------------------------------------------------
+Command Failed
+Neo4j web server failed to start. See log for more info.
+-----------------------------------------------------
+Directories in use:
+home:         M:\runtime\neo4j
+config:       M:\runtime\neo4j\conf
+logs:         M:\runtime\neo4j\logs
+plugins:      M:\runtime\neo4j\plugins
+import:       M:\runtime\neo4j\import
+data:         M:\runtime\neo4j\data
+certificates: M:\runtime\neo4j\certificates
+licenses:     M:\runtime\neo4j\licenses
+run:          M:\runtime\neo4j\run
+Starting Neo4j.
+2026-07-01 12:28:40.504+0000 INFO  Logging config in use: File 'M:\runtime\neo4j\conf\user-logs.xml'
+2026-07-01 12:28:40.530+0000 INFO  Starting...
+2026-07-01 12:28:42.144+0000 INFO  This instance is ServerId{fd285e47} (fd285e47-921d-4775-97f1-fbfee8823f79)
+2026-07-01 12:28:44.572+0000 INFO  ======== Neo4j 2026.02.2 ========
+2026-07-01 12:28:48.326+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-07-01 12:28:48.856+0000 INFO  Bolt enabled on localhost:7687.
+2026-07-01 12:28:54.653+0000 INFO  HTTP enabled on localhost:7474.
+2026-07-01 12:28:54.653+0000 INFO  Remote interface available at http://localhost:7474/
+2026-07-01 12:28:54.660+0000 INFO  id: 3A16F20B5CD8A4DD447EF3BE7EAB3D524100533AE816FAB63FC179E00C94D32C
+2026-07-01 12:28:54.660+0000 INFO  name: system
+2026-07-01 12:28:54.662+0000 INFO  creationDate: 2026-06-28T04:01:44.527Z
+2026-07-01 12:28:54.662+0000 INFO  Started.
+^CDirectories in use:
+home:         M:\runtime\neo4j
+config:       M:\runtime\neo4j\conf
+logs:         M:\runtime\neo4j\logs
+plugins:      M:\runtime\neo4j\plugins
+import:       M:\runtime\neo4j\import
+data:         M:\runtime\neo4j\data
+certificates: M:\runtime\neo4j\certificates
+licenses:     M:\runtime\neo4j\licenses
+run:          M:\runtime\neo4j\run
+Starting Neo4j.
+2026-07-01 13:10:11.060+0000 INFO  Logging config in use: File 'M:\runtime\neo4j\conf\user-logs.xml'
+2026-07-01 13:10:11.085+0000 INFO  Starting...
+2026-07-01 13:10:13.266+0000 INFO  This instance is ServerId{fd285e47} (fd285e47-921d-4775-97f1-fbfee8823f79)
+2026-07-01 13:10:16.009+0000 INFO  ======== Neo4j 2026.02.2 ========
+2026-07-01 13:10:20.270+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-07-01 13:10:20.915+0000 INFO  Bolt enabled on localhost:7687.
+2026-07-01 13:10:27.821+0000 INFO  HTTP enabled on localhost:7474.
+2026-07-01 13:10:27.821+0000 INFO  Remote interface available at http://localhost:7474/
+2026-07-01 13:10:27.829+0000 INFO  id: 3A16F20B5CD8A4DD447EF3BE7EAB3D524100533AE816FAB63FC179E00C94D32C
+2026-07-01 13:10:27.838+0000 INFO  name: system
+2026-07-01 13:10:27.838+0000 INFO  creationDate: 2026-06-28T04:01:44.527Z
+2026-07-01 13:10:27.838+0000 INFO  Started.
+^CDirectories in use:
+home:         M:\runtime\neo4j
+config:       M:\runtime\neo4j\conf
+logs:         M:\runtime\neo4j\logs
+plugins:      M:\runtime\neo4j\plugins
+import:       M:\runtime\neo4j\import
+data:         M:\runtime\neo4j\data
+certificates: M:\runtime\neo4j\certificates
+licenses:     M:\runtime\neo4j\licenses
+run:          M:\runtime\neo4j\run
+Starting Neo4j.
+2026-07-01 13:18:26.048+0000 INFO  Logging config in use: File 'M:\runtime\neo4j\conf\user-logs.xml'
+2026-07-01 13:18:26.072+0000 INFO  Starting...
+2026-07-01 13:18:28.000+0000 INFO  This instance is ServerId{fd285e47} (fd285e47-921d-4775-97f1-fbfee8823f79)
+2026-07-01 13:18:30.585+0000 INFO  ======== Neo4j 2026.02.2 ========
+2026-07-01 13:18:35.164+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-07-01 13:18:35.821+0000 INFO  Bolt enabled on localhost:7687.
+2026-07-01 13:18:43.255+0000 INFO  HTTP enabled on localhost:7474.
+2026-07-01 13:18:43.256+0000 INFO  Remote interface available at http://localhost:7474/
+2026-07-01 13:18:43.267+0000 INFO  id: 3A16F20B5CD8A4DD447EF3BE7EAB3D524100533AE816FAB63FC179E00C94D32C
+2026-07-01 13:18:43.269+0000 INFO  name: system
+2026-07-01 13:18:43.269+0000 INFO  creationDate: 2026-06-28T04:01:44.527Z
+2026-07-01 13:18:43.269+0000 INFO  Started.
+-----------------------------------------------------
+Command Failed
+Neo4j web server failed to start. See log for more info.
+-----------------------------------------------------
+Directories in use:
+home:         M:\runtime\neo4j
+config:       M:\runtime\neo4j\conf
+logs:         M:\runtime\neo4j\logs
+plugins:      M:\runtime\neo4j\plugins
+import:       M:\runtime\neo4j\import
+data:         M:\runtime\neo4j\data
+certificates: M:\runtime\neo4j\certificates
+licenses:     M:\runtime\neo4j\licenses
+run:          M:\runtime\neo4j\run
+Starting Neo4j.
+2026-07-01 13:23:27.933+0000 INFO  Logging config in use: File 'M:\runtime\neo4j\conf\user-logs.xml'
+2026-07-01 13:23:27.943+0000 INFO  Starting...
+2026-07-01 13:23:29.158+0000 INFO  This instance is ServerId{fd285e47} (fd285e47-921d-4775-97f1-fbfee8823f79)
+2026-07-01 13:23:31.766+0000 INFO  ======== Neo4j 2026.02.2 ========
+2026-07-01 13:23:36.025+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-07-01 13:23:36.628+0000 INFO  Bolt enabled on localhost:7687.
+2026-07-01 13:23:43.216+0000 INFO  HTTP enabled on localhost:7474.
+2026-07-01 13:23:43.216+0000 INFO  Remote interface available at http://localhost:7474/
+2026-07-01 13:23:43.227+0000 INFO  id: 3A16F20B5CD8A4DD447EF3BE7EAB3D524100533AE816FAB63FC179E00C94D32C
+2026-07-01 13:23:43.227+0000 INFO  name: system
+2026-07-01 13:23:43.227+0000 INFO  creationDate: 2026-06-28T04:01:44.527Z
+2026-07-01 13:23:43.227+0000 INFO  Started.
+-----------------------------------------------------
+Command Failed
+Neo4j web server failed to start. See log for more info.
+-----------------------------------------------------
+Directories in use:
+home:         M:\runtime\neo4j
+config:       M:\runtime\neo4j\conf
+logs:         M:\runtime\neo4j\logs
+plugins:      M:\runtime\neo4j\plugins
+import:       M:\runtime\neo4j\import
+data:         M:\runtime\neo4j\data
+certificates: M:\runtime\neo4j\certificates
+licenses:     M:\runtime\neo4j\licenses
+run:          M:\runtime\neo4j\run
+Starting Neo4j.
+2026-07-02 18:20:01.857+0000 INFO  Logging config in use: File 'M:\runtime\neo4j\conf\user-logs.xml'
+2026-07-02 18:20:01.878+0000 INFO  Starting...
+2026-07-02 18:20:02.583+0000 INFO  This instance is ServerId{fd285e47} (fd285e47-921d-4775-97f1-fbfee8823f79)
+2026-07-02 18:20:03.770+0000 INFO  ======== Neo4j 2026.02.2 ========
+2026-07-02 18:20:05.296+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+2026-07-02 18:20:05.476+0000 INFO  Bolt enabled on localhost:7687.
+2026-07-02 18:20:07.546+0000 INFO  HTTP enabled on localhost:7474.
+2026-07-02 18:20:07.546+0000 INFO  Remote interface available at http://localhost:7474/
+2026-07-02 18:20:07.549+0000 INFO  id: 3A16F20B5CD8A4DD447EF3BE7EAB3D524100533AE816FAB63FC179E00C94D32C
+2026-07-02 18:20:07.549+0000 INFO  name: system
+2026-07-02 18:20:07.549+0000 INFO  creationDate: 2026-06-28T04:01:44.527Z
+2026-07-02 18:20:07.549+0000 INFO  Started.
+-----------------------------------------------------
+Command Failed
+Neo4j web server failed to start. See log for more info.
+-----------------------------------------------------

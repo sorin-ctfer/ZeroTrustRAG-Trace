@@ -1,0 +1,23 @@
+﻿{
+    "name":  "MABZT Agent Dynamic Demo Portable Bundle",
+    "generated_at":  "2026-06-28T12:01:20",
+    "bundle_root":  "E:\\daily\\3-吴永贤\\备课\\最终版\\最终实验\\无依赖一键启动包",
+    "java":  "runtime/java21",
+    "neo4j":  "runtime/neo4j",
+    "python":  "runtime/python312",
+    "python_site":  "runtime/python_site",
+    "app":  "app",
+    "dataset":  "data/mabzt_comm_dataset",
+    "results":  "results",
+    "docs":  "docs",
+    "launcher":  "start_demo.bat",
+    "stopper":  "stop_demo.bat",
+    "alias_strategy":  "start_demo.bat creates a temporary SUBST drive alias such as M: so Neo4j and Python use ASCII runtime paths even when the bundle is stored under Chinese directories",
+    "java_source":  "E:\\game\\MCmod\\bkm\\java21",
+    "neo4j_source":  "E:\\tools\\WindowsDomainJail\\neo4j-community-2026.02.2-windows\\neo4j-community-2026.02.2",
+    "python_source":  "C:\\Program Files\\Python312",
+    "dashboard":  "http://127.0.0.1:5000",
+    "neo4j_browser":  "http://127.0.0.1:7474",
+    "neo4j_user":  "neo4j",
+    "neo4j_password":  "Lzj.123456"
+}
